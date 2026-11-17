@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+    Template : flow_start / requester
+    Khách hàng: Home Credit Vietnam (HCVN)
+    Gửi khi  : người khởi tạo tạo hợp đồng thành công
+    Biến     : rqtMail, envName
+    TODO     : thay {{HELP_CENTER_URL}} bằng link trang Trợ giúp chính thức khi HCVN cung cấp
+-->
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FptContact Email</title>
+</head>
+
+<body style="background-color: #ffffff; font-family: Arial, sans-serif; -webkit-font-smoothing: antialiased; font-size: 13px; line-height: 1.5; margin: 0; padding: 20px; color: #000000;">
+    <table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; max-width: 800px; margin: 0 auto; background-color: #ffffff;">
+        <tbody>
+            <tr>
+                <td style="font-family: Arial, sans-serif; font-size: 13px; vertical-align: top; color: #000000;">
+
+                    <!-- XIN CHÀO -->
+                    <p style="margin-top: 0; margin-bottom: 16px; font-size: 14px;">
+                        Xin chào/<span style="color: #2E6CF6; font-style: italic;">Dear</span> <span th:text="${rqtMail}">{Employee Name}</span>,
+                    </p>
+
+                    <!-- NỘI DUNG THÔNG BÁO -->
+                    <p style="margin-top: 0; margin-bottom: 20px;">
+                        Bạn đã khởi tạo thành công tài liệu <span th:text="${envName}">{Document Name}</span>. Vui lòng theo dõi trạng thái ký tại FPT.eContract/ 
+                        <span style="color: #2E6CF6; font-style: italic;">The document </span><span style="color: #2E6CF6; font-style: italic;" th:text="${envName}">{Document Name}</span><span style="color: #2E6CF6; font-style: italic;"> has been successfully created. Please monitor its signing status in FPT.eContract.</span>
+                    </p>
+
+                    <!-- CHỮ KÝ TRÂN TRỌNG -->
+                    <p style="margin-top: 0; margin-bottom: 20px; line-height: 1.6;">
+                        Trân trọng/ <span style="color: #2E6CF6; font-style: italic;">Regards,</span><br>
+                        Phòng Dịch Vụ Nhân Sự/ <span style="color: #2E6CF6; font-style: italic;">PSS Department</span><br>
+                        <b>Home Credit Vietnam</b>
+                    </p>
+
+                    <!-- ĐƯỜNG KẺ NÉT ĐỨT PHÂN CÁCH -->
+                    <div style="border-top: 1px dashed #000000; margin-top: 20px; margin-bottom: 20px;"></div>
+
+                    <!-- FOOTER 1: KHÔNG CHIA SẺ -->
+                    <p style="margin-top: 0; margin-bottom: 4px;">
+                        <b>KHÔNG CHIA SẺ/ </b><b style="color: #2E6CF6; font-style: italic;">DO NOT SHARE</b>
+                    </p>
+                    <p style="margin-top: 0; margin-bottom: 16px;">
+                        Email này chứa một mã bảo mật của FPT.eContract, vui lòng không chia sẻ email hoặc mã bảo mật này với người khác/ 
+                        <span style="color: #2E6CF6; font-style: italic;">This email contains a security code for FPT.eContract. Please do not share this email or the security code with anyone.</span>
+                    </p>
+
+                    <!-- FOOTER 2: THÔNG TIN LIÊN HỆ -->
+                    <p style="margin-top: 0; margin-bottom: 4px;">
+                        <b>THÔNG TIN LIÊN HỆ/ </b><b style="color: #2E6CF6; font-style: italic;">SUPPORT NEEDED?</b>
+                    </p>
+                    <p style="margin-top: 0; margin-bottom: 0;">
+                        Nếu bạn cần sửa đổi hoặc có câu hỏi về nội dung trong tài liệu, vui lòng liên hệ với Phòng Dịch vụ Nhân sự qua email 
+                        <a href="mailto:VN.HRSS.Supports@homecredit.vn" style="color: #000000; text-decoration: underline;">VN.HRSS.Supports@homecredit.vn</a>/ 
+                        <span style="color: #2E6CF6; font-style: italic;">If you need any amendments or questions regarding the content of the document, please contact the PSS Team via </span>
+                        <a href="mailto:VN.HRSS.Supports@homecredit.vn" style="color: #2E6CF6; font-style: italic; text-decoration: underline;">VN.HRSS.Supports@homecredit.vn</a>.<br>
+                        Nếu bạn gặp sự cố khi ký tài liệu, vui lòng truy cập 
+                        <a href="#" style="color: #000000; text-decoration: underline;">trang Trợ giúp</a>/ 
+                        <span style="color: #2E6CF6; font-style: italic;">If you experience any issues while signing the document, please visit the </span>
+                        <a href="#" style="color: #2E6CF6; font-style: italic; text-decoration: underline;">Help Center</a>.
+                    </p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

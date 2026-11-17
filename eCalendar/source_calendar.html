@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>[Calendar] Bạn vừa được chia sẻ lịch</title>
+    <style>
+      @media only screen and (max-width: 620px) {
+        .email-container { width: 100% !important; }
+        .mobile-padding { padding-left: 20px !important; padding-right: 20px !important; }
+        .info-column { display: block !important; width: 100% !important; box-sizing: border-box !important; }
+        .header-image { width: 100% !important; height: auto !important; }
+      }
+    </style>
+  </head>
+  <body style="margin: 0; padding: 0; background-color: #e5e5e5; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 1.5; color: #00204d; -webkit-font-smoothing: antialiased;">
+
+    <!-- Preheader -->
+    <div style="display: none; max-height: 0; overflow: hidden; opacity: 0; color: transparent; line-height: 1px; font-size: 1px;">
+      <span th:text="${sharer_name}">Nguyễn Văn A</span> vừa chia sẻ quyền truy cập nguồn lịch "<span th:text="${calendar_source_name}">Lịch cá nhân</span>" cho Anh/Chị.
+    </div>
+
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#e5e5e5" style="width: 100%; margin: 0; padding: 0; border-collapse: collapse; background-color: #e5e5e5;">
+      <tr>
+        <td align="center" style="padding: 0; vertical-align: top;">
+          <table class="email-container" role="presentation" width="800" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" style="width: 100%; max-width: 800px; margin: 0 auto; border-collapse: collapse; background-color: #ffffff;">
+
+            <!-- HEADER -->
+            <tr>
+              <td style="padding: 0; line-height: 0;">
+                <img class="header-image" src="https://i.imgur.com/4NFT8F6.png" width="800" alt="KYTA Platform" style="display: block; width: 100%; max-width: 800px; height: auto; border: 0;">
+              </td>
+            </tr>
+
+            <!-- GREETING & INTRO -->
+            <tr>
+              <td class="mobile-padding" style="padding: 35px 36px 28px 36px;">
+                <h1 style="margin: 0 0 12px 0; font-size: 21px; font-weight: 600; line-height: 28px; color: #6f2ced;">
+                  Kính gửi Anh/Chị,
+                </h1>
+                <p style="margin: 0; font-size: 14px; font-weight: 400; line-height: 22px; color: #193958;">
+                  <span th:text="${sharer_name}">Nguyễn Văn A</span> vừa chia sẻ quyền truy cập nguồn lịch "<strong style="font-weight: 600;" th:text="${calendar_source_name}">Lịch cá nhân</strong>" cho Anh/Chị.
+                </p>
+              </td>
+            </tr>
+
+            <!-- CARD THÔNG TIN CHIA SẺ -->
+            <tr>
+              <td class="mobile-padding" style="padding: 0 34px 28px 34px;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#edf2fd" style="width: 100%; border-collapse: collapse; background-color: #edf2fd; border-radius: 8px;">
+                  <tr>
+                    <td style="padding: 24px 28px 8px 28px;">
+                      <p style="margin: 0; font-size: 16px; font-weight: 600; line-height: 28px; color: #6f2ced;">
+                        THÔNG TIN CHIA SẺ
+                      </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style="padding: 0 20px 20px 20px;">
+                      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="width: 100%; border-collapse: collapse;">
+                        <tr>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;">
+                            <p style="margin: 0 0 3px 0; font-size: 13px; line-height: 20px; color: #5f6670;">Loại nguồn lịch</p>
+                            <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 22px; color: #000000;" th:text="${calendar_source_group}">
+                              Lịch của tôi
+                            </p>
+                          </td>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;">
+                            <p style="margin: 0 0 3px 0; font-size: 13px; line-height: 20px; color: #5f6670;">Tên nguồn lịch</p>
+                            <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 22px; color: #000000; word-break: break-word;" th:text="${calendar_source_name}">
+                              Lịch cá nhân
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;">
+                            <p style="margin: 0 0 3px 0; font-size: 13px; line-height: 20px; color: #5f6670;">Người chia sẻ</p>
+                            <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 22px; color: #000000;" th:text="${sharer_name}">
+                              Nguyễn Văn A
+                            </p>
+                          </td>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;">
+                            <p style="margin: 0 0 3px 0; font-size: 13px; line-height: 20px; color: #5f6670;">Thời gian chia sẻ</p>
+                            <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 22px; color: #000000;" th:text="${shared_at}">
+                              15/09/2026 10:32
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;">
+                            <p style="margin: 0 0 3px 0; font-size: 13px; line-height: 20px; color: #5f6670;">Quyền truy cập</p>
+                            <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 22px; color: #16875b;" th:text="${permission_level}">
+                              Xem
+                            </p>
+                          </td>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;"></td>
+                        </tr>
+
+                        <!-- ĐỐI TƯỢNG CHIA SẺ -->
+                        <tr th:if="${(shared_user_count != null and !#strings.isEmpty(shared_user_count) and shared_user_count != '0' and shared_user_count != '00') or (shared_dept_count != null and !#strings.isEmpty(shared_dept_count) and shared_dept_count != '0' and shared_dept_count != '00')}">
+                          <td colspan="2" style="padding: 12px 8px 4px 8px;">
+                            <p style="margin: 0 0 6px 0; font-size: 13px; line-height: 20px; color: #5f6670;">Đối tượng chia sẻ</p>
+                            
+                            <!-- Ẩn/hiển thị Cá nhân -->
+                            <div th:if="${shared_user_count != null and !#strings.isEmpty(shared_user_count) and shared_user_count != '0' and shared_user_count != '00'}" style="margin-bottom: 4px; font-size: 14px; line-height: 22px; color: #000000;">
+                              • Cá nhân: <span th:text="${shared_user_count}">01</span> người: <strong th:text="${shared_user_list}">Trần Thị B</strong>
+                            </div>
+                            
+                            <!-- Ẩn/hiển thị Phòng ban -->
+                            <div th:if="${shared_dept_count != null and !#strings.isEmpty(shared_dept_count) and shared_dept_count != '0' and shared_dept_count != '00'}" style="font-size: 14px; line-height: 22px; color: #000000;">
+                              • Phòng ban: <span th:text="${shared_dept_count}">01</span> phòng ban: <strong th:text="${shared_dept_list}">Phòng thư ký</strong>
+                            </div>
+                          </td>
+                        </tr>
+
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- CALL TO ACTION -->
+            <tr>
+              <td class="mobile-padding" align="center" style="padding: 0 34px 34px 34px;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+                  <tr>
+                    <td align="center" bgcolor="#eee8fe" style="border: 1px solid #d7c7fa; border-radius: 4px; background-color: #eee8fe;">
+                      <a th:href="${calendar_source_url}" style="display: inline-block; padding: 10px 22px; font-size: 14px; line-height: 22px; font-weight: 600; text-decoration: none; color: #6f2ced;">
+                        Xem nguồn lịch
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- SIGNATURE -->
+            <tr>
+              <td class="mobile-padding" style="padding: 0 36px 36px 36px;">
+                <p style="margin: 0; font-size: 14px; line-height: 22px; color: #193958;">
+                  Trân trọng,<br>
+                  <strong style="font-weight: 600; color: #00204d;" th:text="${sharer_name}">Nguyễn Văn A</strong>
+                </p>
+              </td>
+            </tr>
+
+            <!-- COPYRIGHT FOOTER -->
+            <tr>
+              <td class="mobile-padding" style="padding: 18px 36px; border-top: 1px solid #e2e7ef; background-color: #f7f9fc;">
+                <p style="margin: 0; font-size: 12px; line-height: 18px; text-align: center; color: #6b7685;">
+                  Đây là email được gửi tự động từ hệ thống Calendar. Vui lòng không trả lời email này.
+                </p>
+              </td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

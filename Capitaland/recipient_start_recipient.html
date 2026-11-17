@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FptContact Email</title>
+  </head>
+  <body style="background-color: #E5E5E5;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size: 12px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <table class="body" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;padding: 0;background-color: #ffffff;">
+      <tbody>
+        <tr>
+          <td class="container" style="font-family: sans-serif;font-size: 12px;vertical-align: top;display: block;margin: 0 auto;max-width: 800px;padding: 0;width: 800px;">
+            <div class="content" style="box-sizing: border-box;display: block;Margin: 0;max-width: 800px;padding: 0;">
+              <!-- START CENTERED WHITE CONTAINER -->
+              <div class="header" style="display: inline-block;clear: both;text-align: center;width: 100%;"><img
+                  src="https://raw.githubusercontent.com/buiduyanh0/image-econtract/main/capitaland.png"
+                  alt="CapitaLand" style="max-width: 40%;height: auto;min-height: 32px;padding: 24px 0;"></div>
+              <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+                <!-- START MAIN CONTENT AREA -->
+                <tr>
+                  <td class="wrapper" style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box;padding-bottom: 0;">
+                    <table style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                      <tr>
+                        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                          <div style="gap: 8px; margin: 0 35px 16px 36px;">
+                            <h1 style=" font-size: 21px; font-weight: 600; line-height: 24px; text-align: left; color: rgba(111, 44, 237, 1); margin-bottom: 8px; margin-top: 0;">Kính gửi Quý khách <span th:text="${rcpName}">Nguyễn Văn A</span>,</h1>
+                            <div style=" font-size: 14px; font-weight: 400; line-height: 22px; text-align: left; color: rgba(0, 32, 77, 0.9); ">
+                              <b>CapitaLand Development Vietnam</b> trân trọng cảm ơn Quý Khách hàng đã lựa chọn đồng hành cùng dự án của chúng tôi tại thị trường Việt Nam.
+                              <br>
+                              <span>Để hoàn tất quy trình, kính đề nghị Quý khách hàng truy cập và hoàn thiện tài liệu theo thông tin dưới đây.</span>
+                              <br th:if="${rcpId == 'p_002_r_001'}">
+                              <span th:if="${rcpId == 'p_002_r_001'}">Quý khách vui lòng dành chút thời gian đánh giá quy trình ký kết:</span>
+                            </div>
+                           </div>
+                          <!-- Đường dẫn đánh giá ký kết: chỉ hiển thị khi recipientId = p_002_r_001 -->
+                          <div th:if="${rcpId == 'p_002_r_001'}" style="font-size: 14px; line-height: 22px; text-align: left; color: rgba(0, 32, 77, 0.9); margin: 0 35px 35px 36px;">
+                            <a href="https://forms.office.com/r/eAnXHug5K3?origin=lprLink" style="font-size: 14px; line-height: 22px; padding: 9px 16px; font-weight: 500; text-decoration: none; display: inline-block; cursor: pointer; background: linear-gradient(92.13deg, rgba(0, 189, 142, 0.12) -10.74%, rgba(64, 188, 254, 0.4) 47.33%, rgba(116, 85, 254, 0.2) 100.27%); color: #7F43EF;">Đánh giá quy trình ký kết</a>
+                          </div>
+                          <div style="background: rgba(237, 242, 253, 1);margin-bottom: 16px;text-align: center; padding: 24px 32px; margin: 0 37px 35px 34px;">
+                            <!-- Dự án: chỉ hiển thị khi docTypeCode = 779 (docTypeCode nằm trong header, kiểu Long) -->
+                            <div th:if="${header?.docTypeCode != null && #strings.toString(header.docTypeCode) == '779'}" style=" font-size: 15px; line-height: 22px; text-align: left; margin-bottom: 15px;">
+                              <span style=" color: rgba(66, 66, 66, 1); font-weight: 500;">Dự án:</span>
+                              <br>
+                              <span style="color: rgba(0, 0, 0, 1); font-weight: 600;">Orchard Collection</span>
+                            </div>
+                            <!-- Dự án: chỉ hiển thị khi docTypeCode = 778 -->
+                            <div th:if="${header?.docTypeCode != null && #strings.toString(header.docTypeCode) == '778'}" style=" font-size: 15px; line-height: 22px; text-align: left; margin-bottom: 15px;">
+                              <span style=" color: rgba(66, 66, 66, 1); font-weight: 500;">Dự án:</span>
+                              <br>
+                              <span style="color: rgba(0, 0, 0, 1); font-weight: 600;">Fullton Regal</span>
+                            </div>
+                            <!-- Code cũ (th:switch map nhiều docTypeCode) - giữ lại để sau dùng: <div style="
+                                font-size: 15px; line-height: 22px; text-align: left; margin-bottom: 15px;"> <span
+                                style=" color: rgba(66, 66, 66, 1); font-weight: 500;">Dự án:</span> <br> <span
+                                style="color: rgba(0, 0, 0, 1); font-weight: 600;" th:switch="${docTypeCode}"> <span
+                                th:case="68">Orchard Collection</span> <span th:case="*"></span> </span> </div> -->
+                            <div style=" font-size: 15px; line-height: 22px; text-align: left; margin-bottom: 15px;">
+                              <span style=" color: rgba(66, 66, 66, 1); font-weight: 500;">Tên tài liệu:</span>
+                              <br>
+                              <span style="color: rgba(0, 0, 0, 1); font-weight: 600;"
+                                  th:with="nameEnv=(@{|${envName}|})" th:text="${nameEnv}">Hợp đồng công nghệ thông 2019</span>
+                            </div>
+                            <div th:if="${baseUrlInternal == 'null' || baseUrlInternal == null }">
+                              <div style=" font-size: 15px; line-height: 22px; text-align: left; margin-bottom: 15px;">
+                                <span style=" color: rgba(66, 66, 66, 1); font-weight: 500;">Mã truy cập:</span>
+                                <br>
+                                <span style="color: rgba(0, 0, 0, 1); font-weight: 600;"
+                                    th:with="code=(@{|${password}|})" th:text="${code}">fptsoft</span>
+                              </div>
+                              <div><a style=" font-size: 14px; line-height: 22px; padding: 9px 16px; font-weight: 500; text-decoration: none; margin-bottom: 0; display: inline-block; cursor: pointer; background: linear-gradient(92.13deg, rgba(0, 189, 142, 0.12) -10.74%, rgba(64, 188, 254, 0.4) 47.33%, rgba(116, 85, 254, 0.2) 100.27%); color: #7F43EF;"
+                                  th:with="url=(@{|${baseUrl}/fi/${envId}/${rcpId}/act|})" th:href="${url}">Truy cập tài liệu</a></div>
+                            </div>
+                            <div th:if="${baseUrlInternal != 'null' && baseUrlInternal != null }">
+                              <div><a style=" font-size: 14px; line-height: 22px; padding: 9px 16px; font-weight: 500; text-decoration: none; margin-bottom: 0; display: inline-block; cursor: pointer; background: linear-gradient(92.13deg, rgba(0, 189, 142, 0.12) -10.74%, rgba(64, 188, 254, 0.4) 47.33%, rgba(116, 85, 254, 0.2) 100.27%); color: #7F43EF;"
+                                  th:href="@{|${baseUrlInternal}|}">Truy cập tài liệu</a></div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-family: sans-serif; font-size: 12px; vertical-align: top; background: #FAFBFB; padding: 3% 5%;">
+                    <p style="font-weight: 600; font-size: 13px; line-height: 18px; margin-top: 0; margin-bottom: 4px;">KHÔNG CHIA SẺ</p>
+                    <p style="color: #71787E; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0; margin-bottom: 10px;">Email này chứa một mã bảo mật của FPT.eContract, vui lòng không chia sẻ email hoặc mã bảo mật này với người khác.</p>
+                    <p style="font-weight: 600; font-size: 13px; line-height: 18px; margin-top: 0; margin-bottom: 4px;">GIỚI THIỆU VỀ FPT.eContract</p>
+                    <p style="color: #71787E; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0; margin-bottom: 10px;">FPT.eContract giúp bạn ký tài liệu điện tử trong vài phút. Sản phẩm an toàn, bảo mật, đảm bảo tính pháp lý. Cho dù bạn đang ở văn phòng, ở nhà, đang đi trên đường hay bất kỳ đất nước nào trên thế giới, FPT.eContract sẽ cung cấp giải pháp và dịch vụ đến với bạn.</p>
+                    <p style="font-weight: 600; font-size: 13px; line-height: 18px; margin-top: 0; margin-bottom: 4px;">CÂU HỎI VỀ TÀI LIỆU</p>
+                    <p style="color: #71787E; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0; margin-bottom: 0;">Nếu bạn cần sửa đổi hoặc có câu hỏi về nội dung trong tài liệu, vui lòng liên hệ với người gửi bằng cách gửi email trực tiếp cho họ. Nếu bạn gặp sự cố khi ký tài liệu, vui lòng truy cập trang Trợ giúp.</p>
+                  </td>
+                </tr>
+                <!-- END MAIN CONTENT AREA -->
+              </table>
+              <!-- END CENTERED WHITE CONTAINER -->
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

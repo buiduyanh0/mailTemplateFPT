@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>FptContact Consultation Email</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #E5E5E5; font-family: sans-serif; font-size: 12px; line-height: 1.4; -webkit-font-smoothing: antialiased; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+
+  <table class="body" role="presentation" style="width: 100%; padding: 0; background-color: #ffffff; border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+    <tbody>
+      <tr>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+
+        <td class="container" style="display: block; width: 800px; max-width: 800px; margin: 0 auto; padding: 0; font-family: sans-serif; font-size: 12px; vertical-align: top;">
+          <div class="content" style="box-sizing: border-box; display: block; max-width: 800px; margin: 0; padding: 0;">
+
+            <!-- ===== HEADER ===== -->
+            <div class="header" style="display: inline-block; clear: both; width: 100%; text-align: center; background: url(https://i.imgur.com/aisEGz2.png) no-repeat center; background-size: cover;">
+              <img src="https://i.imgur.com/WCHvfh1.png" alt="FPT.eContract"
+                   style="float: left; max-width: 38%; height: auto; min-height: 32px; padding: 5% 0 4% 5%;">
+            </div>
+
+            <!-- ===== MAIN CONTENT ===== -->
+            <table class="main" role="presentation" style="width: 100%; background: #ffffff; border-radius: 3px; border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+
+              <tr>
+                <td class="wrapper" style="box-sizing: border-box; padding: 5%; padding-bottom: 0; font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                  <table role="presentation" style="width: 100%; border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                    <tr>
+                      <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+
+                        <!-- Greeting -->
+                        <h1 style="margin-top: 0; margin-bottom: 24px; font-weight: bold; font-size: 18px; line-height: 24px; color: #2E6CF6;"
+                            th:text="|Dear ${rcpName},|">Dear Nguyễn Văn A,</h1>
+
+                        <!-- Grey content card -->
+                        <div style="margin-bottom: 16px; padding: 5%; text-align: left; background: #FAFBFB;">
+
+                          <!-- ===== CONSULTATION FLOW CONTENT ===== -->
+                          <p style="margin: 0 0 16px 0; font-weight: 500; font-size: 14px; line-height: 20px; color: #121E28;">
+                            <b>You are requested to provide CONSULTATION for a CONTRACT/ DOCUMENT on the KYTA system as follows:</b>
+                          </p>
+
+                          <p style="margin: 0 0 8px 0; font-weight: 500; font-size: 14px; line-height: 20px; color: #121E28;">
+                            - <b>From consultor:
+                              <span th:text="${addedByMail}" style="color: #2E6CF6;">[Consultor]</span>
+                            </b>
+                          </p>
+
+                          <p style="margin: 0 0 8px 0; font-weight: 500; font-size: 14px; line-height: 20px; color: #121E28;">
+                            - <b>Document name:
+                              <span th:text="${envName}" style="color: #2E6CF6;">[Name of contract]</span>
+                            </b>
+                          </p>
+
+                          <!-- ===== BỔ SUNG PHẦN BÔI ĐỎ TRONG ẢNH KÈM ĐIỀU KIỆN LINK ===== -->
+                          
+                          <!-- Trường hợp 1: Luồng ngoài (Không có baseUrlInternal) -> Yêu cầu Email & Access code kèm [link] -->
+                          <p style="margin: 0; font-size: 14px; line-height: 20px; color: #121E28;"
+                             th:if="${baseUrlInternal == 'null' || baseUrlInternal == null }">
+                            <b>Click on the following link using email
+                              <span th:text="${rcpMail}" style="color: #2E6CF6;">example@email.com</span>
+                              and Access code
+                              <span th:text="${password}" style="color: #2E6CF6;">123456</span>
+                              for more details:
+                            </b>
+                          </p>
+
+                          <!-- Trường hợp 2: Luồng nội bộ (Có baseUrlInternal) -> Hiển thị câu hướng dẫn rút gọn kèm [link] -->
+                          <p style="margin: 0; font-size: 14px; line-height: 20px; color: #121E28;"
+                             th:if="${baseUrlInternal != 'null' && baseUrlInternal != null }">
+                            <b>Click on the following link for more details: </b>
+                          </p>
+
+                          <!-- ===== ACTION / ACCESS CODE BUTTON ===== -->
+                          <div style="text-align: center; margin-top: 16px;">
+
+                            <!-- Luồng ngoài: Hiển thị Access code + Nút VIEW DOCUMENT -->
+                            <div th:if="${baseUrlInternal == 'null' || baseUrlInternal == null }">
+                              <p style="margin-top: 16px; margin-bottom: 4px; font-weight: 500; font-size: 12px; line-height: 18px; color: #71787E;">Access code</p>
+                              <p style="margin-top: 0; margin-bottom: 32px; font-weight: bold; font-size: 22px; line-height: 24px; color: #121E28;">
+                                <b th:text="${password}">fptsoft</b>
+                              </p>
+                              <a th:href="|${baseUrl}/fi/${envId}/${rcpId}/act|"
+                                 style="display: inline-block; margin-bottom: 17px; padding: 8px 20px; font-size: 14px; line-height: 24px; font-weight: bold; text-decoration: none; background: #2E6CF6; color: #fff;">VIEW DOCUMENT</a>
+                              <br>
+                            </div>
+
+                            <!-- Luồng nội bộ: Chỉ hiển thị nút VIEW DOCUMENT -->
+                            <div th:if="${baseUrlInternal != 'null' && baseUrlInternal != null }">
+                              <a th:href="|${baseUrlInternal}|"
+                                 style="display: inline-block; margin-bottom: 17px; padding: 8px 20px; font-size: 14px; line-height: 24px; font-weight: bold; text-decoration: none; background: #2E6CF6; color: #fff;">VIEW DOCUMENT</a>
+                            </div>
+
+                          </div>
+
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <!-- ===== FOOTER ===== -->
+              <tr>
+                <td style="padding: 3% 5%; font-family: sans-serif; font-size: 12px; vertical-align: top; background: #ffffff;">
+                  <p style="margin-top: 0; margin-bottom: 4px; font-weight: 600; font-size: 13px; line-height: 18px;">DO NOT SHARE</p>
+                  <p style="margin-top: 0; margin-bottom: 10px; font-weight: normal; font-size: 12px; line-height: 18px; color: #71787E;">This email contains a security code of FPT.eContract, please do not share this email or security code with others.</p>
+
+                  <p style="margin-top: 0; margin-bottom: 4px; font-weight: 600; font-size: 13px; line-height: 18px;">ABOUT ECONTRACT</p>
+                  <p style="margin-top: 0; margin-bottom: 10px; font-weight: normal; font-size: 12px; line-height: 18px; color: #71787E;">FPT.eContract helps you sign e-documents in minutes. The product is safe, secure, and legally guaranteed. Whether you are in the office, at home, on the road or anywhere in the world, FPT.eContract will provide solutions and services to you.</p>
+
+                  <p style="margin-top: 0; margin-bottom: 4px; font-weight: 600; font-size: 13px; line-height: 18px;">QUESTIONS ABOUT DOCUMENTS</p>
+                  <p style="margin-top: 0; margin-bottom: 0; font-weight: normal; font-size: 12px; line-height: 18px; color: #71787E;">If you need to make changes or have questions about the content in the document, please contact the sender by emailing them directly. If you are having trouble signing documents, please visit the Help page.</p>
+                </td>
+              </tr>
+
+            </table>
+          </div>
+        </td>
+
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

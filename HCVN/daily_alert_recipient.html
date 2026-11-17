@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--
+    Template : recipient_start / recipient
+    Khách hàng: Home Credit Vietnam (HCVN)
+    Gửi khi  : đến phiên xử lý của người ký trong luồng
+    Biến     : rcpName, envName, baseUrl, envId, rcpId, password, baseUrlInternal
+    TODO     : gắn link cho "Hướng Dẫn Ký Tài Liệu Trực Tuyến" và "trang Trợ giúp" khi HCVN cung cấp
+-->
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FptContact Email</title>
+</head>
+
+<body style="background-color: #ffffff; font-family: Arial, sans-serif; -webkit-font-smoothing: antialiased; font-size: 13px; line-height: 1.5; margin: 0; padding: 20px; color: #000000;">
+    <table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; max-width: 800px; margin: 0 auto; background-color: #ffffff;">
+        <tbody>
+            <tr>
+                <td style="font-family: Arial, sans-serif; font-size: 13px; vertical-align: top; color: #000000;">
+
+                    <!-- XIN CHÀO -->
+                    <p style="margin-top: 0; margin-bottom: 16px; font-size: 14px;">
+                        Xin chào/<span style="color: #2E6CF6; font-style: italic;">Dear</span> <span th:text="${rcpName}">{Employee Name}</span>,
+                    </p>
+
+                    <!-- LỜI DẪN -->
+                    <p style="margin-top: 0; margin-bottom: 12px;">
+                        Bạn có một tài liệu đã sẵn sàng để ký/xác nhận. Vui lòng truy cập vào hệ thống FPT.eContract theo hướng dẫn sau/
+                        <span style="color: #2E6CF6; font-style: italic;"> You have a document that need to be signed. Please access to FPT.eContract and note the following steps:</span>
+                    </p>
+
+                    <!-- NGƯỜI KÝ BÊN NGOÀI: 3 BƯỚC -->
+                    <div th:if="${baseUrlInternal == 'null' || baseUrlInternal == null}">
+                        
+                        <!-- BƯỚC 1 -->
+                        <p style="margin-top: 0; margin-bottom: 8px;">
+                            <b>Bước 1/</b> <b style="color: #2E6CF6; font-style: italic;">Step 1:</b>
+                            Truy cập vào link/ <span style="color: #2E6CF6; font-style: italic;">Access to: </span>
+                            <a th:with="url=(@{|${baseUrl}/fi/${envId}/${rcpId}/act|})" th:href="${url}" style="color: #2E6CF6; font-weight: bold; text-decoration: underline;" th:text="${envName}">{Link xem tài liệu}</a>
+                        </p>
+
+                        <!-- BƯỚC 2 -->
+                        <p style="margin-top: 0; margin-bottom: 8px;">
+                            <b>Bước 2/</b> <b style="color: #2E6CF6; font-style: italic;">Step 2:</b>
+                            Nhập mã truy cập để xem và ký/xác nhận tài liệu/ <span style="color: #2E6CF6; font-style: italic;">Using this code to access for further process: </span>
+                            <b th:text="${password}">{Mã truy cập}</b>
+                        </p>
+
+                        <!-- BƯỚC 3 -->
+                        <p style="margin-top: 0; margin-bottom: 16px;">
+                            <b>Bước 3/</b> <b style="color: #2E6CF6; font-style: italic;">Step 3:</b>
+                            Chuẩn bị CCCD để thực hiện eKYC theo hướng dẫn hoặc xem thêm chi tiết tại 
+                            <a href="#" style="color: #D90000; font-weight: bold; text-decoration: underline;">Hướng Dẫn Ký Tài Liệu Trực Tuyến</a> 
+                            để hoàn tất quy trình/ 
+                            <span style="color: #2E6CF6; font-style: italic;">Prepare your ID Card/Passport and follow the instructions to complete the eKYC verification process or refer to the </span>
+                            <a href="#" style="color: #D90000; font-weight: bold; font-style: italic; text-decoration: underline;">How to process eSign</a> 
+                            <span style="color: #2E6CF6; font-style: italic;">to complete the signing process.</span>
+                        </p>
+
+                    </div>
+
+                    <!-- NGƯỜI KÝ NỘI BỘ: TRUY CẬP TRỰC TIẾP -->
+                    <div th:if="${baseUrlInternal != 'null' && baseUrlInternal != null}">
+                        <p style="margin-top: 0; margin-bottom: 16px;">
+                            <b>Truy cập vào link/</b> <b style="color: #2E6CF6; font-style: italic;">Access to: </b>
+                            <a th:with="urlInternal=(@{|${baseUrlInternal}|})" th:href="${urlInternal}" style="color: #2E6CF6; font-weight: bold; text-decoration: underline;" th:text="${envName}">{Link xem tài liệu}</a>
+                        </p>
+                    </div>
+
+                    <!-- LƯU Ý / IMPORTANT -->
+                    <p style="margin-top: 20px; margin-bottom: 20px;">
+                        <b style="color: #D90000; text-decoration: underline;">Lưu ý</b><b>/ </b><b style="color: #D90000; font-style: italic; text-decoration: underline;">Important</b><b>: </b>
+                        Hệ thống sẽ tự động vô hiệu hóa quy trình sau thời hạn 30 ngày kể từ ngày bắt đầu nên Anh/chị vui lòng hoàn tất việc ký/xác nhận trước thời hạn trên hoặc liên hệ Phòng Dịch vụ Nhân sự để được hỗ trợ (nếu cần)/ 
+                        <span style="color: #2E6CF6; font-style: italic;">The process will be automatically deactivated by the system 30 days after its initiation date. Please ensure that you complete the signing/confirmation process within this period. Should you require any assistance, please contact the PSS Team.</span>
+                    </p>
+
+                    <!-- CHỮ KÝ TRÂN TRỌNG -->
+                    <p style="margin-top: 0; margin-bottom: 20px; line-height: 1.6;">
+                        Trân trọng/ <span style="color: #2E6CF6; font-style: italic;">Regards,</span><br>
+                        Phòng Dịch Vụ Nhân Sự/ <span style="color: #2E6CF6; font-style: italic;">PSS Department</span><br>
+                        <b>Home Credit Vietnam</b>
+                    </p>
+
+                    <!-- ĐƯỜNG KẺ NÉT ĐỨT PHÂN CÁCH -->
+                    <div style="border-top: 1px dashed #000000; margin-top: 20px; margin-bottom: 20px;"></div>
+
+                    <!-- FOOTER 1: KHÔNG CHIA SẺ -->
+                    <p style="margin-top: 0; margin-bottom: 4px;">
+                        <b>KHÔNG CHIA SẺ/ </b><b style="color: #2E6CF6; font-style: italic;">DO NOT SHARE</b>
+                    </p>
+                    <p style="margin-top: 0; margin-bottom: 16px;">
+                        Email này chứa một mã bảo mật của FPT.eContract, vui lòng không chia sẻ email hoặc mã bảo mật này với người khác/ 
+                        <span style="color: #2E6CF6; font-style: italic;">This email contains a security code for FPT.eContract. Please do not share this email or the security code with anyone.</span>
+                    </p>
+
+                    <!-- FOOTER 2: THÔNG TIN LIÊN HỆ -->
+                    <p style="margin-top: 0; margin-bottom: 4px;">
+                        <b>THÔNG TIN LIÊN HỆ/ </b><b style="color: #2E6CF6; font-style: italic;">SUPPORT NEEDED?</b>
+                    </p>
+                    <p style="margin-top: 0; margin-bottom: 0;">
+                        Nếu bạn cần sửa đổi hoặc có câu hỏi về nội dung trong tài liệu, vui lòng liên hệ với Phòng Dịch vụ Nhân sự qua email 
+                        <a href="mailto:VN.HRSS.Supports@homecredit.vn" style="color: #000000; text-decoration: underline;">VN.HRSS.Supports@homecredit.vn</a>/ 
+                        <span style="color: #2E6CF6; font-style: italic;">If you need any amendments or questions regarding the content of the document, please contact the PSS Team via </span>
+                        <a href="mailto:VN.HRSS.Supports@homecredit.vn" style="color: #2E6CF6; font-style: italic; text-decoration: underline;">VN.HRSS.Supports@homecredit.vn</a>.<br>
+                        Nếu bạn gặp sự cố khi ký tài liệu, vui lòng truy cập 
+                        <a href="#" style="color: #000000; text-decoration: underline;">trang Trợ giúp</a>/ 
+                        <span style="color: #2E6CF6; font-style: italic;">If you experience any issues while signing the document, please visit the </span>
+                        <a href="#" style="color: #2E6CF6; font-style: italic; text-decoration: underline;">Help Center</a>.
+                    </p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

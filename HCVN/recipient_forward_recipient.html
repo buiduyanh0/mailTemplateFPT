@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+    Template : recipient_replace / recipient
+    Khách hàng: Home Credit Vietnam (HCVN)
+    Gửi khi  : người ký A được thay thế bằng người ký B (chỉ áp dụng Company side)
+    Biến     : rcpName, rqtMail, envName, baseUrl, envId, rcpId, rcpMail, password, baseUrlInternal
+    TODO     : gắn link cho "trang Trợ giúp" khi HCVN cung cấp
+-->
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FptContact Email</title>
+</head>
+
+<body style="background-color: #E5E5E5; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 13px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+<table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; padding: 0; background-color: #ffffff;">
+    <tbody>
+    <tr>
+        <td style="font-family: sans-serif; font-size: 13px; vertical-align: top;">&nbsp;</td>
+        <td class="container" style="font-family: sans-serif; font-size: 13px; vertical-align: top; display: block; margin: 0 auto; max-width: 800px; padding: 0; width: 800px;">
+            <div class="content" style="box-sizing: border-box; display: block; margin: 0; max-width: 800px; padding: 0;">
+
+                <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+
+                    <!-- NỘI DUNG -->
+                    <tr>
+                        <td class="wrapper" style="font-family: sans-serif; font-size: 13px; vertical-align: top; box-sizing: border-box; padding: 40px;">
+
+                            <!-- LỜI CHÀO -->
+                            <p style="font-size: 13px; line-height: 20px; color: #121E28; margin-top: 0; margin-bottom: 16px;">
+                                Xin chào/<i style="color: #2E6CF6;">Dear</i> <span style="font-weight: normal;" th:text="${rcpName}">Nguyễn Văn A</span>,
+                            </p>
+
+                            <!-- NỘI DUNG YÊU CẦU -->
+                            <p style="font-size: 13px; line-height: 20px; color: #121E28; margin-top: 0; margin-bottom: 12px;">
+                                Anh/Chị có yêu cầu xem xét/ký tài liệu từ/<i style="color: #2E6CF6;"> You have received a request to review/sign a document from:</i> 
+                                <span th:text="${rqtMail}">Nguyễn Minh Tâm - nguyenminhtam@gmail.com</span>.
+                            </p>
+
+                            <p style="font-size: 13px; line-height: 20px; color: #121E28; margin-top: 0; margin-bottom: 12px;">
+                                Vui lòng truy cập tài khoản của Anh/Chị trên FPT.eContract hoặc theo thông tin bên dưới để xử lý/<i style="color: #2E6CF6;"> Please access your FPT.eContract account or use the information below to take the required action:</i>
+                            </p>
+
+                            <!-- DANH SÁCH THÔNG TIN TÀI LIỆU -->
+                            <div style="margin-bottom: 16px;">
+                                <p style="font-size: 13px; line-height: 20px; color: #121E28; margin: 4px 0;">
+                                    - Tên tài liệu/<i style="color: #2E6CF6;"> Document name:</i> 
+                                    <span style="font-weight: bold;" th:text="${envName}">Hợp đồng lao động 2025</span>
+                                </p>
+
+                                <!-- Người ký bên ngoài: Link truy cập -->
+                                <p style="font-size: 13px; line-height: 20px; color: #121E28; margin: 4px 0;" th:if="${baseUrlInternal == 'null' || baseUrlInternal == null}">
+                                    - Link truy cập/<i style="color: #2E6CF6;"> Access link:</i> 
+                                    <a th:with="url=(@{|${baseUrl}/fi/${envId}/${rcpId}/act|})" th:href="${url}" th:text="${url}" style="color: #2E6CF6; text-decoration: underline;">Link xem tài liệu</a>
+                                </p>
+
+                                <!-- Người ký nội bộ: Link truy cập -->
+                                <p style="font-size: 13px; line-height: 20px; color: #121E28; margin: 4px 0;" th:if="${baseUrlInternal != 'null' && baseUrlInternal != null}">
+                                    - Link truy cập/<i style="color: #2E6CF6;"> Access link:</i> 
+                                    <a th:with="urlInternal=(@{|${baseUrlInternal}|})" th:href="${urlInternal}" th:text="${urlInternal}" style="color: #2E6CF6; text-decoration: underline;">Link xem tài liệu</a>
+                                </p>
+
+                                <!-- Mã truy cập (Dành cho người ký bên ngoài) -->
+                                <p style="font-size: 13px; line-height: 20px; color: #121E28; margin: 4px 0;" th:if="${baseUrlInternal == 'null' || baseUrlInternal == null}">
+                                    - Mã truy cập/<i style="color: #2E6CF6;"> Access code:</i> 
+                                    <span th:text="${password}">fptsoft</span>
+                                </p>
+                            </div>
+
+                            <!-- LỜI CHÚC / KÝ TÊN -->
+                            <p style="font-size: 13px; line-height: 20px; color: #121E28; margin-top: 24px; margin-bottom: 24px;">
+                                Trân trọng/<i style="color: #2E6CF6;"> Regards</i>,<br>
+                                Phòng Dịch Vụ Nhân Sự/<i style="color: #2E6CF6;"> PSS Department</i><br>
+                                <b>Home Credit Vietnam</b>
+                            </p>
+
+                            <!-- ĐƯỜNG KẺ PHÂN CÁCH NÉT ĐỨT -->
+                            <div style="border-top: 1px dashed #A0A0A0; margin: 20px 0;"></div>
+
+                            <!-- FOOTER / LƯU Ý BẢO MẬT -->
+                            <div style="font-size: 12px; line-height: 18px; color: #121E28;">
+                                <p style="font-weight: bold; font-size: 12px; margin-top: 0; margin-bottom: 4px;">
+                                    KHÔNG CHIA SẺ/<i style="color: #2E6CF6; font-weight: normal;"> DO NOT SHARE</i>
+                                </p>
+                                <p style="color: #121E28; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0; margin-bottom: 12px;">
+                                    Email này chứa một mã bảo mật của FPT.eContract, vui lòng không chia sẻ email hoặc mã bảo mật này với người khác/<i style="color: #2E6CF6;"> This email contains a security code for FPT.eContract. Please do not share this email or the security code with anyone.</i>
+                                </p>
+
+                                <p style="font-weight: bold; font-size: 12px; margin-top: 0; margin-bottom: 4px;">
+                                    THÔNG TIN LIÊN HỆ/<i style="color: #2E6CF6; font-weight: normal;"> SUPPORT NEEDED?</i>
+                                </p>
+                                <p style="color: #121E28; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0; margin-bottom: 0;">
+                                    Nếu bạn cần sửa đổi hoặc có câu hỏi về nội dung trong tài liệu, vui lòng liên hệ với Phòng Dịch vụ Nhân sự qua email
+                                    <a href="mailto:VN.HRSS.Supports@homecredit.vn" style="color: #2E6CF6; text-decoration: underline;">VN.HRSS.Supports@homecredit.vn</a>/<i style="color: #2E6CF6;"> If you need any amendments or questions regarding the content of the document, please contact the PSS Team via <a href="mailto:VN.HRSS.Supports@homecredit.vn" style="color: #2E6CF6; text-decoration: underline;">VN.HRSS.Supports@homecredit.vn</a>.</i><br>
+                                    Nếu bạn gặp sự cố khi ký tài liệu, vui lòng truy cập
+                                    <span style="color: #2E6CF6; text-decoration: underline;">trang Trợ giúp</span>/<i style="color: #2E6CF6;"> If you experience any issues while signing the document, please visit the <span style="color: #2E6CF6; text-decoration: underline;">Help Center</span>.</i>
+                                </p>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </td>
+        <td style="font-family: sans-serif; font-size: 13px; vertical-align: top;">&nbsp;</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+
+</html>

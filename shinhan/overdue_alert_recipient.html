@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  </head>
+  <style>
+    @media(max-width: 830px) {
+        .container {
+            .content {
+                .header {
+                    height: 100% !important;
+                }
+            }
+        }
+        .footer{
+            height: 100% !important;
+        }
+    }
+</style>
+  <body>
+    <p></p>
+    <table class="body" style="border-collapse: separate; width: 101.14%; padding: 0px; background-color: #ffffff;">
+      <tbody>
+        <tr>
+          <td style="font-family: sans-serif; font-size: 12px; vertical-align: top; width: 0.251256%;"></td>
+          <td class="container" style="font-family: sans-serif; font-size: 12px; vertical-align: top; display: block;
+              margin: 0px auto; max-width: 800px; padding: 0px; width: 91.4573%;">
+            <div class="content" style="box-sizing: border-box; display: block; margin: 0; max-width: 800px; padding:
+                0;">
+              <!-- START CENTERED WHITE CONTAINER -->
+              <div style="width: 100%; height: 185px; display: flex">
+                <div class="header" style="display: inline-block; clear: both; text-align: center; width: 100%; height:
+                    185px; "><img src="https://i.imgur.com/Azoa17r.png" alt=""></div>
+              </div>
+              <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width:
+                  100%; background: #ffffff; border-radius: 3px;">
+                <!-- START MAIN CONTENT AREA -->
+                <tbody>
+                  <tr>
+                    <td class="wrapper" style="font-family: sans-serif; font-size: 12px; vertical-align: top;
+                        box-sizing: border-box; padding: 5%; padding-bottom: 0;">
+                      <table style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width:
+                          100%;">
+                        <tbody>
+                          <tr>
+                            <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                              <div style="margin-bottom: 10px;"><span style="font-size: 12px; ">Kính gửi Quý khách hàng
+                                  <span style="background-color: #ffffff; color: #000000; font-weight: bold;"
+                                  th:with="rqtNameMail=(@{| ${rcpName}|})" th:text="${rqtNameMail}">Nguyễn Văn
+                                  A,</span></span></div>
+                              <div style="font-size: 12px;"><span>Công ty TNHH Chứng khoán Shinhan Việt Nam (SSV) trân
+                                  trọng thông báo việc <span style="font-weight: bold;">Hủy đăng ký mở tài khoản giao
+                                  dịch chứng khoán</span> của Quý khách như sau:</span></div>
+                              <!-- th:with="regisDate=(@{| - Ngày đăng ký và yêu cầu xác nhận Hợp đồng mở tài khoản:
+                                  ${createdDate}|})"-->
+                              <!-- th:text="${regisDate}"-->
+                              <p style="margin-bottom: 10px">
+                                <span>
+                                  - Ngày đăng ký và yêu cầu xác nhận Hợp đồng mở tài khoản:
+                                  <span th:text="${dueDate != null ? 
+                                      #dates.format(
+                                      new java.util.Date(T(java.lang.Long).parseLong(createdDate)),
+                                      'dd/MM/yyyy'
+                                      ) : ''}"></span>
+                                  <!-- <span th:text="${#temporals.format(
+										                T(java.time.Instant).ofEpochSecond(createdDate)
+										                .atZone(T(java.time.ZoneId).of('Asia/Ho_Chi_Minh'))
+										                .toLocalDate(), 'dd/MM/yyyy')}">
+									                </span> -->
+                                </span>
+                                <br>
+                                <span>
+                                  - Ngày hết hiệu lực xác nhận Hợp đồng:
+                                  <!-- <span th:text="${#dates.format(exDate, 'dd/MM/yyyy')}">03-01-2023</span> -->
+                                  <span th:text="${dueDate != null ? 
+                                      #dates.format(
+                                      new java.util.Date(T(java.lang.Long).parseLong(dueDate)),
+                                      'dd/MM/yyyy'
+                                      ) : ''}"></span>
+                                </span>
+                                <br>
+                                <span>- Trạng thái xác nhận Hợp đồng: Đã quá hạn</span>
+                              </p>
+                              <div>
+                                <p>Do thời gian xác nhận Hợp đồng mở tài khoản của Quý khách đã hết hạn, SSV sẽ hủy việc
+                                    đăng ký tài khoản giao dịch chứng khoán của Quý khách tại Công ty chúng tôi tại ngày
+                                    quý khách nhận thông báo này.</p>
+                              </div>
+                              <div style="margin-bottom: 10px;">
+                                Trường hợp Quý khách có nhu cầu mở lại Tài khoản giao dịch chứng khoán, Quý khách vui
+                                    lòng thực hiện tại các kênh giao dịch chính thức của SSV, gồm:
+                                <br>
+                                <span>- Ứng dụng Shinhan Alpha VN: Quý khách có thể tải ứng dụng tại App Store hoặc
+                                    Google Play.</span>
+                                <br>
+                                <div>- Web giao dịch: <a style="color: #2E6CF6; text-decoration-line: underline; cursor:
+                                    pointer;" href="https://online.shinhansec.com.vn/">tại đây</a></div>
+                              </div>
+                              <div>Để xem hướng dẫn mở tài khoản giao dịch, Quý khách vui lòng truy cập <a style="color:
+                                  #2E6CF6; text-decoration-line: underline; cursor: pointer;"
+                                  href="https://shinhansec.com.vn/vi/ho-tro-khach-hang/mo-tai-khoan-truc-tuyen.html">tại
+                                  đây.</a></div>
+                              <p>
+                                Để được hỗ trợ thêm thông tin, Quý khách vui lòng liên hệ bộ phận Hỗ trợ giao dịch:
+                                <br>
+                                Số điện thoại: (028) 6299 8000
+                                <br>
+                                Email: <a style="color: #2E6CF6"
+                                    href="mailto:support@shinhan.com">support@shinhan.com</a>
+                                <br>
+                                Website: <a style="color: #2E6CF6"
+                                    href="http://shinhansec.com.vn">http://shinhansec.com.vn</a>
+                              </p>
+                              <p>Trân trọng!</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <!-- END MAIN CONTENT AREA -->
+                </tbody>
+              </table>
+              <!-- END CENTERED WHITE CONTAINER -->
+              <div class="footer" style="display: inline-block; margin-top: 15px; clear: both; text-align: center;
+                  width: 100%; height: 185px"><img src="https://i.imgur.com/sZSK5Nb.png" alt=""></div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

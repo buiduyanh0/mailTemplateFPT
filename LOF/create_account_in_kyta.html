@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>KYTA Email</title>
+    <style>
+        .email a{
+            color: #6333CA;
+            font-weight: 600;
+        }
+    </style>
+  </head>
+  <body class="" style="background-color: #E5E5E5;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size:
+      12px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <div style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;padding:
+        0;background-color: #ffffff;">
+      <div>
+        <div>
+          <div style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</div>
+          <div class="container" style="font-family: sans-serif;font-size: 12px;vertical-align: top;display:
+              block;margin: 0 auto;max-width: 800px;padding: 0;width: 800px;">
+            <div class="content" style="box-sizing: border-box;display: block;Margin: 0;max-width: 800px;padding:
+                0;background: #f5f5f5">
+              <!-- START CENTERED WHITE CONTAINER -->
+              <div class="header" style="display: inline-block;clear: both;text-align: center;width: 100%;"><img
+                  src="https://i.imgur.com/4NFT8F6.png" alt="FPT.eContract" style="float: left;max-width: 99.5%;height:
+                  auto;min-height: 32px;"></div>
+              <div class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width:
+                  100%; background: #f5f5f5 ; border-radius: 3px;">
+                <!-- START MAIN CONTENT AREA -->
+                <div>
+                  <div class="wrapper" style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing:
+                      border-box; padding: 5%;padding-bottom: 0; background: #fff">
+                    <div style=" width: 100%;">
+                      <div>
+                        <div style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                          <div style="background: rgba(237, 242, 253, 1); text-align: center; padding: 40px 32px">
+                            <div style="text-align: left">
+                              <p style=" font-size: 14px; font-weight: 400; line-height: 28px;"><span
+                                  th:text="${thanks}" style="color: rgba(0, 32, 77, 1);">Cảm ơn quý khách đã tin tưởng
+                                  và lựa chọn sử dụng dịch vụ của </span><span style="font-weight: 600; color:
+                                  rgb(0,32,76); font-size: 14px; line-height: 28px">Kyta Platform!</span></p>
+                              <p style=" font-weight: 600; font-size: 16px; line-height: 22px; color: #943CDD;
+                                  margin-bottom: 5px" th:text="${infoLogin}">Tài khoản đăng nhập của quý khách: Mail đăng nhập cá nhân của LOF</p>
+                              <!-- <p style=" font-weight: 400; font-size: 14px; line-height: 22px; margin: 5px 0"><span
+                                  th:text="${theAccount}" style="color: rgba(0, 32, 77, 1) ">Tên tài khoản: </span><span
+                                  style="color: #6333CA" th:text="${account}" class="email">anhltn43@fpt.com</span></p>
+                              <p style=" font-weight: 400; font-size: 14px; line-height: 22px; margin: 5px 0 30px
+                                  0"><span th:text="${thePassWord}" style="color: rgba(0, 32, 77, 1) ">Mật khẩu đăng
+                                  nhập: </span><span style="font-weight: 600; color: rgba(0, 32, 77, 1)"
+                                  th:text="${password}">abcde@1234567</span></p>
+                                <p style="
+                                  margin: -20px 0 30px 0;
+                                  padding: 8px 12px;
+                                  background: #FFF8E6;
+                                  border-left: 3px solid #943CDD;
+                                  font-size: 13px;
+                                  line-height: 20px;
+                                  color: #666666;
+                                  font-style: italic;
+                              ">
+                                  Lưu ý: Nếu dùng tính năng SSO tài khoản email thì sử dụng mật khẩu email của quý khách hoặc sử dụng mật khẩu được cung cấp bên trên. Vui lòng đổi mật khẩu khi đăng nhập lần đầu.
+                              </p> -->
+                            </div>
+                            <br>
+                            <div><a th:with="url=(@{|${baseUrl}|})" th:href="${url}" style=" text-decoration: none;
+                                padding: 10px 22px; border-radius: 4px; background: #943CDD; color: #FFFFFF; border: 1px
+                                solid #943CDD; font-size: 14px; font-weight: 500; line-height: 22px; text-align: center;
+                                cursor: pointer">Đăng nhập</a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div style="font-family: sans-serif; font-size: 12px; vertical-align: top;background: #fff;padding: 3%
+                      5%;">
+                    <p style=" font-weight: 600; font-size: 16px; line-height: 24px; margin-top: 0; margin-bottom: 4px;
+                        color: rgba(0, 32, 77, 1); ">KHÔNG CHIA SẺ</p>
+                    <p style=" color: rgba(0, 32, 77, 0.9); font-weight: normal; font-size: 14px; line-height: 22px;
+                        margin-top: 0; margin-bottom: 10px; ">Emai này chứa một mã bảo mật của Kyta Platform, vui lòng
+                        không chia sẻ email hoặc mã bảo mật này với người khác</p>
+                    <p style=" font-weight: 600; font-size: 16px; line-height: 24px; margin-top: 0; margin-bottom: 4px;
+                        color: rgba(0, 32, 77, 1); ">GIỚI THIỆU</p>
+                    <p style=" color: rgba(0, 32, 77, 0.9); font-weight: normal; font-size: 14px; line-height: 22px;
+                        margin-top: 0; margin-bottom: 10px; ">Kyta Platform là nền tảng định danh và ký kết điện tử.
+                        Cung cấp nhiều dịch vụ liên quan đến ký hết hợp đồng điện tử. Sản phầm an toàn, bảo mật, đảm bảo
+                        tính pháp lý</p>
+                  </div>
+                  <div style="margin-top: 24px; text-align: center;">
+                    <p style="
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: rgba(0, 32, 77, 1);
+                        margin-bottom: 20px;
+                    ">
+                        TẢI APP TẠI ĐÂY
+                    </p>
+                  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top: 24px;">
+                    <tr>
+                        <td align="center" width="50%" style="padding-right: 10px;">
+                            <p style="
+                                margin: 0 0 10px 0;
+                                font-size: 14px;
+                                font-weight: 600;
+                                color: rgba(0, 32, 77, 1);
+                            ">
+                                IOS
+                            </p>
+                            <img
+                                src="https://raw.githubusercontent.com/buiduyanh0/image-econtract/main/QRIOS.png"
+                                alt="QRIOS"
+                                style="max-width: 40%; height: auto; display: block;"
+                            />
+                        </td>
+                        <td align="center" width="50%" style="padding-left: 10px;">
+                            <p style="
+                                margin: 0 0 10px 0;
+                                font-size: 14px;
+                                font-weight: 600;
+                                color: rgba(0, 32, 77, 1);
+                            ">
+                                Android
+                            </p>
+                            <img
+                                src="https://raw.githubusercontent.com/buiduyanh0/image-econtract/main/QRAndroid.png"
+                                alt="QRAndroid"
+                                style="max-width: 40%; height: auto; display: block;"
+                            />
+                        </td>
+                    </tr>
+                </table>
+                </div>
+                </div>
+                <!-- END MAIN CONTENT AREA -->
+              </div>
+              <!-- END CENTERED WHITE CONTAINER -->
+            </div>
+          </div>
+          <div style="font-family: sans-serif; font-size: 12px; vertical-align: top; padding: 2%;">&nbsp;</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

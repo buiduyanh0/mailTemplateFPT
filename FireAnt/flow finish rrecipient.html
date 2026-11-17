@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FptContact Email</title>
+</head>
+
+<body class="" style="background-color: #E5E5E5;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size: 12px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;padding: 0;background-color: #ffffff;">
+    <tbody>
+    <tr>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+        <td class="container" style="font-family: sans-serif;font-size: 12px;vertical-align: top;display: block;margin: 0 auto;max-width: 800px;padding: 0;width: 800px;">
+            <div class="content" style="box-sizing: border-box;display: block;Margin: 0;max-width: 800px;padding: 0;">
+
+                <!-- START CENTERED WHITE CONTAINER -->
+                <div>
+                    <img src="https://raw.githubusercontent.com/buiduyanh0/image-econtract/main/fireant.png" alt="FPT.eContract" style="float: left;padding: 0 0 0 5%; width: 90%; max-width: 300%;height: auto;min-height: 32px;">
+                </div>
+                <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+
+                    <!-- START MAIN CONTENT AREA -->
+   					<tr>
+                        <td class="wrapper" style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding: 20px 0 4% 5%;padding-bottom: 0;">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                <tr>
+                                    <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                                        <div style="background: white ;margin-bottom: 16px;text-align: left;padding-top: 0;">
+										<p style="
+												font-color: #F3F2F2;
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                color: #121E28;
+                                            "> Kính gửi Quý khách
+                                        <b style="color: #0238FA;" th:with="rcpNameMail=(@{|${rcpName}|})"  th:text="${rcpNameMail}"
+                                        >Nguyễn Văn A</b></p>
+                                            <p style="
+                                                margin-top: 20px;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                color: #121E28;">
+												<span th:if="${envStatus == 'completed'}">
+                                                    Chúng tôi xin trân trọng thông báo rằng Hợp đồng điện tử Mở tài khoản Giao dịch Hàng hóa Phái sinh của Quý Khách đã được ký kết thành công trên hệ thống của chúng tôi.</span>
+												<span th:if="${envStatus == 'rejected'}">
+													Chúng tôi xin thông báo rằng hợp đồng điện tử Mở tài khoản Giao dịch Hàng hóa Phái sinh tại FAI của Quý Khách đã quá thời hạn ký theo quy định của hệ thống.
+												</span>
+												<span th:if="${envStatus == 'voided'}">
+													Chúng tôi xin thông báo rằng hợp đồng điện tử Mở tài khoản Giao dịch Hàng hóa Phái sinh tại FAI của Quý Khách đã quá thời hạn ký theo quy định của hệ thống.
+												</span>
+												</p>
+												<p  style="
+													margin-top: 20px;
+													margin-bottom: 5px;
+													font-size: 14px;
+													line-height: 20px;
+													color: #121E28;"> Thông tin chi tiết: </p>
+												<p  style="
+													margin-top: 10px;
+													margin-bottom: 10px;
+													margin-left: 20px;
+													font-size: 14px;
+													line-height: 20px;
+													color: #121E28;"> 
+													- Loại hợp đồng: <b>Mở tài khoản giao dịch hàng hóa phái sinh</b>
+													<br>
+													- Trạng thái:
+													<b><span style="color: #0525FA" th:if="${envStatus == 'completed'}" th:with="finishstatus=(@{| Đã ký thành công |})" th:text="${finishstatus}">Đã ký thành công</span>
+													<span style="color: #FA0505" th:if="${envStatus == 'rejected'}" th:with="finishstatus=(@{| BỊ TỪ CHỐI|})" th:text="${finishstatus}">Bị từ chối</span>
+													<span style="color: #FA0505" th:if="${envStatus == 'voided'}" th:with="finishstatus=(@{| BỊ HỦY |})" th:text="${finishstatus}">Bị hủy</span></b>
+
+													<br>
+
+													<span th:if="${envStatus == 'completed'}">- Thời gian ký: <b><span th:text="${#dates.format(#dates.createNow(), 'dd/MM/yyyy')}">[Thời gian ký]</span></span></b>
+													<span th:if="${envStatus == 'rejected'}">- Thời hạn ký: <b><span style="color: #FAC802" th:text="${#dates.format(#dates.createNow(), 'dd/MM/yyyy')}">Ngày từ chối</span></b></span>
+													<span th:if="${envStatus == 'voided'}">- Thời hạn ký: <b><span style="color: #FAC802" th:text="${#dates.format(#dates.createNow(), 'dd/MM/yyyy')}">Ngày hủy hợp đồng</span></b></span>
+
+												</p>
+												<p  style="
+													margin-top: 10px;
+													margin-bottom: 5px;
+													font-size: 14px;
+													line-height: 20px;
+													color: #121E28;">
+													<span th:if="${envStatus == 'completed'}">Hợp đồng đã được lưu trữ an toàn trên hệ thống. Quý Khách có thể truy cập để xem hoặc tải về bất kỳ lúc nào thông qua tài khoản đã đăng ký.</span>
+													<span th:if="${envStatus == 'rejected'}">Do đã quá thời hạn, hợp đồng hiện <span style="color: #FA0505">không còn hiệu lực để ký kết.</span> Để tiếp tục thực hiện giao dịch, Quý Khách vui lòng đăng ký lại hoặc liên hệ với chúng tôi để được hỗ trợ tạo hợp đồng mới.</span>
+													<span th:if="${envStatus == 'voided'}">Do đã quá thời hạn, hợp đồng hiện <span style="color: #FA0505">không còn hiệu lực để ký kết.</span> Để tiếp tục thực hiện giao dịch, Quý Khách vui lòng đăng ký lại hoặc liên hệ với chúng tôi để được hỗ trợ tạo hợp đồng mới.</span>
+												</p>
+												<p  style="
+													margin-top: 10px;
+													margin-bottom: 5px;
+													font-size: 14px;
+													line-height: 20px;
+													color: #121E28;">Trong trường hợp cần hỗ trợ thêm hoặc có bất kỳ thắc mắc nào, vui lòng liên hệ với chúng tôi qua:
+												</p>
+												<p style="
+												color: #121E28;
+												font-size: 12px;
+												line-height: 18px;
+												margin-top: 10px;
+												margin-bottom: 0;
+												">
+													<strong>CTCP ĐẦU TƯ FIREANT</strong> - Thành viên Kinh doanh số 048 của Sở Giao Dịch Hàng Hóa Việt Nam.<br>
+													- <strong>Địa chỉ:</strong> Tòa ADG, số 37 Lê Văn Thiêm, Phường Thanh Xuân, Thành phố Hà Nội, Việt Nam.<br>
+													- <strong>Email:</strong> <a href="invest@fireant.vn" style="color:#71787E; text-decoration: underline;"> <i>invest@fireant.vn</i></a><br>
+													- <strong>Hotline:</strong> <i>1900.633.543</i><br>
+													- <strong>Website:</strong> 
+													<a href="https://commodities.fireant.vn/" style="color:#71787E; text-decoration: underline;"> <i>https://commodities.fireant.vn/</i></a>
+												</p>
+												<p  style="
+													font-weight: bold;
+													margin-top: 20px;
+													margin-bottom: 5px;
+													font-size: 14px;
+													line-height: 20px;
+													color: #121E28;">
+													<span th:if="${envStatus == 'rejected'}">Chúng tôi rất mong tiếp tục được phục vụ Quý Khách.</span>
+													<span th:if="${envStatus == 'voided'}">Chúng tôi rất mong tiếp tục được phục vụ Quý Khách.</span>
+												</p>
+												<p  style="
+													font-weight: bold;
+													margin-top: 20px;
+													margin-bottom: 5px;
+													font-size: 14px;
+													line-height: 20px;
+													color: #121E28;"> Trân trọng cảm ơn, </p>												
+                                            </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                    </tr>
+
+                    <!-- END MAIN CONTENT AREA -->
+                </table>
+
+                <!-- END CENTERED WHITE CONTAINER -->
+            </div>
+        </td>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+    </tr>
+	</tbody>
+</table>
+</body>
+
+</html>

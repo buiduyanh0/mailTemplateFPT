@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FptContact Email</title>
+    <style>
+    @media only screen and (max-width: 620px) {
+      table[class=body] h1 {
+        font-size: 28px !important;
+        margin-bottom: 10px !important;
+      }
+      table[class=body] p,
+      table[class=body] ul,
+      table[class=body] ol,
+      table[class=body] td,
+      table[class=body] span,
+      table[class=body] a {
+        font-size: 16px !important;
+      }
+      table[class=body] .wrapper,
+      table[class=body] .article {
+        padding: 10px !important;
+      }
+      table[class=body] .content {
+        padding: 0 !important;
+      }
+      table[class=body] .container {
+        padding: 0 !important;
+        width: 100% !important;
+      }
+      table[class=body] .main {
+        border-left-width: 0 !important;
+        border-radius: 0 !important;
+        border-right-width: 0 !important;
+      }
+      table[class=body] .btn table {
+        width: 100% !important;
+      }
+      table[class=body] .btn a {
+        width: 100% !important;
+      }
+      table[class=body] .img-responsive {
+        height: auto !important;
+        max-width: 100% !important;
+        width: auto !important;
+      }
+    }
+  </style>
+  </head>
+  <body class="" style="background-color: #E5E5E5; font-family: sans-serif; -webkit-font-smoothing: antialiased;
+      font-size: 12px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust:
+      100%;">
+    <table class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;
+        background-color: #f6f6f6;">
+      <tr>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+        <td class="container" style="font-family: sans-serif; font-size: 12px; vertical-align: top; display: block;
+            Margin: 0 auto; max-width: 800px; padding: 10px; width: 800px;">
+          <div class="content" style="box-sizing: border-box; display: block; Margin: 0 auto; max-width: 800px; padding:
+              10px;">
+            <!-- START CENTERED WHITE CONTAINER -->
+            <div class="header" style="display: inline-block;clear: both;text-align: center;width: 100%;"><img
+                  src="https://i.imgur.com/4NFT8F6.png" alt="FPT.eContract" style="float: left;max-width: 99.5%;height:
+                  auto;min-height: 32px;"></div>
+            <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width:
+                100%; background: #ffffff; border-radius: 3px;">
+              <!-- START MAIN CONTENT AREA -->
+              <tr>
+                <td class="wrapper" style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing:
+                    border-box; padding: 40px;">
+                  <table style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                    <tr>
+                      <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                        <div style="background: rgba(233, 234, 247, 0.8);padding: 40px;margin-bottom: 24px;">
+                          <p style=" margin-top: 0; font-weight: 500; font-size: 14px; line-height: 24px; color:
+                              #121E28; margin-bottom: 32px;">Cảm ơn quý khách đã tin tưởng và lựa chọn sử dụng dịch vụ của <strong>Kyta Platform!</strong>
+							</p>
+                          <p style="color:#7a42f4; font-weight:bold; font-size:16px;">
+								Tài khoản đăng nhập của quý khách là:
+							</p>
+						  <p style="margin:8px 0;">
+								Tên tài khoản: <strong th:text="${username}">tung.hoang@yopmail.com</strong>
+							</p>
+
+						  <p style="margin:8px 0;">
+								Mật khẩu đăng nhập là: <strong th:text="${password}">E6QsVq8wmQyD</strong>
+							</p>
+
+                          <a th:with="url=(@{|${baseUrl}|})" th:href="${url}" style=" font-size: 14px; line-height:
+                              24px; padding: 8px 24px; font-weight: bold; text-decoration: none; margin-bottom: 0;
+                              display: inline-block; background: #2E6CF6; color: #fff; ">Đăng nhập</a>
+                        </div>
+                        <p style="font-weight:bold;">KHÔNG CHIA SẺ</p>
+							<p style="font-size:14px;color:#555;">
+							Email này chứa một mã bảo mật của Kyta Platform, vui lòng không chia sẻ email 
+							hoặc mã bảo mật này với người khác.
+							</p>
+					<div style="background: rgba(233, 234, 247, 0.8);padding: 40px;margin-bottom: 24px;">	
+						<p style="font-size:16px;">Thank you for trusting and choosing to use the services of <strong>Kyta Platform!</strong>
+							</p>
+						<p style="color:#7a42f4; font-weight:bold; font-size:16px;">
+						Your login account information:
+							</p>
+						<p style="margin:8px 0;">
+						Username: <strong th:text="${username}">tung.hoang@yopmail.com</strong>
+							</p>
+						<p style="margin:8px 0;">
+						Password: <strong th:text="${password}">E6QsVq8wmQyD</strong>
+							</p>
+						<a th:with="url=(@{|${baseUrl}|})" th:href="${url}" style=" font-size: 14px; line-height:
+                              24px; padding: 8px 24px; font-weight: bold; text-decoration: none; margin-bottom: 0;
+                              display: inline-block; background: #2E6CF6; color: #fff; ">Login</a>
+					</div>
+					<p style="font-weight:bold;">DO NOT SHARE</p>
+							<p style="font-size:14px;color:#555;">
+							This email contains confidential information from Kyta Platform.
+							Please do not share this email or the security information with others.
+							</p>
+                      </td>
+                    </tr>
+				<tr>
+                  </table>
+                </td>
+              </tr>
+              <!-- END MAIN CONTENT AREA -->
+            </table>
+            <!-- START FOOTER -->
+            <!-- END FOOTER -->
+            <!-- END CENTERED WHITE CONTAINER -->
+          </div>
+        </td>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+      </tr>
+    </table>
+  </body>
+</html>

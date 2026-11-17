@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>SABECO Email</title>
+</head>
+<body style="background-color: #E5E5E5; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 12px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+    
+    <table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; padding: 0; background-color: #ffffff;">
+        <tbody>
+            <tr>
+                <td class="container" style="font-family: sans-serif; font-size: 12px; vertical-align: top; display: block; margin: 0 auto; max-width: 800px; padding: 0; width: 800px;">
+                    
+                    <!-- VIETNAMESE SECTION -->
+                    <div class="content" style="box-sizing: border-box; display: block; margin: 0; max-width: 800px; padding: 0;">
+                        <div class="header" style="display: inline-block; clear: both; text-align: center; width: 100%;">
+                            <img src="https://i.imgur.com/HmfbDDJ.png" alt="FPT.eContract" style="float: left; max-width: 100%; height: auto; min-height: 32px;">
+                        </div>
+
+                        <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+                            <tr>
+                                <td class="wrapper" style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding-bottom: 0;">
+                                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                        <tr>
+                                            <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                                                <div style="gap: 8px; margin: 35px 35px 24px 36px;">
+                                                    <h1 style="font-size: 21px; font-weight: 600; line-height: 24px; text-align: left; color: #CE202F; margin-bottom: 8px; margin-top: 0;">
+                                                        Kính gửi <span th:text="${receiverName}">Nguyễn Văn A</span>
+                                                    </h1>
+                                                    <div style="font-size: 14px; font-weight: 400; line-height: 22px; text-align: left; color: rgba(0, 32, 77, 0.9);">
+                                                        <span style="font-weight: 600;" th:text="${createdBy}">{createdBy}</span>
+                                                        đã từ chối duyệt công việc
+                                                        <span style="font-weight: 600;" th:text="${userTaskName}">{Tên usertask}</span> của giao dịch
+                                                        <span style="font-weight: 600;" th:text="${ticketName}">{Tên giao dịch}</span>
+                                                        vào lúc
+                                                        <span style="font-weight: 600;" th:text="${createdDate}">{createdDate}</span>
+                                                        với lý do <span style="font-weight: 600;" th:text="${reason}">{reason}</span>
+                                                    </div>
+                                                </div>
+
+                                                <div style="background: #FCEEED; text-align: center; padding: 24px 32px; margin: 0 37px 0 34px;">
+                                                    <div style="text-align: left; margin-bottom: 15px;">
+                                                        <span style="font-size: 12px; line-height: 22px; color: #424242; font-weight: 400;">Tên giao dịch</span><br>
+                                                        <span style="color: #000000; font-weight: 500; font-size: 15px; line-height: 22px;" th:text="${ticketName}">Hợp đồng vay tín chấp</span>
+                                                    </div>
+                                                    <div style="text-align: left; margin-bottom: 15px;">
+                                                        <span style="font-size: 12px; line-height: 22px; color: #424242; font-weight: 400;">Bước thực hiện</span><br>
+                                                        <span style="color: #000000; font-weight: 500; font-size: 15px; line-height: 22px;" th:text="${userTaskName}">Xem xét hợp đồng</span>
+                                                    </div>
+                                                    <div style="text-align: left; margin-bottom: 15px;">
+                                                        <span style="font-size: 12px; line-height: 22px; color: #424242; font-weight: 400;">Trạng thái</span><br>
+                                                        <span style="color: #000000; font-weight: 500; font-size: 15px; line-height: 22px;">TỪ CHỐI</span>
+                                                    </div>
+                                                    <div>
+                                                        <a style="font-size: 14px; line-height: 22px; padding: 9px 16px; font-weight: 500; text-decoration: none; margin-bottom: 0; border-radius: 8px; display: inline-block; cursor: pointer; background: #EE3D72; color: #FFFFFF;"
+                                                           th:with="url=(@{|https://erequest-uat.sabeco-app.vn/ticket-detail/${ticketId}?path=%2Fmanage-ticket%2Ffollow-ticket-required&_recipientDetailsId=${recipientDetailsId}&_ticketId=${ticketId}&_userTaskId=${userTaskId}&_typeView=required&isNoti=true|})"
+                                                           th:href="${url}">
+                                                            <span th:if="${userTaskName.matches('(?i).*khảo sát*') or userTaskName.matches('(?i).*tạo Bảng phân tích đầu tư điểm bán.*')}">Xem khảo sát</span>
+                                                            <span th:if="${userTaskName.matches('(?i).*tham vấn đề xuất & bảng phân tích.*')
+                                                                or userTaskName.matches('(?i).*phê duyệt đề xuất và bảng phân tích.*')
+                                                                or userTaskName.matches('(?i).*phê duyệt đề xuất & Bảng phân tích.*')
+                                                                or userTaskName.matches('(?i).*đề xuất*')
+                                                                or userTaskName.matches('(?i).*GĐ Trade MKT – Sales TCT duyệt.*')
+                                                                or userTaskName.matches('(?i).*phê duyệt Để xuất & Bảng phân tích.*') 
+                                                                or userTaskName.matches('(?i).*Lập phiếu đề xuất.*')}">Xem đề xuất</span>
+                                                            <span th:if="${!userTaskName.matches('(?i).*phê duyệt yêu cầu khảo sát.*') 
+                                                                    and !userTaskName.matches('(?i).*phê duyệt khảo sát.*') 
+                                                                    and !userTaskName.matches('(?i).*Điều chỉnh phiếu khảo sát.*') 
+                                                                    and !userTaskName.matches('(?i).*tham vấn đề xuất & bảng phân tích.*') 
+                                                                    and !userTaskName.matches('(?i).*phê duyệt đề xuất và bảng phân tích.*') 
+                                                                    and !userTaskName.matches('(?i).*phê duyệt đề xuất & Bảng phân tích.*') 
+                                                                    and !userTaskName.matches('(?i).*GĐ Trade MKT – Sales TCT duyệt.*') 
+                                                                    and !userTaskName.matches('(?i).*phê duyệt Để xuất & Bảng phân tích.*') 
+                                                                    and !userTaskName.matches('(?i).*tạo Bảng phân tích đầu tư điểm bán.*') 
+                                                                    and !userTaskName.matches('(?i).*Lập phiếu đề xuất.*') 
+                                                                    and userTaskName != 'eContract'}">Xét duyệt</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <!-- VN Proposal Information -->
+                                    <div th:if="${formData['saleSupportProgram'] != null}" style="width: 100%; max-width: 724px; border-radius: 8px; overflow: hidden; padding: 24px 32px;">
+                                        
+                                        <div style="margin-bottom: 12px">
+                                            <img src="https://i.imgur.com/tA4ORmz.png" style="margin-right: 6px" alt="">
+                                            <span style="font-weight: 600; font-size: 16px; line-height: 24px; color: #00204DF2;">Thông tin đề xuất</span>
+                                        </div>
+
+                                        <table style="width: 100%; border-collapse: collapse;">
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Mã điểm bán</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.outletCode != null}" th:text="${formData.outletCode}">CU0002808</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Tên điểm bán</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.outletName != null}" th:text="${formData.outletName}">Quán Túy Ý Quỳnh</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Địa chỉ</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.address != null}" th:text="${formData.address}">Điện Biên Phủ, Lê Thanh Nghị, P. Hồng Hải, TP...</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Kênh</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.channel != null}" th:text="${formData.channel}">ON</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Loại hình</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.type != null}" th:text="${formData.type}">Quan nhau Mid - End</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Chương trình hỗ trợ bán hàng</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.saleSupportProgram != null}" th:text="${formData.saleSupportProgram}">Quán tiếp thị</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Thời hạn hợp đồng (Tháng)</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.contractTerm != null}" th:text="${formData.contractTerm}">12</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Giá trị Hợp đồng (VND)</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.contractValue != null}" th:text="${formData.contractValue}">300,000,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Sản lượng theo Hợp đồng</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.contractOutput != null}" th:text="${formData.contractOutput}">3,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Chi phí/Két, thùng theo Hợp đồng</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.contractCosts != null}" th:text="${formData.contractCosts}">40,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Chi phí đầu tư (VND)</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.investmentCosts != null}" th:text="${formData.investmentCosts}">300,000,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Lợi nhuận</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.profit != null}" th:text="${formData.profit}">300,000,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">ROI (%)</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.roi != null}">
+                                                    <span th:text="${formData.roi}">-5</span>%
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Thời gian hoàn vốn (Tháng)</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.paybackPeriod != null}" th:text="${formData.paybackPeriod}">16</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Ngày khởi tạo đề xuất</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.createdDate != null}" th:text="${formData.createdDate}">dd/mm/yyyy</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Nhân sự đề xuất (Sales Sup)</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.createdBy != null}" th:text="${formData.createdBy}">NhienHT3</td>
+                                            </tr>
+                                        </table>
+
+                                        <div style="font-weight: 400; font-style: italic; font-size: 14px; line-height: 22px; color: #00204DB2; text-align: center; margin-top: 7px;">
+                                            Thông tin tổng quát đề xuất của điểm bán
+                                        </div>
+                                    </div>
+
+                                    <!-- VN Survey Information -->
+                                    <div th:if="${formData['contractValue'] != null}" style="width: 100%; max-width: 724px; border-radius: 8px; overflow: hidden; padding: 24px 32px;">
+                                        
+                                        <div style="margin-bottom: 12px">
+                                            <img src="https://i.imgur.com/tA4ORmz.png" style="margin-right: 6px" alt="">
+                                            <span style="font-weight: 600; font-size: 16px; line-height: 24px; color: #00204DF2;">Thông tin khảo sát</span>
+                                        </div>
+
+                                        <table style="width: 100%; border-collapse: collapse;">
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 35%">Mã điểm bán</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.outletCode != null}" th:text="${formData.outletCode}">CU0002808</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 35%">Tên điểm bán</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.outletName != null}" th:text="${formData.outletName}">Quán Túy Ý Quỳnh</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 35%">Địa chỉ</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.address != null}" th:text="${formData.address}">Điện Biên Phủ, Lê Thanh Nghị, P. Hồng Hải, TP...</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 35%">Loại kênh</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.channel != null}" th:text="${formData.channel}">ON</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 35%">Loại hình</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.type != null}" th:text="${formData.type}">Quan nhau Mid - End</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 35%">
+                                                    Giá trị Hợp đồng <span style="color: red;">dự kiến</span> (VND)
+                                                </td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.contractValue != null}" th:text="${formData.contractValue}">300,000,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 35%">Ngày khảo sát</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.createdDate != null}" th:text="${formData.createdDate}">12/02/2025</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 35%">Nhân sự khảo sát</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.createdBy != null}" th:text="${formData.createdBy}">NhienHT3</td>
+                                            </tr>
+                                        </table>
+
+                                        <div style="font-weight: 400; font-style: italic; font-size: 14px; line-height: 22px; color: #00204DB2; text-align: center; margin-top: 7px;">
+                                            Thông tin tổng quát biểu mẫu khảo sát của điểm bán
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- DIVIDER -->
+                    <div style="width: 100%; height: 1px; background: #EE3D72; margin: 50px 0;"></div>
+
+                    <!-- ENGLISH SECTION -->
+                    <div class="content" style="box-sizing: border-box; display: block; margin: 0; max-width: 800px; padding: 0;">
+                        <div class="header" style="display: inline-block; clear: both; text-align: center; width: 100%;">
+                            <img src="https://i.imgur.com/HmfbDDJ.png" alt="FPT.eContract" style="float: left; max-width: 100%; height: auto; min-height: 32px;">
+                        </div>
+
+                        <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+                            <tr>
+                                <td class="wrapper" style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding-bottom: 0;">
+                                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                        <tr>
+                                            <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                                                <div style="gap: 8px; margin: 35px 35px 24px 36px;">
+                                                    <h1 style="font-size: 21px; font-weight: 600; line-height: 24px; text-align: left; color: #CE202F; margin-bottom: 8px; margin-top: 0;">
+                                                        Dear <span th:text="${receiverName}">Nguyễn Văn A</span>
+                                                    </h1>
+                                                    <div style="font-size: 14px; font-weight: 400; line-height: 22px; text-align: left; color: rgba(0, 32, 77, 0.9);">
+                                                        <span style="font-weight: 600;" th:text="${createdBy}">{createdBy}</span>
+                                                        refused to approve the job
+                                                        <span style="font-weight: 600;" th:text="${userTaskName}">{Tên usertask}</span> of transaction
+                                                        <span style="font-weight: 600;" th:text="${ticketName}">{Tên giao dịch}</span>
+                                                        at
+                                                        <span style="font-weight: 600;" th:text="${createdDate}">{createdDate}</span>
+                                                        with reason <span style="font-weight: 600;" th:text="${reason}">{reason}</span>
+                                                    </div>
+                                                </div>
+
+                                                <div style="background: #FCEEED; text-align: center; padding: 24px 32px; margin: 0 37px 0 34px;">
+                                                    <div style="text-align: left; margin-bottom: 15px;">
+                                                        <span style="font-size: 12px; line-height: 22px; color: #424242; font-weight: 400;">Transaction name</span><br>
+                                                        <span style="color: #000000; font-weight: 500; font-size: 15px; line-height: 22px;" th:text="${ticketName}">Hợp đồng vay tín chấp</span>
+                                                    </div>
+                                                    <div style="text-align: left; margin-bottom: 15px;">
+                                                        <span style="font-size: 12px; line-height: 22px; color: #424242; font-weight: 400;">Implementation step</span><br>
+                                                        <span style="color: #000000; font-weight: 500; font-size: 15px; line-height: 22px;" th:text="${userTaskName}">Xem xét hợp đồng</span>
+                                                    </div>
+                                                    <div style="text-align: left; margin-bottom: 15px;">
+                                                        <span style="font-size: 12px; line-height: 22px; color: #424242; font-weight: 400;">Status</span><br>
+                                                        <span style="color: #000000; font-weight: 500; font-size: 15px; line-height: 22px;">REJECT</span>
+                                                    </div>
+                                                    <div>
+                                                        <a style="font-size: 14px; line-height: 22px; padding: 9px 16px; font-weight: 500; text-decoration: none; margin-bottom: 0; border-radius: 8px; display: inline-block; cursor: pointer; background: #EE3D72; color: #FFFFFF;"
+                                                           th:with="url=(@{|https://erequest-uat.sabeco-app.vn/ticket-detail/${ticketId}?path=%2Fmanage-ticket%2Ffollow-ticket-required&_recipientDetailsId=${recipientDetailsId}&_ticketId=${ticketId}&_userTaskId=${userTaskId}&_typeView=required&isNoti=true|})"
+                                                           th:href="${url}">
+                                                            <span th:if="${userTaskName.matches('(?i).*khảo sát.*') or userTaskName.matches('(?i).*tạo Bảng phân tích đầu tư điểm bán.*')}">View survey</span>
+                                                            <span th:if="${userTaskName.matches('(?i).*tham vấn đề xuất & bảng phân tích.*')
+                                                                or userTaskName.matches('(?i).*phê duyệt đề xuất và bảng phân tích.*')
+                                                                or userTaskName.matches('(?i).*đề xuất*')
+                                                                or userTaskName.matches('(?i).*phê duyệt đề xuất & Bảng phân tích.*')
+                                                                or userTaskName.matches('(?i).*GĐ Trade MKT – Sales TCT duyệt.*')
+                                                                or userTaskName.matches('(?i).*phê duyệt Để xuất & Bảng phân tích.*') 
+                                                                or userTaskName.matches('(?i).*Lập phiếu đề xuất.*')}">See suggestions</span>
+                                                            <span th:if="${!userTaskName.matches('(?i).*phê duyệt yêu cầu khảo sát.*') 
+                                                                and !userTaskName.matches('(?i).*phê duyệt khảo sát.*') 
+                                                                and !userTaskName.matches('(?i).*Điều chỉnh phiếu khảo sát.*') 
+                                                                and !userTaskName.matches('(?i).*tham vấn đề xuất & bảng phân tích.*') 
+                                                                and !userTaskName.matches('(?i).*phê duyệt đề xuất và bảng phân tích.*') 
+                                                                and !userTaskName.matches('(?i).*phê duyệt đề xuất & Bảng phân tích.*') 
+                                                                and !userTaskName.matches('(?i).*GĐ Trade MKT – Sales TCT duyệt.*') 
+                                                                and !userTaskName.matches('(?i).*phê duyệt Để xuất & Bảng phân tích.*') 
+                                                                and !userTaskName.matches('(?i).*tạo Bảng phân tích đầu tư điểm bán.*') 
+                                                                and !userTaskName.matches('(?i).*Lập phiếu đề xuất.*') 
+                                                                and userTaskName != 'eContract'}">Approval</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <!-- EN Proposal Information -->
+                                    <div th:if="${formData['saleSupportProgram'] != null}" style="width: 100%; max-width: 724px; border-radius: 8px; overflow: hidden; padding: 24px 32px;">
+                                        
+                                        <div style="margin-bottom: 12px">
+                                            <img src="https://i.imgur.com/tA4ORmz.png" style="margin-right: 6px" alt="">
+                                            <span style="font-weight: 600; font-size: 16px; line-height: 24px; color: #00204DF2;">Proposal information</span>
+                                        </div>
+
+                                        <table style="width: 100%; border-collapse: collapse;">
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Point of sale code</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.outletCode != null}" th:text="${formData.outletCode}">CU0002808</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Point of sale name</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.outletName != null}" th:text="${formData.outletName}">Quán Túy Ý Quỳnh</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Address</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.address != null}" th:text="${formData.address}">Điện Biên Phủ, Lê Thanh Nghị, P. Hồng Hải, TP...</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Channel</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.channel != null}" th:text="${formData.channel}">ON</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Type</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.type != null}" th:text="${formData.type}">Quan nhau Mid - End</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Sales support program</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.saleSupportProgram != null}" th:text="${formData.saleSupportProgram}">Quán tiếp thị</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Contract Term (Months)</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.contractTerm != null}" th:text="${formData.contractTerm}">12</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Contract Value (VND)</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.contractValue != null}" th:text="${formData.contractValue}">300,000,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Contract Output</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.contractOutput != null}" th:text="${formData.contractOutput}">3,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Cost/Case, Container according to Contract</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.contractCosts != null}" th:text="${formData.contractCosts}">40,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Investment cost (VND)</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.investmentCosts != null}" th:text="${formData.investmentCosts}">300,000,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Profit</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.profit != null}" th:text="${formData.profit}">300,000,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">ROI (%)</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.roi != null}">
+                                                    <span th:text="${formData.roi}">-5</span>%
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Payback period (Months)</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.paybackPeriod != null}" th:text="${formData.paybackPeriod}">16</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Proposal creation date</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.createdDate != null}" th:text="${formData.createdDate}">dd/mm/yyyy</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 40%">Sales Sup</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.createdBy != null}" th:text="${formData.createdBy}">NhienHT3</td>
+                                            </tr>
+                                        </table>
+
+                                        <div style="font-weight: 400; font-style: italic; font-size: 14px; line-height: 22px; color: #00204DB2; text-align: center; margin-top: 7px;">
+                                            General information of the proposed minutes of sale
+                                        </div>
+                                    </div>
+
+                                    <!-- EN Survey Information -->
+                                    <div th:if="${formData['contractValue'] != null}"
+                                         style="width: 100%; max-width: 724px; border-radius: 8px; overflow: hidden; padding: 24px 32px;">
+                                        
+                                        <div style="margin-bottom: 12px">
+                                            <img src="https://i.imgur.com/tA4ORmz.png" style="margin-right: 6px" alt="">
+                                            <span style="font-weight: 600; font-size: 16px; line-height: 24px; color: #00204DF2;">Survey information</span>
+                                        </div>
+
+                                        <table style="width: 100%; border-collapse: collapse;">
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 35%">Point of sale code</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.outletCode != null}" th:text="${formData.outletCode}">CU0002808</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 35%">Point of sale name</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.outletName != null}" th:text="${formData.outletName}">Quán Túy Ý Quỳnh</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 35%">Address</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.address != null}" th:text="${formData.address}">Điện Biên Phủ, Lê Thanh Nghị, P. Hồng Hải, TP...</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 35%">Channel Type</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.channel != null}" th:text="${formData.channel}">ON</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 35%">Type</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.type != null}" th:text="${formData.type}">Quan nhau Mid - End</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 35%">
+                                                    Contract Value <span style="color: red;">expected</span> (VND)
+                                                </td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 600; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.contractValue != null}" th:text="${formData.contractValue}">300,000,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 35%">Survey date</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.createdDate != null}" th:text="${formData.createdDate}">12/02/2025</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2; width: 35%">Survey staff</td>
+                                                <td style="padding: 8px 24px; background: #FFFFFF; border: 1px solid #00358059; font-weight: 500; font-size: 14px; line-height: 22px; color: #00204DF2" th:if="${formData != null and formData.createdBy != null}" th:text="${formData.createdBy}">NhienHT3</td>
+                                            </tr>
+                                        </table>
+
+                                        <div style="font-weight: 400; font-style: italic; font-size: 14px; line-height: 22px; color: #00204DB2; text-align: center; margin-top: 7px;">
+                                            Point of sale survey form overview
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Password reset</title>
+    <meta name="viewport" content="width=device-width">
+<!--    <link rel="shortcut icon" th:href="@{|${baseUrl}/favicon.ico|}" />-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body class="" style="background-color: #E5E5E5;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size: 12px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;padding: 0;background-color: #ffffff;">
+    <tbody>
+    <tr>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+        <td class="container" style="font-family: sans-serif;font-size: 12px;vertical-align: top;display: block;margin: 0 auto;max-width: 800px;padding: 0;width: 800px;">
+            <div class="content" style="box-sizing: border-box;display: block;Margin: 0;max-width: 800px;padding: 0;">
+
+                <!-- START CENTERED WHITE CONTAINER -->
+                <div class="header" style="display: inline-block;clear: both;text-align: center;width: 100%;background: url(https://i.imgur.com/aisEGz2.png) no-repeat center;     background-size: cover;">
+                    <img src="https://i.imgur.com/WCHvfh1.png" alt="FPT.eContract" style="float: left;padding: 5% 0 4% 5%;max-width: 38%;height: auto;min-height: 32px;">
+                </div>
+                <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+
+                    <!-- START MAIN CONTENT AREA -->
+                    <tr>
+                        <td class="wrapper" style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding: 5%;padding-bottom: 0;">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                <tr>
+                                    <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                                        <h1 style="
+                                                font-weight: bold;
+                                                font-size: 18px;
+                                                line-height: 24px;
+                                                color: #2E6CF6;
+                                                margin-bottom: 24px;
+                                                margin-top: 0;
+                                            " th:with="rcpNameMail=(@{|Xin chào ${user.lastName}|})"  th:text="${rcpNameMail}">Xin chào Nguyễn Văn A,</h1>
+                                        <div style="background: rgba(233, 234, 247, 0.5);margin-bottom: 16px;text-align: center;padding-top: 24px;">
+                                            <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                color: #121E28;
+                                                    ">
+                                                <span>Chúng tôi nhận được yêu cầu đặt lại mật khẩu truy cập</span><br>
+                                                <span>FPT.eContract cho tài khoản của bạn</span><br>
+                                                <span style="color: #2E6CF6;"><b>Chọn nút đặt lại mật khẩu để hoàn tất</b></span><br>
+                                                <span>Nếu yêu cầu không phải của bạn, vui lòng bỏ qua email này</span><br>
+                                            </p>
+                                            <a th:with="url=(@{|${baseUrl}/reset/finish?key=${user.resetKey}|})" th:href="${url}" style="
+                                                    font-size: 14px;
+                                                    line-height: 24px;
+                                                    padding: 8px 20px;
+                                                    font-weight: bold;
+                                                    text-decoration: none;
+                                                    margin-bottom: 0;
+                                                    display: inline-block;
+                                                    background: #2E6CF6;
+                                                    color: #fff;
+                                                    margin-bottom: 17px;"
+                                            >ĐẶT LẠI MẬT KHẨU</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;background: #FAFBFB;padding: 3% 5%;">
+                            <p style="
+                                                font-weight: 600;
+                                                font-size: 13px;
+                                                line-height: 18px;
+                                                margin-top: 0;
+                                                margin-bottom: 4px;
+                                            ">KHÔNG CHIA SẺ</p>
+                            <p style="
+                                                color: #71787E;
+                                                font-weight: normal;
+                                                font-size: 12px;
+                                                line-height: 18px;
+                                                margin-top: 0;
+                                                margin-bottom: 10px;
+                                            ">Email này chứa một mã bảo mật của FPT.eContract, vui lòng không chia
+                                sẻ email hoặc mã bảo mật này với người khác.</p>
+                            <p style="
+                                                font-weight: 600;
+                                                font-size: 13px;
+                                                line-height: 18px;
+                                                margin-top: 0;
+                                                margin-bottom: 4px;
+                                            ">GIỚI THIỆU VỀ FPT.eContract</p>
+                            <p style="
+                                                color: #71787E;
+                                                font-weight: normal;
+                                                font-size: 12px;
+                                                line-height: 18px;
+                                                margin-top: 0;
+                                                margin-bottom: 10px;
+                                            ">FPT.eContract giúp bạn ký tài liệu điện tử trong vài phút. Sản phẩm an toàn,
+                                bảo mật, đảm bảo tính pháp lý. Cho dù bạn đang ở văn phòng, ở
+                                nhà, đang đi trên đường hay bất kỳ đất nước nào trên thế giới,
+                                FPT.eContract sẽ cung cấp giải pháp và dịch vụ đến với bạn.</p>
+                            <p style="
+                                                font-weight: 600;
+                                                font-size: 13px;
+                                                line-height: 18px;
+                                                margin-top: 0;
+                                                margin-bottom: 4px;
+                                            ">CÂU HỎI VỀ TÀI LIỆU</p>
+                            <p style="
+                                                color: #71787E;
+                                                font-weight: normal;
+                                                font-size: 12px;
+                                                line-height: 18px;
+                                                margin-top: 0;
+                                                margin-bottom: 0;
+                                            ">Nếu bạn cần sửa đổi hoặc có câu hỏi về nội dung trong tài liệu,
+                                vui lòng liên hệ với người gửi bằng cách gửi email trực tiếp
+                                cho họ. Nếu bạn gặp sự cố khi ký tài liệu, vui lòng truy cập
+                                trang Trợ giúp.</p>
+                        </td>
+                    </tr>
+
+                    <!-- END MAIN CONTENT AREA -->
+                </table>
+
+                <!-- END CENTERED WHITE CONTAINER -->
+            </div>
+        </td>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+    </tr>
+</table>
+</body>
+
+</html>

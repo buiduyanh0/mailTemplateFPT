@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>KYTAGATE Email - Announcement</title>
+    <style>
+      @media only screen and (max-width: 620px) {
+        .container { width: 100% !important; }
+        .mobile-padding { padding-left: 20px !important; padding-right: 20px !important; }
+      }
+    </style>
+  </head>
+  <body style="background-color: #ffffff; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.5; margin: 0; padding: 0;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; width: 100%; padding: 0;">
+      <tr>
+        <td align="center">
+          <table class="container" role="presentation" width="800" cellspacing="0" cellpadding="0" border="0" style="max-width: 800px; width: 100%; background-color: #ffffff; border: none; border-radius: 4px; overflow: hidden;">
+            
+            <!-- HEADER BANNER -->
+            <tr>
+              <td style="padding: 0; text-align: center; background-color: #ffffff;">
+                <img src="https://i.imgur.com/4NFT8F6.png" alt="Kyta Platform" style="display: block; width: 100%; max-width: 800px; height: auto; border: 0;">
+              </td>
+            </tr>
+
+            <!-- MAIN CONTENT AREA -->
+            <tr>
+              <td class="mobile-padding" style="padding: 32px 36px 36px 36px; background-color: #ffffff;">
+                
+                <!-- GREETING & INTRO -->
+                <h1 style="font-size: 21px; font-weight: 600; line-height: 28px; color: #6F2CED; margin: 0 0 12px 0;">
+                  Dear <span th:text="${publishedToName}">Recipient Name</span>,
+                </h1>
+                
+                <div style="font-size: 14px; line-height: 22px; color: #00204D; margin-bottom: 24px;">
+                  <strong style="font-weight: 600;" th:text="${publisherName}">Publisher Name</strong> has published document <strong style="font-weight: 600;" th:text="${proposalCode}">Proposal No.</strong> - <strong style="font-weight: 600;" th:text="${proposalTitle}">Proposal Title</strong> to you.<br>
+                  Please access Kyta Platform to view the document content.
+                </div>
+
+                <!-- PROPOSAL INFO CARD -->
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #EDF2FD; border-radius: 8px; margin-bottom: 32px;">
+                  <tr>
+                    <td style="padding: 24px 32px;">
+                      <p style="font-size: 16px; font-weight: 600; line-height: 24px; color: #6F2CED; margin: 0 0 16px 0; text-align: left;">
+                        PROPOSAL INFORMATION
+                      </p>
+
+                      <div style="margin-bottom: 14px; text-align: left;">
+                        <span style="font-size: 13px; color: #5F6670; font-weight: 400; display: block; margin-bottom: 2px;">Proposal</span>
+                        <span style="font-size: 15px; color: #00204D; font-weight: 600; word-break: break-word;">
+                          <span th:text="${proposalCode}">Proposal No.</span> - <span th:text="${proposalTitle}">Proposal Title</span>
+                        </span>
+                      </div>
+
+                      <div style="margin-bottom: 20px; text-align: left;">
+                        <span style="font-size: 13px; color: #5F6670; font-weight: 400; display: block; margin-bottom: 2px;">Status</span>
+                        <span style="font-size: 15px; color: #00204D; font-weight: 600;" th:text="${status}">Status</span>
+                      </div>
+
+                      <div style="text-align: center; margin-top: 12px;">
+                        <a th:href="|https://demo.eclm.kyta.fpt.com/${subUrl}|" style="display: inline-block; padding: 10px 24px; font-size: 14px; font-weight: 500; color: #7F43EF; background: linear-gradient(92.13deg, rgba(0, 189, 142, 0.12) -10.74%, rgba(64, 188, 254, 0.4) 47.33%, rgba(116, 85, 254, 0.2) 100.27%); border-radius: 6px; text-decoration: none;">
+                          View Details
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- DO NOT SHARE -->
+                <div style="margin-bottom: 24px; text-align: left;">
+                  <p style="font-weight: 600; font-size: 16px; line-height: 24px; color: #00204D; margin: 0 0 4px 0;">
+                    DO NOT SHARE
+                  </p>
+                  <p style="font-size: 14px; line-height: 22px; color: rgba(0, 32, 77, 0.9); margin: 0;">
+                    This email contains a security code from Kyta Platform. Please do not share this email or security code with others.
+                  </p>
+                </div>
+
+                <!-- ABOUT US -->
+                <div style="text-align: left;">
+                  <p style="font-weight: 600; font-size: 16px; line-height: 24px; color: #00204D; margin: 0 0 4px 0;">
+                    ABOUT US
+                  </p>
+                  <p style="font-size: 14px; line-height: 22px; color: rgba(0, 32, 77, 0.9); margin: 0;">
+                    Kyta Platform is an identity and electronic signing platform, providing various services related to electronic contract signing. Safe, secure, and legally binding.
+                  </p>
+                </div>
+
+              </td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

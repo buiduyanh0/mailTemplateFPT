@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FptContact Email</title>
+  </head>
+  <body class="" style="background-color: #E5E5E5;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size:
+      12px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <table class="body" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width:
+        100%;padding: 0;background-color: #ffffff;">
+      <tbody>
+        <tr>
+          <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+          <td class="container" style="font-family: sans-serif;font-size: 12px;vertical-align: top;display:
+              block;margin: 0 auto;max-width: 800px;padding: 0;width: 800px;">
+            <div class="content" style="box-sizing: border-box;display: block;Margin: 0;max-width: 800px;padding: 0;">
+              <!-- START CENTERED WHITE CONTAINER -->
+              <div class="header" style="display: inline-block;clear: both;text-align: center;width: 100%;background:
+                  url(https://i.imgur.com/aisEGz2.png) no-repeat center; background-size: cover;"><img
+                  src="https://i.imgur.com/WCHvfh1.png" alt="FPT.eContract" style="float: left;padding: 5% 0 4%
+                  5%;max-width: 38%;height: auto;min-height: 32px;"></div>
+              <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width:
+                  100%; background: #ffffff; border-radius: 3px;">
+                <!-- START MAIN CONTENT AREA -->
+                <tr>
+                  <td class="wrapper" style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing:
+                      border-box; padding: 5%;padding-bottom: 0;">
+                    <table style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width:
+                        100%;">
+                      <tr>
+                        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                          <h1 style=" font-weight: bold; font-size: 18px; line-height: 24px; color: #2E6CF6;
+                              margin-bottom: 24px; margin-top: 0; " th:with="rcpNameMail=(@{|Dear
+                              ${rcpName}|})" th:text="${rcpNameMail}">Dear Nguyễn Văn A,</h1>
+                          <div style="background: #FAFBFB;margin-bottom: 16px;text-align:
+                              left;padding: 5%;">
+                            <p style=" font-weight: 500; margin-top: 0; margin-bottom: 16px; font-size: 14px;
+                                line-height: 20px; color: #121E28;">
+                              <b th:switch="${role}">
+							  <span th:case="signer"> You have a document need to be signed from <span style="color: #2E6CF6;" th:text="${header.owner}">ABC</span></span>
+                <span th:case="reviewer"> You have a document need to be signed from <span style="color: #2E6CF6;" th:text="${header.owner}">ABC</span></span>
+                <span th:case="stamper"> You have a document need to be signed from <span style="color: #2E6CF6;" th:text="${header.owner}">ABC</span></span></b>
+                            <p style="font-weight: 500; font-size: 14px; line-height: 20px; color: #121E28; margin: 0 0 12px 0;">
+								<b> Name of contract: <span style="color: #2E6CF6;" th:text="${envName}">[Name of Contract]</span></b>
+							</p>
+
+							<p style="font-size: 14px; line-height: 20px; color: #121E28; margin: 0 0 8px 0;">
+								<b>Click on the link: 
+							<a th:with="url=(@{|${baseUrl}/fi/${envId}/${rcpId}/act|})"
+                                  th:href="${url}" style="color: #2E6CF6; text-decoration: underline;">
+								View Document
+							</a>
+							</b>
+							</p>
+
+							<p style="font-size: 14px; line-height: 20px; color: #121E28; margin: 0 0 8px 0;">
+								<b>Use your email 
+							<span style="color: #2E6CF6;" th:with="code=(@{|${rcpMail}|})"
+                                  th:text="${code}">example@email.com</span> 
+								and Access code 
+							<span style="color: #2E6CF6;" th:with="code=(@{|${password}|})"
+                                  th:text="${code}">123456</span> 
+								to sign the document.
+							</b>
+							</p>
+							
+							<p style="color: #FC2C03; font-weight: bold; font-size: 14px; line-height: 20px; margin: ;">
+								Proceed e-signing with your e-signature.<br>
+							<a href="https://docs.google.com/document/d/1TGMG--B2Xy3Y_-kDehF6NNYCiYT7H_NO/edit?usp=drive_link&ouid=110726679045724518896&rtpof=true&sd=true" style="color: #FC2C03; text-decoration: underline;">
+							View instution
+							</a>
+							</p>
+							</p>
+                          <div style="text-align: center;">
+                            <div th:if="${baseUrlInternal == 'null' || baseUrlInternal == null }">
+                              <p style=" font-weight: 500; margin-top: 0; margin-bottom: 4px; font-size: 12px;
+                                  line-height: 18px; color: #71787E; " th:with="codetitle=(@{|Access
+                                  code|})" th:text="${codetitle}">Access code</p>
+                              <p style=" font-weight: bold; font-size: 22px; line-height: 24px; color: #121E28;
+                                  margin-top: 0; margin-bottom: 32px; "><b th:with="code=(@{|${password}|})"
+                                  th:text="${code}">fptsoft</b></p>
+                              <a style=" font-size: 14px; line-height: 24px; padding: 8px 20px; font-weight: bold;
+                                  text-decoration: none; display: inline-block; background: #2E6CF6; color: #fff;
+                                  margin-bottom: 17px; " th:with="url=(@{|${baseUrl}/fi/${envId}/${rcpId}/act|})"
+                                  th:href="${url}">VIEW DOCUMENT</a>
+                              <br>
+                            </div>
+                            <div th:if="${baseUrlInternal != 'null' && baseUrlInternal != null }">
+                              <a style=" font-size:
+                                14px; line-height: 24px; padding: 8px 20px; font-weight: bold; text-decoration: none;
+                                display: inline-block; background: #2E6CF6; color: #fff; margin-bottom: 17px; "
+                                th:with="urlInternal=(@{|${baseUrlInternal}|})" th:href="${urlInternal}">VIEW DOCUMENT</a></div>
+                          </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;background: #ffffff;padding:
+                      3% 5%;">
+                    <p style=" font-weight: 600; font-size: 13px; line-height: 18px; margin-top: 0; margin-bottom: 4px;
+                        ">DO NOT SHARE</p>
+                    <p style=" color: #71787E; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0;
+                        margin-bottom: 10px; ">This email contains a security code of
+                        FPT.eContract, please do not share this email or security code with others.</p>
+                    <p style=" font-weight: 600; font-size: 13px; line-height: 18px; margin-top: 0; margin-bottom: 4px;
+                        ">ABOUT ECONTRACT</p>
+                    <p style=" color: #71787E; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0;
+                        margin-bottom: 10px; ">FPT.eContract helps you sign e-documents in minutes. The product is safe, secure, and legally
+                        guaranteed. Whether you are in the office, at home, on the road or anywhere in the world,
+                        FPT.eContract will provide solutions and services to you.</p>
+                    <p style=" font-weight: 600; font-size: 13px; line-height: 18px; margin-top: 0; margin-bottom: 4px;
+                        ">QUESTIONS ABOUT DOCUMENTS</p>
+                    <p style=" color: #71787E; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0;
+                        margin-bottom: 0; ">If you need to make changes or have questions about the
+                        content in the document, please contact the sender by emailing them directly. If you are having
+                        trouble signing documents, please visit the Help page.</p>
+                  </td>
+                </tr>
+                <!-- END MAIN CONTENT AREA -->
+              </table>
+              <!-- END CENTERED WHITE CONTAINER -->
+            </div>
+          </td>
+          <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

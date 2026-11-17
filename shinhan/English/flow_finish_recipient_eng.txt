@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<p> </p>
+<table class="body" style="border-collapse: separate; width: 101.14%; padding: 0px; background-color: #ffffff;"
+       border="0" cellspacing="0" cellpadding="0">
+  <tbody>
+  <tr>
+    <td style="font-family: sans-serif; font-size: 12px; vertical-align: top; width: 0.251256%;"> </td>
+    <td class="container"
+        style="font-family: sans-serif; font-size: 12px; vertical-align: top; display: block; margin: 0px auto; max-width: 800px; padding: 0px; width: 91.4573%;">
+      <div class="content"
+           style="box-sizing: border-box; display: block; margin: 0; max-width: 800px; padding: 0;">
+        <!-- START CENTERED WHITE CONTAINER -->
+        <div class="header"
+             style="display: inline-block; clear: both; text-align: center; width: 100%; background: url('https://i.imgur.com/CzGFK54.png') no-repeat center; background-size: cover;">
+          <img
+                  style="float: left; padding: 5% 0 4% 5%; max-width: 38%; height: auto; min-height: 32px;"/>
+        </div>
+        <table class="main"
+               style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+          <!-- START MAIN CONTENT AREA -->
+          <tbody>
+          <tr>
+            <td class="wrapper"
+                style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding: 5%; padding-bottom: 0;">
+              <table
+                      style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;"
+                      border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                  <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                    <div style="margin-bottom: 10px;">
+                                                        <span style="font-size: 12px; ">Dear customer
+                                                            <span style="background-color: #ffffff; color: #000000; font-weight: bold;"
+                                                                  th:with="rqtNameMail=(@{| ${rcpName}|})"
+                                                                  th:text="${rqtNameMail}"
+                                                            > Nguyễn Văn A,</span></span>
+                    </div>
+                    <div style="font-size: 12px;">
+                      <span>Shinhan Securities Vietnam Co., Ltd (SSV) congratulates you on successfully opening an account at SSV.</span><br>
+                      <span>Your contract to open an electronic securities account at SSV has been confirmed.</span>
+                    </div>
+                    <div style="margin-bottom: 10px">
+                      <p>We are pleased to announce your trading account information as follows:</p>
+                      <span>- Account number: 123456789</span><br>
+                      <span>- Transaction password over the phone: [MKGD]</span><br>
+                      <span>- Login ID: [TK đăng nhập TT]</span><br>
+                      <span>- Login password: [MK đăng nhập TT]
+                      </span>
+                    </div>
+
+                    <div>
+                                            <span>To trade, please visit
+                                              <a target="_blank" style="color: #2E6CF6; text-decoration-line: underline; cursor: pointer;" href="https://online.shinhansec.com.vn/">here</a></span><br>
+                      <span>To view transaction instructions, please visit
+                        <a target="_blank" style="color: #2E6CF6; text-decoration-line: underline; cursor: pointer;" href="https://shinhansec.com.vn/vi/ho-tro-khach-hang/huong-dan-giao-dich.html">here</a></span><br>
+                      <span>To view and store the Contract, please see the attached file or SSV's online trading system.</span>
+                    </div>
+                    <div>
+                      <p>For further assistance, please contact your Account Manager:
+                        <br>Full name: [Tên người quản lý]
+                        <br>Phone number: [SĐT người quản lý]
+                        <br>Email: [Email người quản lý]
+                      </p>
+                    </div>
+                    <p>For more information, please contact our department
+                      Transaction support:
+                      <br>Phone number: (028) 6299 8000
+                      <br>Email: <a href="mailto:support@shinhan.com">support@shinhan.com</a>
+                      <br>Website: <a href="http://shinhansec.com.vn">http://shinhansec.com.vn</a>
+                    </p>
+                    <p>Trân trọng!</p>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+
+          <!-- END MAIN CONTENT AREA -->
+          </tbody>
+        </table>
+        <!-- END CENTERED WHITE CONTAINER -->
+        <div class="footer"
+             style="display: inline-block; margin-top: 15px; clear: both; text-align: center; width: 100%; background: url('https://i.imgur.com/6D2UxKr.png') no-repeat center; background-size: cover;">
+          <img
+                  style="float: left; padding: 5% 0 4% 5%; max-width: 38%; height: auto; min-height: 32px;"/>
+        </div>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
+

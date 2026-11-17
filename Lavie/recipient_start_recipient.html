@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FPT.eContract Email</title>
+  </head>
+  <body style="background-color:#FFFFFF; font-family:sans-serif; font-size:12px; line-height:1.4; margin:0; padding:0;
+      -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;">
+    <table style="width:100%;background:#FFFFFF;">
+      <tr>
+        <td>&nbsp;</td>
+        <!-- CONTAINER -->
+        <td align="center" style="max-width:800px;background:#ffffff;">
+          <table align="center" style="width:100%;max-width:800px;margin:0 auto;">
+            <!-- ================= HEADER IMAGE ================= -->
+            <tr>
+              <td style="padding:0;margin:0;"><img
+                  src="https://raw.githubusercontent.com/phamuyen19091999-star/public-assets/main/Header.png" alt="La
+                  Vie Header" style="width:100%;max-width:800px;display:block;border:0;outline:none;"></td>
+            </tr>
+            <!-- ================= MAIN CONTENT ================= -->
+            <tr>
+              <td style="padding:5%; font-family:sans-serif; font-size:12px;">
+                <h1 style="font-weight:bold; font-size:18px; line-height:24px; color:#00265a; margin:0 0 24px 0;"
+                    th:with="rcpNameMail=(@{|Xin chào ${rcpName}|})" th:text="${rcpNameMail}">Xin chào Nguyễn Văn
+                    A,</h1>
+                <div style="background:rgba(233,234,247,0.5); text-align:center; padding:24px; margin-bottom:16px;">
+                  <p style="font-weight:500; margin:0 0 16px 0; font-size:14px; line-height:20px; color:#121E28;">
+                    <b th:switch="${role}"><span th:case="signer" th:with="roleRecipient=(@{|Bạn có một yêu cầu ký tài
+                        liệu từ |})" th:text="${roleRecipient}">Bạn có một yêu cầu ký tài liệu từ</span><span
+                        th:case="reviewer" th:with="roleRecipient=(@{|Bạn có một yêu cầu xem xét tài liệu từ |})"
+                        th:text="${roleRecipient}">Bạn có một yêu cầu xem xét tài liệu từ</span><span th:case="stamper"
+                        th:with="roleRecipient=(@{|Bạn có một yêu cầu ký số của đơn vị từ |})"
+                        th:text="${roleRecipient}">Bạn có một yêu cầu ký số của đơn vị từ</span></b>
+                    <br>
+                    <br>
+                    <b th:with="create=(@{|${rqtMail}|})" th:text="${create}">Nguyễn Minh Tâm -
+                        nguyenminhtam@gmail.com</b>
+                    <br>
+                    <span style="color:#00265a;" th:text="|Tên tài liệu: ${envName}|"><b>Tên tài liệu: Hợp đồng công
+                        nghệ thông tin 2019</b></span>
+                  </p>
+                  <div th:if="${baseUrlInternal == 'null' || baseUrlInternal == null}">
+                    <p style="font-weight:500; margin:0 0 4px 0; font-size:12px; line-height:18px; color:#71787E;"
+                        th:with="codetitle=(@{|Mã truy cập / Access code|})" th:text="${codetitle}">Mã truy cập / Access
+                        code</p>
+                    <p style="font-weight:bold; font-size:22px; line-height:24px; color:#121E28; margin:0 0 32px 0;"><b
+                        th:with="code=(@{|${password}|})" th:text="${code}">fptsoft</b></p>
+                    <a style="font-size:14px; line-height:24px; padding:8px 20px; font-weight:bold;
+                        text-decoration:none; display:inline-block; background:#00265a; color:#ffffff;"
+                        th:with="url=(@{|${baseUrl}/fi/${envId}/${rcpId}/act|})" th:href="${url}">XEM TÀI LIỆU</a>
+                  </div>
+                  <div th:if="${baseUrlInternal != 'null' && baseUrlInternal != null}">
+                    <a style="font-size:14px; line-height:24px; padding:8px 20px; font-weight:bold;
+                        text-decoration:none; display:inline-block; background:#00265a; color:#ffffff;"
+                        th:with="urlInternal=(@{|${baseUrlInternal}|})" th:href="${urlInternal}">XEM TÀI LIỆU</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <!-- ================= TEXT FOOTER ================= -->
+            <tr>
+              <td style="background:#FAFBFB; padding:3% 5%; font-family:sans-serif; font-size:12px;">
+                <p style="font-weight:600; font-size:13px; line-height:18px; margin:0 0 4px 0;">KHÔNG CHIA SẺ</p>
+                <p style="color:#71787E; font-size:12px; line-height:18px; margin:0 0 10px 0;">Email này chứa mã bảo mật
+                    của LA VIE/FPT.eContract. Vui lòng không chia sẻ email hoặc mã bảo mật này cho bất kỳ ai.</p>
+                <p style="font-weight:600; font-size:13px; line-height:18px; margin:0 0 4px 0;">CÂU HỎI VỀ TÀI LIỆU</p>
+                <p style="color:#71787E; font-size:12px; line-height:18px; margin:0;">Nếu bạn cần thêm thông tin về nội
+                    dung tài liệu hoặc gặp sự cố khi ký, vui lòng liên hệ với bộ phận nhân sự tại nơi bạn làm việc để
+                    được hỗ trợ.</p>
+              </td>
+            </tr>
+            <!-- ================= FOOTER IMAGE ================= -->
+            <tr>
+              <td style="padding:0;margin:0;"><img
+                  src="https://raw.githubusercontent.com/phamuyen19091999-star/public-assets/main/Footer.png" alt="La
+                  Vie Footer" style="width:100%;max-width:800px;display:block;border:0;outline:none;"></td>
+            </tr>
+          </table>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </body>
+</html>

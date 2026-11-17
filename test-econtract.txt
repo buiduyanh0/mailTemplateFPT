@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Document Completed</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #E5E5E5; font-family: sans-serif; font-size: 12px; line-height: 1.4; -webkit-font-smoothing: antialiased; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+
+  <table class="body" role="presentation" style="width: 100%; padding: 0; background-color: #ffffff; border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+    <tbody>
+      <tr>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+
+        <td class="container" style="display: block; width: 800px; max-width: 800px; margin: 0 auto; padding: 0; font-family: sans-serif; font-size: 12px; vertical-align: top;">
+          <div class="content" style="box-sizing: border-box; display: block; max-width: 800px; margin: 0; padding: 0;">
+
+            <!-- ===== HEADER (logo removed) ===== -->
+            <div class="header" style="display: block; width: 100%; min-height: 60px; text-align: center; background: url(https://i.imgur.com/aisEGz2.png) no-repeat center; background-size: cover;"></div>
+
+            <!-- ===== MAIN CONTENT ===== -->
+            <table class="main" role="presentation" style="width: 100%; background: #ffffff; border-radius: 3px; border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+
+              <tr>
+                <td class="wrapper" style="box-sizing: border-box; padding: 5%; padding-bottom: 0; font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                  <table role="presentation" style="width: 100%; border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                    <tr>
+                      <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+
+                        <!-- Greeting -->
+                        <h1 style="margin-top: 0; margin-bottom: 24px; font-weight: bold; font-size: 18px; line-height: 24px; color: #2E6CF6;"
+                            th:text="|Dear ${rcpName},|">Dear [Employee Name],</h1>
+
+                        <!-- Body shown only when the document is completed -->
+                        <div th:if="${envStatus == 'completed'}" style="margin-bottom: 16px; padding-top: 24px; text-align: left; background: #ffffff;">
+
+                          <!-- Confirmation -->
+                          <p style="margin-top: 0; margin-bottom: 8px; font-weight: 500; font-size: 14px; line-height: 20px; color: #121E28;">
+                            This is to confirm that your document has been successfully signed and completed.
+                          </p>
+                          <p style="margin-top: 0; margin-bottom: 16px; font-size: 14px; line-height: 20px; color: #121E28;">
+                            <b>Document:
+                              <span th:text="${envName}" style="color: #2E6CF6; text-decoration: underline;">[Document Name]</span>
+                            </b>
+                          </p>
+
+                          <!-- Access / download -->
+                          <p style="margin-top: 0; margin-bottom: 16px; font-size: 14px; line-height: 20px; color: #121E28;">
+                            You may access and download the completed document using the link below.
+                          </p>
+
+                          <!-- Access code + download link -->
+                          <div style="text-align: center;">
+                            <p style="margin-top: 0; margin-bottom: 4px; font-weight: 500; font-size: 12px; line-height: 18px; color: #71787E;">Mã truy cập</p>
+                            <p style="margin-top: 0; margin-bottom: 32px; font-weight: bold; font-size: 22px; line-height: 24px; color: #121E28;">
+                              <b th:text="${password}">fptsoft</b>
+                            </p>
+                            <a th:href="|${baseUrl}/fi/${envId}/${rcpId}/act|"
+                               style="display: inline-block; margin-bottom: 17px; padding: 8px 20px; font-size: 14px; line-height: 24px; font-weight: bold; text-decoration: none; background: #2E6CF6; color: #fff;">View / Download Document</a>
+                            <br>
+                          </div>
+
+                          <!-- Support note -->
+                          <p style="margin-top: 0; margin-bottom: 16px; font-size: 14px; line-height: 20px; color: #121E28;">
+                            If you have any questions regarding this document, please contact the HR Department.
+                          </p>
+
+                          <!-- Sign-off -->
+                          <p style="margin-top: 0; margin-bottom: 0; font-size: 14px; line-height: 20px; color: #121E28;">
+                            Kind regards,
+                          </p>
+
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <!-- ===== FOOTER ===== -->
+              <tr>
+                <td style="padding: 3% 5%; font-family: sans-serif; font-size: 12px; vertical-align: top; background: #FAFBFB;">
+                  <p style="margin-top: 0; margin-bottom: 4px; font-weight: 600; font-size: 13px; line-height: 18px;">DO NOT SHARE</p>
+                  <p style="margin-top: 0; margin-bottom: 10px; font-weight: normal; font-size: 12px; line-height: 18px; color: #71787E;">This email contains a security code of FPT.eContract, please do not share this email or security code with others.</p>
+
+                  <p style="margin-top: 0; margin-bottom: 4px; font-weight: 600; font-size: 13px; line-height: 18px;">ABOUT ECONTRACT</p>
+                  <p style="margin-top: 0; margin-bottom: 10px; font-weight: normal; font-size: 12px; line-height: 18px; color: #71787E;">FPT.eContract helps you sign e-documents in minutes. The product is safe, secure, and legally guaranteed. Whether you are in the office, at home, on the road or anywhere in the world, FPT.eContract will provide solutions and services to you.</p>
+
+                  <p style="margin-top: 0; margin-bottom: 4px; font-weight: 600; font-size: 13px; line-height: 18px;">QUESTIONS ABOUT DOCUMENTS</p>
+                  <p style="margin-top: 0; margin-bottom: 0; font-weight: normal; font-size: 12px; line-height: 18px; color: #71787E;">If you need to make changes or have questions about the content in the document, please contact the sender by emailing them directly. If you are having trouble signing documents, please visit the Help page.</p>
+                </td>
+              </tr>
+
+            </table>
+          </div>
+        </td>
+
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

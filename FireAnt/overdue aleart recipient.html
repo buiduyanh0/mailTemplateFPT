@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FptContact Email</title>
+</head>
+
+<body class="" style="background-color: #E5E5E5;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size: 12px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;padding: 0;background-color: #ffffff;">
+    <tbody>
+    <tr>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+        <td class="container" style="font-family: sans-serif;font-size: 12px;vertical-align: top;display: block;margin: 0 auto;max-width: 800px;padding: 0;width: 800px;">
+            <div class="content" style="box-sizing: border-box;display: block;Margin: 0;max-width: 800px;padding: 0;">
+
+                <!-- START CENTERED WHITE CONTAINER -->
+                <div>
+                    <img src="https://raw.githubusercontent.com/buiduyanh0/image-econtract/main/fireant.png" alt="FPT.eContract" style="float: left;padding: 0 0 0 5%; width: 90%; max-width: 300%;height: auto;min-height: 32px;">
+                </div>
+                <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+
+                    <!-- START MAIN CONTENT AREA -->
+                    <tr>
+                        <td class="wrapper" style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding: 20px 0 4% 5%;padding-bottom: 0;">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                <tr>
+                                    <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                                        <div style="background: white ;margin-bottom: 16px;text-align: left;padding-top: 0;">
+										<p style="
+												font-color: #F3F2F2;
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                color: #121E28;
+                                            "> Kính gửi Quý khách
+                                        <b style="color: #0238FA;" th:with="rcpNameMail=(@{|${rcpName}|})"  th:text="${rcpNameMail}"
+                                        >Nguyễn Văn A</b></p>
+                                            <p style="
+                                                margin-top: 20px;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                color: #121E28;">
+                                                    Chúng tôi xin thông báo rằng hợp đồng điện tử Mở tài khoản Giao dịch Hàng hóa Phái sinh tại FAI của Quý Khách đã quá thời hạn ký theo quy định của hệ thống.
+												</p>
+												<p  style="
+													margin-top: 20px;
+													margin-bottom: 5px;
+													font-size: 14px;
+													line-height: 20px;
+													color: #121E28;"> Thông tin chi tiết: </p>
+												<p  style="
+													margin-top: 10px;
+													margin-bottom: 10px;
+													margin-left: 20px;
+													font-size: 14px;
+													line-height: 20px;
+													color: #121E28;"> - Loại hợp đồng: <span style="color: #FAC802; font-weight: bold;" th:text="${envName}">[Tên hợp đồng]</span><br>
+																	  - Thời hạn ký: <span style="color: #FAC802; font-weight: bold;" th:switch="${envStatus}">
+																	  <span th:case="overdue" th:text="${#dates.format(#dates.createNow(), 'dd/MM/yyyy')}">Ngày hết hạn</span></span><br>
+																	  - Trạng thái: <span th:switch="${envStatus}">
+																	  <span style="color: #FA0505; font-weight: bold;" th:case="overdue" th:with="finishstatus=(@{| Quá hạn ký |})" th:text="${finishstatus}">Quá hạn ký</span></span>
+												</p>
+												<p  style="
+													margin-top: 10px;
+													margin-bottom: 5px;
+													font-size: 14px;
+													line-height: 20px;
+													color: #121E28;"> Do đã quá thời hạn, hợp đồng hiện <b style="color: #FA0505">không còn hiệu lực để ký kết.</b> Để tiếp tục thực hiện giao dịch, Quý Khách vui lòng đăng ký lại hoặc liên hệ với chúng tôi để được hỗ trợ tạo hợp đồng mới.
+												</p>
+												<p  style="
+													margin-top: 10px;
+													margin-bottom: 5px;
+													font-size: 14px;
+													line-height: 20px;
+													color: #121E28;"> Nếu Quý Khách cần hỗ trợ hoặc có bất kỳ thắc mắc nào, xin vui lòng liên hệ:
+												</p>
+												<p style="
+													color: #121E28;
+													font-size: 12px;
+													line-height: 18px;
+													margin-top: 10px;
+													margin-bottom: 0;
+												">
+												<strong>CTCP FIREANT</strong> - Thành viên Kinh doanh số 048 của Sở Giao Dịch Hàng Hóa Việt Nam.<br>
+												- <strong>Địa chỉ:</strong>  Tòa ADG, số 37 Lê Văn Thiêm, Phường Thanh Xuân, Thành phố Hà Nội, Việt Nam.<br>
+												- <strong>Email:</strong> <a href="invest@fireant.vn" style="color:#71787E; text-decoration: underline;"> <i>invest@fireant.vn</i></a><br>
+												- <strong>Hotline:</strong> <i>1900.633.543</i><br>
+												- <strong>Website:</strong> 
+												<a href="https://commodities.fireant.vn/" style="color:#71787E; text-decoration: underline;"> <i>https://commodities.fireant.vn/</i></a>
+												</p>
+												<p  style="
+													font-weight: bold;
+													margin-top: 20px;
+													margin-bottom: 5px;
+													font-size: 14px;
+													line-height: 20px;
+													color: #121E28;"> Chúng tôi rất mong tiếp tục được phục vụ Quý Khách. 
+												</p>
+												<p  style="
+													font-weight: bold;
+													margin-top: 20px;
+													margin-bottom: 5px;
+													font-size: 14px;
+													line-height: 20px;
+													color: #121E28;"> Trân trọng cảm ơn, 
+												</p>												
+                                            </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                    </tr>
+
+                    <!-- END MAIN CONTENT AREA -->
+                </table>
+
+                <!-- END CENTERED WHITE CONTAINER -->
+            </div>
+        </td>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+    </tr>
+	</tbody>
+</table>
+</body>
+
+</html>

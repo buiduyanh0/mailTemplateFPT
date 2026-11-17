@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Everest  Email</title>
+</head>
+
+<body class="" style="background-color: #E5E5E5;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size: 12px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;padding: 0;background-color: #ffffff;">
+    <tbody>
+    <tr>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+        <td class="container" style="font-family: sans-serif;font-size: 12px;vertical-align: top;display: block;margin: 0 auto;max-width: 800px;padding: 0;width: 800px;">
+            <div class="content" style="box-sizing: border-box;display: block;Margin: 0;max-width: 800px;padding: 0;">
+
+                <!-- START CENTERED WHITE CONTAINER -->
+                <!--                <div class="header" style="display: inline-block;clear: both;text-align: center;width: 100%;background: url(https://i.imgur.com/aisEGz2.png) no-repeat center;     background-size: cover;">-->
+                <!--                    <img src="https://i.imgur.com/WCHvfh1.png" alt="FPT.eContract" style="float: left;padding: 5% 0 4% 5%;max-width: 38%;height: auto;min-height: 32px;">-->
+                <!--                </div>-->
+                <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+
+                    <!-- START MAIN CONTENT AREA -->
+                    <tr>
+                        <td class="wrapper" style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding-bottom: 0;">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                <tr>
+                                    <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                                        <h1 style="
+                                                font-size: 18px;
+                                                line-height: 24px;
+                                                margin-bottom: 24px;
+                                                margin-top: 0;
+font-weight: 500">
+                                            Kính gửi Quý khách hàng <span style="font-style: italic" th:with="rcpNameMail=(@{|Kính gửi Quý khách hàng ${rcpName}|})"  th:text="${rcpNameMail}">Nguyễn Văn A</span>,</h1>
+                                        <div style="margin-bottom: 16px;text-align: center">
+                                            <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                text-align: left;
+                                                color: #121E28;">
+                                                Trân trọng cảm ơn Quý khách đã đăng ký mở tài khoản tại Công ty cổ phần chứng khoán Everest (EVS)</p>
+                                            <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                text-align: left;
+                                                color: #121E28;">
+                                                Để đảm bảo tính pháp lý và an toàn khi sử dụng phương thức điện tử thực hiện ký kết hợp đồng, Quý khách sẽ được điều hướng
+                                                sang trang ký hợp đồng điện tử của nhà cung cấp FPT để hoàn tất thủ tục ký hợp đồng mở tài khoản.</p>
+                                            <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                text-align: left;
+                                                color: #121E28;">
+                                                Các bước ký Hợp đồng mở tài khoản như sau:</p>
+                                            <div th:if="${baseUrlInternal == 'null' || baseUrlInternal == null }" style="text-align: left">
+                                                <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                color: #121E28;">
+                                                    <span style="font-weight: bold; text-decoration-line: underline">Bước 1:</span> Nhấn vào
+                                                    <a style="
+                                                    font-size: 14px;
+                                                    line-height: 24px;
+                                                    font-weight: bold;
+                                                    display: inline-block;
+                                                    color: #0050fb; 
+                                                    text-decoration: underline;"
+                                                       th:with="url=(@{|${baseUrl}/fi/${envId}/${rcpId}/act|})" th:href="${url}"
+                                                    >đây</a> và đăng nhập vào trang ký Hợp đồng mở tài khoản:</p>
+                                                <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                text-align: left;
+                                                color: #121E28;">
+                                                    Tên đăng nhập: <span th:with="rcpMail=(@{|${rcpMail}|})" th:text="${rcpMail}" style="color: #0050fb; text-decoration: underline;">duong@gmail.com</span></p>
+                                                    <p style="font-size: 15px;"> Mã truy cập: <span style="color: #0050fb; text-decoration: underline;" th:with="codetitle=(@{|${password}|})"
+                                                        th:text="${codetitle}">FisES9</span></p>
+                                            </div>
+                                            <div th:if="${baseUrlInternal != 'null' && baseUrlInternal != null }" style="text-align: left">
+                                                <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                color: #121E28;">
+                                                    <span style="font-weight: bold; text-decoration-line: underline">Bước 1:</span> Nhấn vào
+                                                    <a style="
+                                                    font-size: 14px;
+                                                    line-height: 24px;
+                                                    font-weight: bold;
+                                                    display: inline-block;
+                                                    color: #0050fb; text-decoration: underline;"
+                                                "
+                                                       th:with="url=(@{|${baseUrl}/fi/${envId}/${rcpId}/act|})" th:href="${url}"
+                                                    >đây</a> và đăng nhập vào trang ký Hợp đồng mở tài khoản:</p>
+                                            </div>
+                                            <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                color: #121E28;
+                                                text-align: left">
+                                                <span style="font-weight: bold; text-decoration-line: underline">Bước 2:</span> Thao tác từng bước theo hướng dẫn của
+                                                hệ thống cho đến khi màn hình thể hiện Trạng thái <span style="font-weight: bold">"Đã ký"</span></p>
+                                                <p style="
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                text-align: left;
+                                                color: #121E28;
+                                            ">Lưu ý: Lưu ý: Để thực hiện giao dịch chứng khoán, Quý khách cần hoàn thiện ký Hợp đồng mở tài khoản theo hướng dẫn trên.</p>
+                                            <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                text-align: left;
+                                                color: #121E28;">
+                                                Đây là Email được gửi tự động từ hệ thống, vui lòng không trả lời Email này. Mọi thắc mắc vui lòng liên hệ với chúng tôi để được hỗ trợ nhanh nhất.</p>
+                                            <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                text-align: left;
+                                                color: #121E28;">
+                                                Email: <span style="color: #0050fb; text-decoration: underline;">phongdvkh@eves.com.vn</span></p>
+                                            <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                text-align: left;
+                                                color: #121E28;">
+                                                Hotline: 0243 772 6699 máy lẻ: 328</p>
+                                            <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                text-align: left;
+                                                color: #121E28;">
+                                                Kính chúc Quý khách hàng sức khỏe và đầu tư thành công tại EVS.</p>
+                                            <p style="
+                                                font-weight: bold;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                text-align: left;
+                                                color: #121E28;">
+                                                Trân trọng.</p>
+                                            <img style="width: 80%" src="https://i.imgur.com/L8zTW7d.png" alt="">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- END MAIN CONTENT AREA -->
+                </table>
+
+                <!-- END CENTERED WHITE CONTAINER -->
+            </div>
+        </td>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+    </tr>
+</table>
+</body>
+
+</html>

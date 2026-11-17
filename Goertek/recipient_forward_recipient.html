@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FptContact Email</title>
+</head>
+
+<body style="background-color: #ffffff; color: #F5F5F5; font-family: Arial, sans-serif; -webkit-font-smoothing: antialiased; font-size: 12px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+<table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; padding: 0; background-color: #ffffff;">
+    <tbody>
+    <tr>
+        <td style="font-family: Arial, sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+        <td class="container" style="font-family: Arial, sans-serif; font-size: 12px; vertical-align: top; display: block; margin: 0 auto; max-width: 720px; padding: 20px; width: 100%; box-sizing: border-box;">
+            <div class="content" style="box-sizing: border-box; display: block; margin: 0; max-width: 720px; padding: 0; background-color: #151719;">
+
+                <!-- START CENTERED WHITE CONTAINER -->
+                <div class="header" style="display: block; clear: both; text-align: left; width: 100%; box-sizing: border-box; padding: 24px 30px; background-color: #ffffff;">
+                    <img src="https://raw.githubusercontent.com/buiduyanh0/image-econtract/main/goertek-seeklogo.png" alt="FPT.eContract" style="display: block; margin: 0; padding: 0; width: 190px; max-width: 38%; height: auto; min-height: 0;">
+                </div>
+
+                <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 0;">
+
+                    <!-- START MAIN CONTENT AREA -->
+                    <tr>
+                        <td class="wrapper" style="font-family: Arial, sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding: 34px 30px 18px;">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                <tr>
+                                    <td style="font-family: Arial, sans-serif; font-size: 12px; vertical-align: top;">
+                                        <h1 style="font-weight: bold; font-size: 22px; line-height: 30px; color: #000000; margin-bottom: 30px; margin-top: 6px; text-align: left;"
+                                            th:with="rcpNameMail=(@{|Xin chào ${rcpName}|})" th:text="${rcpNameMail}">Xin chào Nguyễn Văn A,</h1>
+
+                                        <div style="background: #ffffff; margin-bottom: 0; text-align: center; padding: 28px 24px 24px; box-sizing: border-box;">
+                                            <p style="font-weight: 500; margin-top: 0; margin-bottom: 22px; font-size: 18px; line-height: 28px; color: #000000;">
+                                                <b th:switch="${role}">
+                                                    <span th:case="signer" th:with="roleRecipient=(@{| Bạn có một yêu cầu ký tài liệu từ |})" th:text="${roleRecipient}">Bạn có một yêu cầu ký tài liệu từ</span>
+                                                    <span th:case="reviewer" th:with="roleRecipient=(@{| Bạn có một yêu cầu xem xét tài liệu từ |})" th:text="${roleRecipient}">Bạn có một yêu cầu xem xét tài liệu từ</span>
+                                                    <span th:case="stamper" th:with="roleRecipient=(@{| Bạn có một yêu cầu ký số của đơn vị từ |})" th:text="${roleRecipient}">Bạn có một yêu cầu ký số của đơn vị từ</span>
+                                                </b>
+                                                <br>
+                                                <b style="color: #000000;">GOERTEK VIỆT NAM</b>
+                                                <br>
+                                                <b style="color: #000000;" th:with="nameEnv=(@{| ${envName}|})" th:text="${nameEnv}">Hợp đồng công nghệ thông 2019</b>
+                                            </p>
+
+                                            <div th:if="${baseUrlInternal == 'null' || baseUrlInternal == null }" style="border-top: 1px solid #494C4E; margin: 28px auto 0; padding-top: 28px; max-width: 440px;">
+                                                <p style="font-weight: 500; margin-top: 0; margin-bottom: 8px; font-size: 15px; line-height: 20px; color: #000000;"
+                                                   th:with="codetitle=(@{|Mã truy cập |})" th:text="${codetitle}">Mã truy cập</p>
+                                                <p style="font-weight: bold; font-size: 22px; line-height: 28px; color: #000000; margin-top: 0; margin-bottom: 20px;">
+                                                    <b th:with="code=(@{|${password}|})" th:text="${code}">fptsoft</b>
+                                                </p>
+                                                <a style="font-size: 16px; line-height: 24px; padding: 12px 44px; font-weight: bold; text-decoration: none; display: inline-block; background: #59BD4F; color: #111315; margin-bottom: 4px;"
+                                                   th:with="url=(@{|${baseUrl}/fi/${envId}/${rcpId}/act|})" th:href="${url}">XEM TÀI LIỆU</a>
+                                                <br>
+                                            </div>
+
+                                            <div th:if="${baseUrlInternal != 'null' && baseUrlInternal != null }" style="border-top: 1px solid #494C4E; margin: 28px auto 0; padding-top: 28px; max-width: 440px;">
+                                                <a style="font-size: 16px; line-height: 24px; padding: 12px 44px; font-weight: bold; text-decoration: none; display: inline-block; background: #59BD4F; color: #111315; margin-bottom: 4px;"
+                                                   th:with="urlInternal=(@{|${baseUrlInternal}|})" th:href="${urlInternal}">XEM TÀI LIỆU</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-family: Arial, sans-serif; font-size: 12px; vertical-align: top; background: #c2c1c1; padding: 14px 30px; border-top: 16px solid #ffffff;">
+                            <p style="color: #000000; font-weight: 600; font-size: 15px; line-height: 20px; margin-top: 0; margin-bottom: 6px;">KHÔNG CHIA SẺ</p>
+                            <p style="color: #000000; font-weight: normal; font-size: 14px; line-height: 21px; margin-top: 0; margin-bottom: 0;">Email này chứa một mã bảo mật của GOERTEK VIỆT NAM, vui lòng không chia sẻ email hoặc mã bảo mật này với người khác.</p>
+                            <p style="color: #000000; margin-top: 10px; margin-bottom: 10px;">Nếu bạn cần hỗ trợ, vui lòng liên hệ Bộ phận Nhân sự GOERTEK VIỆT NAM.</p>
+                            <p style="color: #000000; margin-top: 0; margin-bottom: 10px;">Trân trọng,</p>
+                            <p style="color: #000000; margin-top: 0; margin-bottom: 0;">GOERTEK VIỆT NAM</p>
+                        </td>
+                    </tr>
+                    <!-- END MAIN CONTENT AREA -->
+                </table>
+                <!-- END CENTERED WHITE CONTAINER -->
+
+            </div>
+        </td>
+        <td style="font-family: Arial, sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+
+</html>

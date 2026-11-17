@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>[THÔNG BÁO KYTA]: BẠN ĐƯỢC ỦY QUYỀN XỬ LÝ GIAO DỊCH</title>
+  </head>
+  <body style="background-color: #E5E5E5; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 12px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+    <table class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; padding: 0; background-color: #ffffff;">
+      <tbody>
+        <tr>
+          <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+          <td class="container" style="font-family: sans-serif; font-size: 12px; vertical-align: top; display: block; margin: 0 auto; max-width: 800px; padding: 0; width: 800px;">
+            <div class="content" style="box-sizing: border-box; display: block; margin: 0; max-width: 800px; padding: 0;">
+              
+              <!-- HEADER LOGO -->
+              <div class="header" style="display: inline-block; clear: both; text-align: center; width: 100%;">
+                <img src="https://i.imgur.com/4NFT8F6.png" alt="KYTA Platform" style="float: left; max-width: 99.5%; height: auto; min-height: 32px;">
+              </div>
+
+              <!-- MAIN CONTENT AREA -->
+              <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+                <tr>
+                  <td class="wrapper" style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding-bottom: 0;">
+                    <table style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                      <tr>
+                        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                          
+                          <!-- LỜI CHÀO & NỘI DUNG CHÍNH -->
+                          <div style="gap: 8px; margin: 35px 35px 24px 36px;">
+                            <h1 style="font-size: 21px; font-weight: 600; line-height: 24px; text-align: left; color: rgba(111, 44, 237, 1); margin-bottom: 12px; margin-top: 0;">
+                              Kính gửi <span th:text="${receiverName}">[Họ và tên người được ủy quyền]</span>,
+                            </h1>
+                            <div style="font-size: 14px; font-weight: 400; line-height: 22px; text-align: left; color: rgba(0, 32, 77, 0.9);">
+                              Cảm ơn quý khách đã sử dụng dịch vụ của <strong>KYTA Platform</strong>.
+                              <br><br>
+                              <span style="font-weight: 600;" th:text="${assigner}">[Người ủy quyền]</span> đã ủy quyền cho quý khách thực hiện xử lý giao dịch <span style="font-weight: 600;" th:text="${ticketName}">[Tên giao dịch]</span> tại bước <span style="font-weight: 600;" th:text="${userTaskName}">[Bước xử lý]</span>.
+                              <br><br>
+                              Vui lòng truy cập hệ thống KYTA để thực hiện nhiệm vụ trong thời gian ủy quyền.
+                            </div>
+                          </div>
+
+                          <!-- THÔNG TIN ỦY QUYỀN -->
+                          <div style="margin: 0 37px 24px 34px;">
+                            <p style="font-size: 16px; font-weight: 600; line-height: 24px; text-align: left; color: rgba(111, 44, 237, 1); margin: 0 0 8px 0;">
+                              THÔNG TIN ỦY QUYỀN
+                            </p>
+                            <table style="width: 100%; border-collapse: collapse; background: #F4F7FC; border: 1px solid #D1DBE8;">
+                              <tr>
+                                <td style="padding: 10px 16px; border: 1px solid #D1DBE8; font-weight: 600; font-size: 14px; color: #00204D; width: 30%;">
+                                  Người ủy quyền
+                                </td>
+                                <td style="padding: 10px 16px; border: 1px solid #D1DBE8; font-size: 14px; color: #00204D;" th:text="${assigner}">
+                                  [Người ủy quyền]
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding: 10px 16px; border: 1px solid #D1DBE8; font-weight: 600; font-size: 14px; color: #00204D;">
+                                  Người được ủy quyền
+                                </td>
+                                <td style="padding: 10px 16px; border: 1px solid #D1DBE8; font-size: 14px; color: #00204D;" th:text="${assignee}">
+                                  [Người được ủy quyền]
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+
+                          <!-- THÔNG TIN GIAO DỊCH -->
+                          <div style="margin: 0 37px 24px 34px;">
+                            <p style="font-size: 16px; font-weight: 600; line-height: 24px; text-align: left; color: rgba(111, 44, 237, 1); margin: 0 0 8px 0;">
+                              THÔNG TIN GIAO DỊCH
+                            </p>
+                            <table style="width: 100%; border-collapse: collapse; background: #F4F7FC; border: 1px solid #D1DBE8;">
+                              <tr>
+                                <td style="padding: 10px 16px; border: 1px solid #D1DBE8; font-weight: 600; font-size: 14px; color: #00204D; width: 30%;">
+                                  Tên giao dịch
+                                </td>
+                                <td style="padding: 10px 16px; border: 1px solid #D1DBE8; font-size: 14px; color: #00204D;" th:text="${ticketName}">
+                                  [Tên giao dịch]
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding: 10px 16px; border: 1px solid #D1DBE8; font-weight: 600; font-size: 14px; color: #00204D;">
+                                  Bước xử lý
+                                </td>
+                                <td style="padding: 10px 16px; border: 1px solid #D1DBE8; font-size: 14px; color: #00204D;" th:text="${userTaskName}">
+                                  [Bước xử lý]
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding: 10px 16px; border: 1px solid #D1DBE8; font-weight: 600; font-size: 14px; color: #00204D;">
+                                  Trạng thái
+                                </td>
+                                <td style="padding: 10px 16px; border: 1px solid #D1DBE8; font-size: 14px; color: #00204D;" th:text="${ticketStatus}">
+                                  [Trạng thái]
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+
+                          <!-- ACTION BUTTON -->
+                          <div style="text-align: center; margin: 30px 37px 35px 34px;">
+                            <a style="font-size: 14px; line-height: 22px; padding: 10px 20px; font-weight: normal; text-decoration: none; display: inline-block; cursor: pointer; background: linear-gradient(92.13deg, rgba(0, 189, 142, 0.12) -10.74%, rgba(64, 188, 254, 0.4) 47.33%, rgba(116, 85, 254, 0.2) 100.27%); color: #6F2CED; border-radius: 4px;"
+                               th:with="url=(@{|https://erequest.sandbox.kytaplatform.com/workspace/dashboard|})"
+                               th:href="${url}">
+                              XEM VÀ XỬ LÝ GIAO DỊCH
+                            </a>
+                          </div>
+
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- FOOTER SECTION -->
+                <tr>
+                  <td style="vertical-align: top; background: #FFF; padding: 0 37px 40px 34px;">
+                    <p style="font-weight: 600; font-size: 16px; line-height: 24px; margin-top: 0; margin-bottom: 4px; color: rgba(111, 44, 237, 1);">
+                      KHÔNG CHIA SẺ
+                    </p>
+                    <p style="color: rgba(0, 32, 77, 0.9); font-weight: normal; font-size: 14px; line-height: 22px; margin-top: 0; margin-bottom: 16px;">
+                      Email này có thể chứa đường dẫn truy cập hoặc thông tin bảo mật của KYTA. Vui lòng không chia sẻ email hoặc thông tin truy cập này với người khác.
+                    </p>
+                    <p style="font-weight: 600; font-size: 16px; line-height: 24px; margin-top: 0; margin-bottom: 4px; color: rgba(111, 44, 237, 1);">
+                      GIỚI THIỆU
+                    </p>
+                    <p style="color: rgba(0, 32, 77, 0.9); font-weight: normal; font-size: 14px; line-height: 22px; margin-top: 0; margin-bottom: 10px;">
+                      KYTA Platform là nền tảng định danh và ký kết điện tử, cung cấp các dịch vụ liên quan đến thực hiện hợp đồng điện tử, hướng tới bảo đảm an toàn, bảo mật và tuân thủ yêu cầu pháp lý.
+                    </p>
+                  </td>
+                </tr>
+
+              </table>
+            </div>
+          </td>
+          <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>eBooking - Xác nhận đặt phòng họp</title>
+    <style>
+      @media only screen and (max-width: 620px) {
+        .email-container {
+          width: 100% !important;
+        }
+
+        .mobile-padding {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+
+        .info-column {
+          display: block !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+        }
+
+        .header-image {
+          width: 100% !important;
+          height: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body style="margin: 0; padding: 0; background-color: #e5e5e5; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 1.5; color: #00204d; -webkit-font-smoothing: antialiased; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+    <!-- Preheader: nội dung xem trước trong hộp thư -->
+    <div style="display: none; max-height: 0; overflow: hidden; opacity: 0; color: transparent; line-height: 1px; font-size: 1px;">
+      Yêu cầu đăng ký sử dụng phòng họp của Anh/Chị đã được phê duyệt và xếp phòng thành công.
+    </div>
+
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#e5e5e5" style="width: 100%; margin: 0; padding: 0; border-collapse: collapse; background-color: #e5e5e5;">
+      <tr>
+        <td align="center" style="padding: 0; vertical-align: top;">
+          <!--[if mso]>
+          <table role="presentation" width="800" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+              <td>
+          <![endif]-->
+          <table class="email-container" role="presentation" width="800" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" style="width: 100%; max-width: 800px; margin: 0 auto; border-collapse: collapse; background-color: #ffffff;">
+            <!-- ===== HEADER ===== -->
+            <tr>
+              <td style="padding: 0; line-height: 0;">
+                <img
+                  class="header-image"
+                  src="https://i.imgur.com/4NFT8F6.png"
+                  width="800"
+                  alt="KYTA Platform"
+                  style="display: block; width: 100%; max-width: 800px; height: auto; border: 0; outline: none; text-decoration: none;"
+                >
+              </td>
+            </tr>
+
+            <!-- ===== GREETING + INTRO ===== -->
+            <tr>
+              <td class="mobile-padding" style="padding: 35px 36px 28px 36px; font-family: Arial, Helvetica, sans-serif;">
+                <h1 style="margin: 0 0 12px 0; font-size: 21px; font-weight: 600; line-height: 28px; text-align: left; color: #6f2ced;">
+                  Kính gửi Anh/Chị tham gia cuộc họp,
+                </h1>
+                <p style="margin: 0; font-size: 14px; font-weight: 400; line-height: 22px; text-align: left; color: #193958;">
+                  Phòng Quản trị thông báo yêu cầu đăng ký sử dụng phòng họp của Anh/Chị đã được
+                  <strong style="font-weight: 600;">phê duyệt và xếp phòng thành công</strong>.
+                </p>
+              </td>
+            </tr>
+
+            <!-- ===== BOOKING INFORMATION ===== -->
+            <tr>
+              <td class="mobile-padding" style="padding: 0 34px 28px 34px;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#edf2fd" style="width: 100%; border-collapse: collapse; background-color: #edf2fd;">
+                  <tr>
+                    <td style="padding: 24px 28px 8px 28px;">
+                      <p style="margin: 0; font-size: 16px; font-weight: 600; line-height: 28px; color: #6f2ced;">
+                        THÔNG TIN ĐẶT PHÒNG
+                      </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style="padding: 0 20px 8px 20px;">
+                      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="width: 100%; border-collapse: collapse;">
+                        <tr>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;">
+                            <p style="margin: 0 0 3px 0; font-size: 13px; line-height: 20px; color: #5f6670;">Mã booking</p>
+                            <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 22px; color: #000000; word-break: break-word;" th:text="${booking_code}">
+                              BK-2026-0001
+                            </p>
+                          </td>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;">
+                            <p style="margin: 0 0 3px 0; font-size: 13px; line-height: 20px; color: #5f6670;">Tên cuộc họp</p>
+                            <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 22px; color: #000000; word-break: break-word;" th:text="${meeting_title}">
+                              Họp triển khai kế hoạch quý III
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;">
+                            <p style="margin: 0 0 3px 0; font-size: 13px; line-height: 20px; color: #5f6670;">Đơn vị chủ trì</p>
+                            <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 22px; color: #000000; word-break: break-word;" th:text="${department}">
+                              Phòng Công nghệ thông tin
+                            </p>
+                          </td>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;">
+                            <p style="margin: 0 0 3px 0; font-size: 13px; line-height: 20px; color: #5f6670;">Người đăng ký</p>
+                            <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 22px; color: #000000; word-break: break-word;" th:text="${requester_name}">
+                              Trần Thị B
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;">
+                            <p style="margin: 0 0 3px 0; font-size: 13px; line-height: 20px; color: #5f6670;">Người chủ trì</p>
+                            <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 22px; color: #000000; word-break: break-word;" th:text="${host_name}">
+                              Nguyễn Văn A
+                            </p>
+                          </td>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;">
+                            <p style="margin: 0 0 3px 0; font-size: 13px; line-height: 20px; color: #5f6670;">Phòng họp</p>
+                            <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 22px; color: #000000; word-break: break-word;" th:text="${room_name}">
+                              Phòng họp 301
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;">
+                            <p style="margin: 0 0 3px 0; font-size: 13px; line-height: 20px; color: #5f6670;">Thời gian</p>
+                            <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 22px; color: #000000;">
+                              <span th:text="${meeting_date}">31/07/2026</span>,
+                              <span th:text="${start_time}">09:00</span>
+                              –
+                              <span th:text="${end_time}">10:30</span>
+                            </p>
+                          </td>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;">
+                            <p style="margin: 0 0 3px 0; font-size: 13px; line-height: 20px; color: #5f6670;">Số lượng người tham dự</p>
+                            <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 22px; color: #000000;">
+                              <span th:text="${participant_count}">20</span> người
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;">
+                            <p style="margin: 0 0 3px 0; font-size: 13px; line-height: 20px; color: #5f6670;">Trạng thái</p>
+                            <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 22px; color: #16875b;" th:text="${booking_status}">
+                              Đã xác nhận
+                            </p>
+                          </td>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;">&nbsp;</td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+
+                  <!-- ===== PREPARATION REQUESTS ===== -->
+                    <tr>
+                      <td style="padding: 8px 28px 8px 28px;">
+                        <div style="height: 1px; background-color: #d5deee; line-height: 1px; font-size: 1px;">&nbsp;</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 8px 28px 6px 28px;">
+                        <p style="margin: 0; font-size: 16px; font-weight: 600; line-height: 28px; color: #6f2ced;">
+                          YÊU CẦU CHUẨN BỊ ĐÃ GHI NHẬN
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 0 28px 24px 28px;">
+                        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="width: 100%; border-collapse: collapse;">
+                          <tr>
+                            <td valign="top" style="padding: 6px 0; font-size: 14px; line-height: 22px; color: #193958;">
+                              <strong style="font-weight: 600; color: #424242;">Ghi chú:</strong>
+                              <div style="white-space: pre-line; word-break: break-word;" th:utext="${note}">
+                                Vui lòng chuẩn bị phòng trước 15 phút.
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- ===== CALL TO ACTION ===== -->
+            <tr>
+              <td class="mobile-padding" align="center" style="padding: 0 34px 34px 34px;">
+                <p style="margin: 0 0 16px 0; font-size: 14px; line-height: 22px; text-align: left; color: #193958;">
+                  Vui lòng nhấn vào nút bên dưới để xem chi tiết lịch họp:
+                </p>
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="border-collapse: separate;">
+                  <tr>
+                    <td align="center" bgcolor="#eee8fe" style="border: 1px solid #d7c7fa; border-radius: 4px; background-color: #eee8fe;">
+                      <a
+                        href="#"
+                        th:href="${booking_detail_url}"
+                        style="display: inline-block; padding: 10px 22px; border-radius: 4px; font-size: 14px; line-height: 22px; font-weight: 600; text-decoration: none; color: #6f2ced;"
+                      >
+                        Xem chi tiết lịch họp
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- ===== NOTE + SIGNATURE ===== -->
+            <tr>
+              <td class="mobile-padding" style="padding: 0 36px 36px 36px; font-family: Arial, Helvetica, sans-serif;">
+                <p style="margin: 0 0 14px 0; font-size: 14px; line-height: 22px; color: #193958;">
+                  Đề nghị Anh/Chị kiểm tra lại thông tin đặt phòng và chủ động thông báo tới các đại biểu/người tham dự.
+                  Trường hợp cần điều chỉnh hoặc hủy lịch, vui lòng thực hiện trên hệ thống
+                  <strong style="font-weight: 600;">eBooking</strong>
+                  <span th:if="${change_deadline != null}">
+                    hoặc liên hệ Phòng Quản trị trước
+                    <strong style="font-weight: 600;"><span th:text="${change_deadline}">02</span> giờ</strong>
+                    so với thời gian họp.
+                  </span>
+                </p>
+                <p style="margin: 0; font-size: 14px; line-height: 22px; color: #193958;">
+                  Trân trọng,<br>
+                  <strong style="font-weight: 600; color: #00204d;">Phòng Quản trị</strong>
+                </p>
+              </td>
+            </tr>
+
+            <!-- ===== FOOTER ===== -->
+            <tr>
+              <td class="mobile-padding" style="padding: 18px 36px; border-top: 1px solid #e2e7ef; background-color: #f7f9fc; font-family: Arial, Helvetica, sans-serif;">
+                <p style="margin: 0; font-size: 12px; line-height: 18px; text-align: center; color: #6b7685;">
+                  Đây là email được gửi tự động từ hệ thống eBooking. Vui lòng không trả lời email này.
+                </p>
+              </td>
+            </tr>
+          </table>
+              </td>
+            </tr>
+        </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

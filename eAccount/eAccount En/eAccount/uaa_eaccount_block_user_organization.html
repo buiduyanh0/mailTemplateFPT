@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>KYTA.GATE Email</title>
+    <style>
+        .email a {
+            color: #6333CA;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body class=""
+    style="background-color: #E5E5E5;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size: 12px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <div border="0" cellpadding="0" cellspacing="0" class="body"
+        style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;padding: 0;background-color: #ffffff;">
+        <div>
+            <div>
+                <div style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</div>
+                <div class="container"
+                    style="font-family: sans-serif;font-size: 12px;vertical-align: top;display: block;margin: 0 auto;max-width: 800px;padding: 0;width: 800px;">
+                    <div class="content"
+                        style="box-sizing: border-box;display: block;Margin: 0;max-width: 800px;padding: 0;background: #f5f5f5">
+
+                        <!-- START CENTERED WHITE CONTAINER -->
+                        <div class="header"
+                             style="display: inline-block;clear: both;text-align: center;width: 100%;height: 80px ;background: url(https://i.imgur.com/AZtlBRZ.png) no-repeat center;     background-size: cover;">
+                        </div>
+                        <div class="main"
+                            style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #f5f5f5; border-radius: 3px;">
+
+                            <!-- START MAIN CONTENT AREA -->
+                            <div>
+                                <div class="wrapper"
+                                    style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding: 5%;padding-bottom: 0; background: #fff">
+                                    <div
+                                        style="width: 100%;">
+                                        <div>
+                                            <div style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                                                <div>
+                                                    <p style="font-size: 21px;
+                                font-weight: 600;
+                                line-height: 24px;
+                                text-align: left;
+                                color: #943CDD;
+                                ">Dear
+                                                        <span th:text="${name}">Nguyễn Văn A</span>,
+                                                    </p>
+                                                    <div style="font-size: 14px;
+                                            color: #00204DE5;
+                                line-height: 22px;
+                                font-weight: 400">
+                                                        Thank you for using our services <span
+                                                            style="font-weight: 600">KYTA.GATE !</span>
+                                                        <p th:if="${block}" style="margin: 0">
+                                                            We contacted you to notify you that your account
+                                                            <span class="email"
+                                                                th:text="${user.login}">anhltn43@fpt.com</span> your
+                                                                there have been lock up.
+                                                            <br>If you need to unlock it, contact the company's Human Resources Department.
+                                                            <br>Below is your employee information.
+                                                        </p>
+                                                        <p th:unless="${block}" style="margin: 0">
+                                                            We contacted you to notify you that your account
+                                                            <span class="email"
+                                                                th:text="${user.login}">anhltn43@fpt.com</span>
+                                                                Yours has been unlocked. Please log in to the system using
+                                                                password your old .
+                                                            <br>Below is your employee information.
+                                                        </p>
+                                                    </div>
+                                                    <br>
+                                                </div>
+                                                <div
+                                                    style="background: rgba(237, 242, 253, 1);text-align: center; padding: 40px 32px; color: #00204DE5">
+                                                    <div style="text-align: left">
+                                                        <p style="font-size: 16px;
+                                                        font-weight: 600;
+                                                        line-height: 28px;
+                                                        color: #943CDD;
+                                                        ">STAFF INFORMATION</p>
+                                                                                <p style="font-size: 14px;
+                                                        font-weight: 500;
+                                                        line-height: 22px;
+                                                        color: #424242;
+                                                        "> Company name <br>
+                                                            <span
+                                                                style="font-weight: 600; font-size: 15px;color: #000000"
+                                                                th:text="${orgRootName}">FPT Information system</span>
+                                                        </p>
+                                                        <p style="font-size: 14px;
+                                                        font-weight: 500;
+                                                        line-height: 22px;
+                                                        color: #424242;
+                                                        "> Department <br>
+                                                            <span
+                                                                style="font-weight: 600; font-size: 15px;color: #000000"
+                                                                th:text="${orgName}">FIS ES HN</span>
+                                                        </p>
+                                                        <span th:if="${size > 0}"><span>Title</span></span> <br>
+                                                        <span style="font-size: 14px;
+                                                          font-weight: 500;
+                                                          line-height: 22px;
+                                                          color: #424242;" th:if="${size > 0}"
+                                                            th:each="p, iterStat: ${positions}">
+
+                                                            <span
+                                                                style="font-weight: 600; font-size: 15px; color: #000000"
+                                                                th:text="${p.name}">Software development staff</span>
+                                                            <span th:if="${!iterStat.last}">,</span>
+                                                        </span>
+                                                        <p style="font-size: 14px;
+                                                                font-weight: 500;
+                                                                line-height: 22px;
+                                                                color: #424242;" th:if="${size == 0}">
+                                                            Title <br>
+                                                            <span
+                                                                style="font-weight: 600; font-size: 15px; color: #000000">-</span>
+                                                        </p>
+                                                    </div>
+                                                    <br>
+                                                    <div th:if="${!block}">
+                                                        <a th:with="url=(@{|${baseUrl}|})" th:href="${url}" style="  text-decoration: none;
+                                                            padding: 10px 22px;
+                                                            border-radius: 4px;
+                                                            background: #943CDD;
+                                                            color: #FFFFFF;
+                                                            border: 1px solid    #943CDD;
+                                                            font-size: 14px;
+                                                            font-weight: 500;
+                                                            line-height: 22px;
+                                                            text-align: center;
+                                                            cursor: pointer"> Login</a>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="font-family: sans-serif; font-size: 12px; vertical-align: top;background: #fff;padding: 3% 5%;">
+                                    <p style="
+                                                        font-weight: 600;
+                                                        font-size: 16px;
+                                                        line-height: 24px;
+                                                        margin-top: 0;
+                                                        margin-bottom: 4px;
+                                                        color: rgba(0, 32, 77, 1);
+                                                    ">DO NOT SHARE</p>
+                                    <p style="
+                                                        color: rgba(0, 32, 77, 0.9);
+                                                        font-weight: 400;
+                                                        font-size: 14px;
+                                                        line-height: 22px;
+                                                        margin-top: 0;
+                                                        margin-bottom: 10px;
+                                                    ">This email contains a security code for KYTA.GATE, please do not share this email or security code with others</p>
+                                    <p style="
+                                                        font-weight: 600;
+                                                        font-size: 16px;
+                                                        line-height: 24px;
+                                                        margin-top: 0;
+                                                        margin-bottom: 4px;
+                                                        color: rgba(0, 32, 77, 1);
+                                                    ">INTRODUCE</p>
+                                    <p style="
+                                                        color: rgba(0, 32, 77, 0.9);
+                                                        font-weight: 400;
+                                                        font-size: 14px;
+                                                        line-height: 22px;
+                                                        margin-top: 0;
+                                                        margin-bottom: 10px;
+                                                    ">KYTA.GATE is an electronic identification and signing platform. Providing many services related to signing electronic contracts. The product is safe, secure, and ensures legality</p>
+                                </div>
+                            </div>
+
+                            <!-- END MAIN CONTENT AREA -->
+                        </div>
+
+                        <!-- END CENTERED WHITE CONTAINER -->
+                    </div>
+                </div>
+                <div style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</div>
+            </div>
+    </div>
+</body>
+
+</html>

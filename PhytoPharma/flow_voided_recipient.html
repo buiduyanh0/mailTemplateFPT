@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thông báo vô hiệu hóa tài liệu</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #E5E5E5; font-family: Arial, sans-serif; color: #121E28;">
+    <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#E5E5E5" style="width: 100%; background-color: #E5E5E5;">
+        <tr>
+            <td align="center" style="padding: 24px 12px;">
+                <!--[if mso]><table role="presentation" width="640" border="0" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+                <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" style="width: 100%; max-width: 640px; background-color: #FFFFFF;">
+                    <tr>
+                        <td bgcolor="#F4F5FB" style="padding: 22px 28px; background-color: #F4F5FB; background-image: url(https://i.imgur.com/aisEGz2.png); background-position: center; background-repeat: no-repeat; background-size: cover; border-bottom: 3px solid #2E6CF6;">
+                            <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td valign="middle">
+                                        <img src="https://i.imgur.com/WCHvfh1.png" alt="FPT.eContract" width="160" style="display: block; width: 160px; max-width: 100%; height: auto; border: 0;">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 28px 28px 24px;">
+                            <h1 style="margin: 0 0 16px; font-size: 23px; line-height: 30px; color: #2E6CF6;">Thông báo vô hiệu hóa tài liệu</h1>
+                            <p style="margin: 0 0 8px; font-size: 15px; line-height: 22px;" th:text="|Xin chào ${rcpName},|">Xin chào Nguyễn Văn A,</p>
+                            <p style="margin: 0 0 20px; font-size: 14px; line-height: 22px;">Tài liệu dưới đây đã được vô hiệu hóa. Bạn có thể mở trang chi tiết bằng nút bên dưới.</p>
+
+                            <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#F4F5FB" style="width: 100%; background-color: #F4F5FB; border: 1px solid #DCE4FA; border-radius: 8px;">
+                                <tr>
+                                    <td style="padding: 18px 20px;">
+                                        <p style="margin: 0 0 4px; font-size: 12px; line-height: 18px; color: #71787E;">Tài liệu</p>
+                                        <p style="margin: 0 0 14px; font-size: 16px; line-height: 23px; font-weight: bold; color: #2E6CF6; overflow-wrap: anywhere;" th:text="${envName}">Hợp đồng mẫu</p>
+
+                                        <p style="margin: 0 0 4px; font-size: 12px; line-height: 18px; color: #71787E;">Người gửi</p>
+                                        <p style="margin: 0 0 14px; font-size: 14px; line-height: 21px; overflow-wrap: anywhere;" th:text="${rqtMail}">nguoigui@example.com</p>
+
+                                        <p style="margin: 0 0 6px; font-size: 12px; line-height: 18px; color: #71787E;">Trạng thái</p>
+                                        <span style="display: inline-block; padding: 4px 10px; border-radius: 4px; background-color: #F9EBDD; color: #7C3D15; font-size: 13px; line-height: 20px; font-weight: bold;">Vô hiệu hóa</span>
+
+                                        <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid #DCE4FA;">
+                                            <p style="margin: 0 0 4px; font-size: 12px; line-height: 18px; color: #71787E;">Lý do vô hiệu hóa</p>
+                                            <p style="margin: 0; font-size: 14px; line-height: 21px; overflow-wrap: anywhere; white-space: pre-line;" th:text="${reason}">Thông tin tài liệu cần được cập nhật.</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td align="center" style="padding-top: 22px;">
+                                        <div th:if="${envStatus == 'completed'}">
+                                        <div th:if="${baseUrlInternal == 'null' || baseUrlInternal == null }">
+                                            <p style="margin: 0 0 4px; font-size: 12px; line-height: 18px; color: #71787E;">Mã truy cập</p>
+                                            <p style="margin: 0 0 16px; font-size: 22px; line-height: 28px; font-weight: bold; color: #121E28;">
+                                                <b th:with="code=(@{|${password}|})" th:text="${code}">••••••</b>
+                                            </p>
+                                            <a style="display: inline-block; padding: 10px 22px; border-radius: 4px; background-color: #2E6CF6; color: #FFFFFF; font-size: 14px; line-height: 22px; font-weight: bold; text-decoration: none;"
+                                               th:with="url=(@{|${baseUrl}/fi/${envId}/${rcpId}/act|})" th:href="${url}">XEM TÀI LIỆU</a>
+                                        </div>
+
+                                        <div th:if="${baseUrlInternal != 'null' && baseUrlInternal != null }">
+                                            <a style="display: inline-block; padding: 10px 22px; border-radius: 4px; background-color: #2E6CF6; color: #FFFFFF; font-size: 14px; line-height: 22px; font-weight: bold; text-decoration: none;"
+                                               th:with="urlInternal=(@{|${baseUrlInternal}|})" th:href="${urlInternal}">XEM TÀI LIỆU</a>
+                                        </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top; background: #FAFBFB; padding: 3% 5%;">
+                            <p style="font-weight: 600; font-size: 13px; line-height: 18px; margin-top: 0; margin-bottom: 4px;">KHÔNG CHIA SẺ</p>
+                            <p style="color: #71787E; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0; margin-bottom: 10px;">Email này chứa một mã bảo mật của FPT.eContract, vui lòng không chia sẻ email hoặc mã bảo mật này với người khác.</p>
+                            <p style="font-weight: 600; font-size: 13px; line-height: 18px; margin-top: 0; margin-bottom: 4px;">LƯU Ý</p>
+                            <p style="color: #71787E; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0; margin-bottom: 10px;">Đường link download hợp đồng có hiệu lực 36 tháng kể từ khi bắt đầu ký</p>
+                            <p style="font-weight: 600; font-size: 13px; line-height: 18px; margin-top: 0; margin-bottom: 4px;">GIỚI THIỆU VỀ FPT.eContract</p>
+                            <p style="color: #71787E; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0; margin-bottom: 10px;">FPT.eContract giúp bạn ký tài liệu điện tử trong vài phút. Sản phẩm an toàn, bảo mật, đảm bảo tính pháp lý. Cho dù bạn đang ở văn phòng, ở nhà, đang đi trên đường hay bất kỳ đất nước nào trên thế giới, FPT.eContract sẽ cung cấp giải pháp và dịch vụ đến với bạn.</p>
+                            <p style="font-weight: 600; font-size: 13px; line-height: 18px; margin-top: 0; margin-bottom: 4px;">CÂU HỎI VỀ TÀI LIỆU</p>
+                            <p style="color: #71787E; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0; margin-bottom: 0;">Nếu bạn cần sửa đổi hoặc có câu hỏi về nội dung trong tài liệu, vui lòng liên hệ với người gửi bằng cách gửi email trực tiếp cho họ. Nếu bạn gặp sự cố khi ký tài liệu, vui lòng truy cập trang Trợ giúp.</p>
+                        </td>
+                    </tr>
+                </table>
+                <!--[if mso]></td></tr></table><![endif]-->
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

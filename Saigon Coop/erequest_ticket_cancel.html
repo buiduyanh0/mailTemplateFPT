@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>[THÔNG BÁO KYTA]: GIAO DỊCH PHÁT SINH YÊU CẦU CHỈNH SỬA</title>
+    <style>
+      @media only screen and (max-width: 620px) {
+        .container { width: 100% !important; }
+        .mobile-padding { padding-left: 20px !important; padding-right: 20px !important; }
+      }
+    </style>
+  </head>
+  <body style="background-color: #ffffff; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.5; margin: 0; padding: 0;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; width: 100%; padding: 0;">
+      <tr>
+        <td align="center">
+          <table class="container" role="presentation" width="800" cellspacing="0" cellpadding="0" border="0" style="max-width: 800px; width: 100%; background-color: #ffffff; border: none; border-radius: 4px; overflow: hidden;">
+            
+            <!-- HEADER BANNER -->
+            <tr>
+              <td style="padding: 0; text-align: center; background-color: #ffffff;">
+                <img src="https://i.imgur.com/4NFT8F6.png" alt="Kyta Platform" style="display: block; width: 100%; max-width: 800px; height: auto; border: 0;">
+              </td>
+            </tr>
+
+            <!-- MAIN CONTENT AREA -->
+            <tr>
+              <td class="mobile-padding" style="padding: 32px 36px 36px 36px; background-color: #ffffff;">
+                
+                <!-- GREETING & INTRO -->
+                <h1 style="font-size: 21px; font-weight: 600; line-height: 28px; color: #6F2CED; margin: 0 0 12px 0;">
+                  Kính gửi <span th:text="${receiverName}">Nguyễn Văn A</span>,
+                </h1>
+                
+                <div style="font-size: 14px; line-height: 22px; color: #00204D; margin-bottom: 16px;">
+                  Cảm ơn quý khách đã sử dụng dịch vụ của <strong style="font-weight: 600;">KYTA PLATFORM</strong><br>
+                  Giao dịch <strong style="font-weight: 600;" th:text="${ticketName}">Hợp đồng vay tín chấp</strong> tại bước <strong style="font-weight: 600;" th:text="${userTaskName}">Xem xét hợp đồng</strong> đã phát sinh yêu cầu chỉnh sửa.<br>
+                  Vui lòng truy cập hệ thống KYTA để xem chi tiết nội dung yêu cầu và thực hiện chỉnh sửa nếu thuộc phạm vi xử lý của quý khách.
+                </div>
+
+                <div style="font-size: 14px; line-height: 22px; color: #00204D; margin-bottom: 24px;">
+                  <strong style="font-weight: 600;">Lưu ý:</strong> Nếu quý khách chưa thực hiện phê duyệt bước trên. Vui lòng bỏ qua email này!
+                </div>
+
+                <!-- TRANSACTION CARD -->
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #EDF2FD; border-radius: 8px; margin-bottom: 32px;">
+                  <tr>
+                    <td style="padding: 24px 32px;">
+                      <p style="font-size: 16px; font-weight: 600; line-height: 24px; color: #6F2CED; margin: 0 0 16px 0; text-align: left;">
+                        THÔNG TIN GIAO DỊCH
+                      </p>
+
+                      <div style="margin-bottom: 14px; text-align: left;">
+                        <span style="font-size: 13px; color: #5F6670; font-weight: 400; display: block; margin-bottom: 2px;">Tên giao dịch</span>
+                        <span style="font-size: 15px; color: #00204D; font-weight: 600; word-break: break-word;" th:text="${ticketName}">Hợp đồng vay tín chấp</span>
+                      </div>
+
+                      <div style="margin-bottom: 14px; text-align: left;">
+                        <span style="font-size: 13px; color: #5F6670; font-weight: 400; display: block; margin-bottom: 2px;">Bước xử lý</span>
+                        <span style="font-size: 15px; color: #00204D; font-weight: 600; word-break: break-word;" th:text="${userTaskName}">Xem xét hợp đồng</span>
+                      </div>
+
+                      <div style="margin-bottom: 14px; text-align: left;">
+                        <span style="font-size: 13px; color: #5F6670; font-weight: 400; display: block; margin-bottom: 2px;">Người yêu cầu chỉnh sửa</span>
+                        <span style="font-size: 15px; color: #00204D; font-weight: 600; word-break: break-word;" th:text="${bienForm_nguoiYeuCau}">Nguyễn Văn B</span>
+                      </div>
+
+                      <div style="margin-bottom: 20px; text-align: left;">
+                        <span style="font-size: 13px; color: #5F6670; font-weight: 400; display: block; margin-bottom: 2px;">Lý do yêu cầu chỉnh sửa</span>
+                        <span style="font-size: 15px; color: #00204D; font-weight: 600; word-break: break-word;" th:text="${bienForm_lyDo}">Bổ sung tài liệu hợp đồng</span>
+                      </div>
+
+                      <!-- CTA BUTTON -->
+                      <div style="text-align: center; margin-top: 12px;">
+                        <a th:with="url=(@{|https://erequest.sandbox.kytaplatform.com/workspace/dashboard|})"
+                           th:href="${url}"
+                           style="display: inline-block; padding: 10px 24px; font-size: 14px; font-weight: 500; color: #7F43EF; background: linear-gradient(92.13deg, rgba(0, 189, 142, 0.12) -10.74%, rgba(64, 188, 254, 0.4) 47.33%, rgba(116, 85, 254, 0.2) 100.27%); border-radius: 6px; text-decoration: none;">
+                          Xem chi tiết
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- KHÔNG CHIA SẺ -->
+                <div style="margin-bottom: 24px; text-align: left;">
+                  <p style="font-weight: 600; font-size: 16px; line-height: 24px; color: #00204D; margin: 0 0 4px 0;">
+                    KHÔNG CHIA SẺ
+                  </p>
+                  <p style="font-size: 14px; line-height: 22px; color: rgba(0, 32, 77, 0.9); margin: 0;">
+                    Emai này chứa một mã bảo mật của KYTA, vui lòng không chia sẻ email hoặc mã bảo mật này với người khác
+                  </p>
+                </div>
+
+                <!-- GIỚI THIỆU -->
+                <div style="text-align: left;">
+                  <p style="font-weight: 600; font-size: 16px; line-height: 24px; color: #00204D; margin: 0 0 4px 0;">
+                    GIỚI THIỆU
+                  </p>
+                  <p style="font-size: 14px; line-height: 22px; color: rgba(0, 32, 77, 0.9); margin: 0;">
+                    KYTA Platform là nền tảng định danh và ký kết điện tử. Cung cấp nhiều dịch vụ liên quan đến ký hết hợp đồng điện tử. Sản phẩm an toàn, bảo mật, đảm bảo tính pháp lý
+                  </p>
+                </div>
+
+              </td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

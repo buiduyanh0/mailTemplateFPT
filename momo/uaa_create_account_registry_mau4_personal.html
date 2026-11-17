@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<head>
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>FptContact Email</title>
+  <style>
+    @media only screen and (max-width: 620px) {
+      table[class=body] h1 {
+        font-size: 28px !important;
+        margin-bottom: 10px !important;
+      }
+      table[class=body] p,
+      table[class=body] ul,
+      table[class=body] ol,
+      table[class=body] td,
+      table[class=body] span,
+      table[class=body] a {
+        font-size: 16px !important;
+      }
+      table[class=body] .wrapper,
+      table[class=body] .article {
+        padding: 10px !important;
+      }
+      table[class=body] .content {
+        padding: 0 !important;
+      }
+      table[class=body] .container {
+        padding: 0 !important;
+        width: 100% !important;
+      }
+      table[class=body] .main {
+        border-left-width: 0 !important;
+        border-radius: 0 !important;
+        border-right-width: 0 !important;
+      }
+      table[class=body] .btn table {
+        width: 100% !important;
+      }
+      table[class=body] .btn a {
+        width: 100% !important;
+      }
+      table[class=body] .img-responsive {
+        height: auto !important;
+        max-width: 100% !important;
+        width: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="" style="background-color: #E5E5E5; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 12px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+<table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background-color: #f6f6f6;">
+  <tr>
+    <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+    <td class="container" style="font-family: sans-serif; font-size: 12px; vertical-align: top; display: block; Margin: 0 auto; max-width: 800px; padding: 10px; width: 800px;">
+      <div class="content" style="box-sizing: border-box; display: block; Margin: 0 auto; max-width: 800px; padding: 10px;">
+
+        <!-- START CENTERED WHITE CONTAINER -->
+        <div class="header" style="display: inline-block;clear: both;text-align: center;width: 100%; margin-bottom: 26px;">
+          <img src="https://i.imgur.com/n7eCnbh.png" alt="FPT.eContract" style="float: left;height: auto;min-height: 32px;width: 100%; padding-bottom: 0px;">
+        </div>
+        <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+
+          <!-- START MAIN CONTENT AREA -->
+          <tr>
+            <td class="wrapper" style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding: 40px;">
+              <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                <tr>
+                  <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                    <div style="background: rgba(233, 234, 247, 0.8);padding: 40px;margin-bottom: 24px;">
+                      <h1 style="
+                                                    font-weight: bold;
+                                                    font-size: 18px;
+                                                    line-height: 24px;
+                                                    color: #a50064;
+                                                    margin-bottom: 16px;
+                                                    margin-top: 0;" th:switch="${cusType}">
+                        <span th:case="P" th:with="dearCustomer=(@{|Kính gửi quý khách hàng,|})" th:text="${dearCustomer}">Kính gửi quý khách hàng / <span style="font-style: italic;"> Dear Customer,</span></span>
+                        <span th:case="O" th:with="dearCompany=(@{|Kính gửi quý doanh nghiệp,|})" th:text="${dearCompany}">Kính gửi quý doanh nghiệp / <span style="font-style: italic;"> Dear Business,</span> </span>
+                      </h1>
+                      <span style="
+                                                    margin-top: 0;
+                                                    font-weight: 500;
+                                                    font-size: 14px;
+                                                    line-height: 24px;
+                                                    color: #121E28;
+                                                    margin-bottom: 32px;"
+                         >Cảm ơn quý khách đã tin tưởng và lựa chọn sử dụng dịch vụ của FPT.eContract ! / </span> <br>
+
+                      <span style="
+                                                    margin-top: 0;
+                                                    font-weight: 500;
+                                                    font-size: 14px;
+                                                    line-height: 24px;
+                                                    color: #121E28;
+                                                    font-style: italic;
+                                                    margin-bottom: 32px;"
+                            >Thank you for trusting and  choosing to use FPT eContract services !</span> <br>
+                      <span style="font-weight: bold;
+                                                    font-size: 16px;
+                                                    line-height: 24px;
+                                                    color: #a50064;
+                                                    margin-top: 0;
+                                                    margin-bottom: 16px;"
+                         th:with="inforLogin=(@{|Tài khoản đăng nhập của quý khách là: |})" th:text="${inforLogin}">Tài khoản đăng nhập của quý khách là /</span>
+                      <span style="font-weight: bold;
+                                                    font-size: 16px;
+                                                    line-height: 24px;
+                                                    color: #a50064;
+                                                    margin-top: 0;
+                                                    font-style: italic;
+                                                    margin-bottom: 16px;">Your login account :</span> <br>
+                      <span style="
+                                                    font-weight: 500;
+                                                    font-size: 14px;
+                                                    line-height: 24px;
+                                                    margin-top: 0;
+                                                    margin-bottom: 32px;
+                                                ">
+                        <span th:with="theAccount=(@{|Tên tài khoản / Account name: |})" th:text="${theAccount}">Tên tài khoản / </span><span style="font-style: italic;">Account name:</span> <span style="font-weight: bold;" th:text="${account}">nenpt@fpt.com.vn</span><br>
+                        <span th:with="thePassWord=(@{|Mật khẩu đăng nhập là: |})" th:text="${thePassWord}">Mật khẩu đăng nhập là /  </span><span style="font-style: italic;">Login password:</span> <span style="font-weight: bold;" th:text="${password}">123456a@</span></span>
+
+                      <div style="width: 100%; text-align: center; margin-top: 20px">
+                        <a th:with="url=(@{|${baseUrl}|})"
+                           th:href="${url}"  style="
+                                                    font-size: 14px;
+                                                    line-height: 24px;
+                                                    padding: 8px 24px;
+                                                    font-weight: bold;
+                                                    text-decoration: none;
+                                                    margin-bottom: 0;
+                                                    display: inline-block;
+                                                    background: #a50064;
+                                                    color: #fff;
+                                                ">Đăng nhập / <span style="font-style: italic;">Login</span> </a>
+                      </div>
+
+                    </div>
+                    <p style="
+                                                font-weight: 600;
+                                                font-size: 13px;
+                                                line-height: 18px;
+                                                margin-top: 0;
+                                                margin-bottom: 4px;
+                                            ">KHÔNG CHIA SẺ / <span style="font-style: italic;">DO NOT SHARE</span> </p>
+                    <p style="
+                                                color: #71787E;
+                                                font-weight: normal;
+                                                font-size: 12px;
+                                                line-height: 18px;
+                                                margin-top: 0;
+                                                margin-bottom: 10px;
+                                            ">Email này chứa một mã bảo mật của FPT.eContract, vui lòng không chia sẻ email hoặc mã bảo mật này với người khác. / <span style="font-style: italic;">
+                                   This email contains a security code of FPT.eContract, please do not share this email or
+                                security code with others.
+                               </span></p>
+<!--                    <p style="-->
+<!--                                                font-weight: 600;-->
+<!--                                                font-size: 13px;-->
+<!--                                                line-height: 18px;-->
+<!--                                                margin-top: 0;-->
+<!--                                                margin-bottom: 4px;-->
+<!--                                            ">GIỚI THIỆU VỀ FPT.eContract</p>-->
+<!--                    <p style="-->
+<!--                                                color: #71787E;-->
+<!--                                                font-weight: normal;-->
+<!--                                                font-size: 12px;-->
+<!--                                                line-height: 18px;-->
+<!--                                                margin-top: 0;-->
+<!--                                                margin-bottom: 10px;-->
+<!--                                            ">FPT.eContract giúp bạn ký tài liệu điện tử trong vài phút. Sản phẩm an toàn, bảo mật, đảm bảo tính pháp lý. Cho dù bạn đang ở văn phòng, ở nhà, đang đi trên đường hay bất kỳ đất nước nào trên thế giới, FPT.eContract sẽ cung cấp giải pháp và dịch vụ đến với bạn.</p>-->
+                    <p style="
+                                                font-weight: 600;
+                                                font-size: 13px;
+                                                line-height: 18px;
+                                                margin-top: 0;
+                                                margin-bottom: 4px;
+                                            ">CÂU HỎI VỀ TÀI LIỆU / <span style="font-style: italic;">QUESTIONS ABOUT DOCUMENTS</span></p>
+                    <p style="
+                                                color: #71787E;
+                                                font-weight: normal;
+                                                font-size: 12px;
+                                                line-height: 18px;
+                                                margin-top: 0;
+                                                margin-bottom: 0;
+                                            ">Nếu bạn cần sửa đổi hoặc có câu hỏi về nội dung trong tài liệu, vui lòng liên hệ với người gửi bằng cách gửi email trực tiếp cho họ. Nếu bạn gặp sự cố khi ký tài liệu, vui lòng truy cập trang Trợ giúp. /
+                      <span style="font-style: italic;">
+                                   If you need to make changes or have questions about the content in the document, please
+                                contact the sender by emailing them directly. If you are having trouble signing
+                                documents, please visit the Help page.
+                               </span> </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- END MAIN CONTENT AREA -->
+        </table>
+
+        <!-- START FOOTER -->
+<!--        <div class="footer" style="clear: both;text-align: center;width: 100%;height: 50px;background-size: cover;">-->
+<!--          <img style="width: 100%;height: 110px;" src="https://i.imgur.com/X3JYb4s.png">-->
+<!--        </div>-->
+        <!-- END FOOTER -->
+
+        <!-- END CENTERED WHITE CONTAINER -->
+      </div>
+    </td>
+    <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+  </tr>
+</table>
+</body>
+
+</html>
+<!-- uaa-create-account-registry-->

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FptContact Email</title>
+</head>
+
+<body class="" style="background-color: #E5E5E5;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size: 12px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;padding: 0;background-color: #ffffff;">
+    <tbody>
+    <tr>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+        <td class="container" style="font-family: sans-serif;font-size: 12px;vertical-align: top;display: block;margin: 0 auto;max-width: 800px;padding: 0;width: 800px;">
+            <div class="content" style="box-sizing: border-box;display: block;Margin: 0;max-width: 800px;padding: 0;">
+
+                <!-- START CENTERED WHITE CONTAINER -->
+                <div class="header" style="text-align: center; width: 100%; background: white;">
+                    <img src="https://i.imgur.com/l0QLMwZ.jpeg" alt="" style="max-width: 38%; height: auto; min-height: 32px; display: inline-block;">
+                </div>
+                <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+
+                    <!-- START MAIN CONTENT AREA -->
+                    <tr>
+                        <td class="wrapper" style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding: 5%;padding-bottom: 0;">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                <tr>
+                                    <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                                        <h1 style="
+                                                font-weight: bold;
+                                                font-size: 18px;
+                                                line-height: 24px;
+                                                color: #4caf50;
+                                                margin-bottom: 24px;
+                                                margin-top: 0;
+                                            "
+                                            th:with="rqtNameMail=(@{|Xin chào / Hi ${rqtMail}|})"  th:text="${rqtNameMail}"
+                                        >Xin chào Nguyễn Văn A,</h1>
+                                        <div style="background: rgba(233, 234, 247, 0.5);margin-bottom: 16px;text-align: center;padding-top: 24px;">
+                                            <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                color: #121E28;
+                                                    ">Tài liệu được gửi từ / Documents sent from <br>
+                                                <b style="color: #4caf50">Phòng nhân sự Công ty TNHH Manulife (Việt Nam) / Human Resources Department, Manulife Company Limited (Vietnam)</b><br>
+                                                <span><b>Hợp đồng lao động / Labor contract</b></span>
+                                            </p>
+
+                                            <b th:switch="${envStatus}"> <span th:case="rejected"
+                                                                               th:with="finishstatus=(@{| BỊ TỪ CHỐI / REJECTED|})"
+                                                                               th:text="${finishstatus}">Bị từ chối</span> <span
+                                                    th:case="completed"
+                                                    th:with="finishstatus=(@{| ĐÃ HOÀN THÀNH / COMPLETED|})"
+                                                    th:text="${finishstatus}">Hoàn thành</span> <span
+                                                    th:case="voided" th:with="finishstatus=(@{| BỊ HỦY / VOIDED |})"
+                                                    th:text="${finishstatus}">Bị hủy </span> <span
+                                                    th:case="overdue" th:with="finishstatus=(@{| ĐÃ QUÁ HẠN / OVERDUE |})"
+                                                    th:text="${finishstatus}">Quá hạn </span>
+
+                                            </b>
+                                            </p><br style="line-height: 12px;">
+
+                                            <div th:if="${envStatus == 'rejected'}">
+                                                <p style="
+                                                    font-weight:normal;
+                                                    margin-top: 5px;
+                                                    margin-bottom: 16px;
+                                                    font-size: 12px;
+                                                    line-height: 20px;
+                                                    color: red;
+                                                    text-align: center;
+                                                    ">
+                                                    <b style="font-weight: normal;" th:switch="${reason}">
+                                                        <span th:case="null"></span>
+                                                        <span th:case="'null'"></span>
+                                                        <span th:case="''"></span>
+                                                        <span th:case="*"
+                                                              th:with="reasonTo=(@{|Lý do từ chối / Reason for rejection ${reason} |})"
+                                                              th:text="${reasonTo}"
+                                                        >
+                                                            Lý do từ chối
+                                                            </span>
+                                                    </b>
+                                                </p>
+                                            </div>
+                                            <!--VOIDED-->
+                                            <div th:if="${envStatus == 'voided'}">
+                                                <p style="
+                                                        font-weight:normal;
+                                                        margin-top: 5px;
+                                                        margin-bottom: 16px;
+                                                        font-size: 12px;
+                                                        line-height: 20px;
+                                                        color: red;
+                                                        text-align: center;
+                                                        ">
+                                                    <b style="font-weight: normal;" th:switch="${requesterReason}">
+                                                        <span th:case="null"></span>
+                                                        <span th:case="'null'"></span>
+                                                        <span th:case="''"></span>
+                                                        <span th:case="*"
+                                                              th:with="reasonTo=(@{|Lý do hủy / Reason for cancellation ${requesterReason}|})"
+                                                              th:text="${reasonTo}"
+                                                        >
+                                                                Lý do hủy
+                                                                </span>
+                                                    </b>
+                                                </p>
+                                            </div>
+                                        </div>
+
+
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;background: #FAFBFB;padding:
+                      3% 5%;">
+                            <p style=" font-weight: 600; font-size: 13px; line-height: 18px; margin-top: 0; margin-bottom: 4px;
+                        ">KHÔNG CHIA SẺ / DO NOT SHARE</p>
+                            <p style=" color: #71787E; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0;
+                        margin-bottom: 10px; ">Email này chứa một mã bảo mật của Manulife.eContract, vui lòng không chia sẻ
+                                email hoặc mã bảo mật này với người khác. / This email contains a Manulife.eContract security code, please do not share this email or security code with others.</p>
+                            <p style=" font-weight: 600; font-size: 13px; line-height: 18px; margin-top: 0; margin-bottom: 4px;
+                        ">CÂU HỎI VỀ TÀI LIỆU / QUESTIONS ABOUT DOCUMENTS</p>
+                            <p style=" color: #71787E; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0;
+                        margin-bottom: 0; ">Nếu bạn cần sửa đổi hoặc có câu hỏi về nội dung trong tài liệu, vui lòng
+                                liên hệ Vietnam_AskHR@manulife.com. Nếu bạn gặp sự cố khi ký tài liệu,
+                                vui lòng truy cập trang Trợ giúp. / If you need to make changes or have questions about the content of the document, please contact Vietnam_AskHR@manulife.com. If you are having trouble signing the document, please visit the Help page.</p>
+                        </td>
+                    </tr>
+
+                    <!-- END MAIN CONTENT AREA -->
+                </table>
+
+                <!-- END CENTERED WHITE CONTAINER -->
+            </div>
+        </td>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+    </tr>
+</table>
+</body>
+
+</html>

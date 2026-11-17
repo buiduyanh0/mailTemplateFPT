@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FptContact Email</title>
+</head>
+
+<body class="" style="background-color: #E5E5E5;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size: 12px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;padding: 0;background-color: #ffffff;">
+    <tbody>
+    <tr>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+        <td class="container" style="font-family: sans-serif;font-size: 12px;vertical-align: top;display: block;margin: 0 auto;max-width: 800px;padding: 0;width: 800px;">
+            <div class="content" style="box-sizing: border-box;display: block;Margin: 0;max-width: 800px;padding: 0;">
+
+                <!-- START CENTERED WHITE CONTAINER -->
+                <div class="header"
+                     style="display: inline-block;clear: both;text-align: center;width: 100%;     background-size: cover;">
+                    <img src="https://i.imgur.com/r1S7Eoh.png" alt="FPT.eContract"
+                         style="float: left;padding: 3% 0 0 0;max-width: 99.5%;height: auto;min-height: 32px;">
+                </div>
+                <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+
+                    <!-- START MAIN CONTENT AREA -->
+                    <tr>
+                        <td class="wrapper" style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding: 5%;padding-bottom: 0;">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                <tr>
+                                    <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                                        <h1 style="
+                                                font-weight: bold;
+                                                font-size: 16px;
+                                                line-height: 22px;
+                                                color: #111111;
+                                                margin-bottom: 15px;
+                                                margin-top: 0;
+                                            "
+
+                                        >Hợp đồng điện tử <span th:with="noEnv=(@{|${envNo}|})"th:text="${noEnv}">11111</span></h1>
+                                        <h1 style="
+                                                font-weight: bold;
+                                                font-size: 16px;
+                                                line-height: 22px;
+                                                color: #111111;
+                                                margin-bottom: 0px;
+                                                margin-top: 0;
+                                            "
+                                            th:with="rcpNameMail=(@{|Chào anh/chị ${rcpName}|})"  th:text="${rcpNameMail}"
+                                        >Xin chào Nguyễn Văn A,</h1>
+                                        <div style="margin-bottom: 16px;text-align: left;padding-top: 20px;">
+                                            <div th:if="${baseUrlInternal == 'null' || baseUrlInternal == null }">
+                                                <div style="font-size: 14px;
+                                                            line-height: 20px;
+                                                            color: #111111;
+                                                            font-weight: 500;
+                                                            text-align: left;
+                                                ">Công ty GSM gửi tới anh/chị thông tin hợp đồng. Anh/chị vui lòng kiểm tra lại thông tin và thực hiện ký điện tử với các thông tin,</div>
+                                                <ul style="text-align: left; line-height: 20px; font-size: 14px">
+                                                    <li>Số hợp đồng: <span style="font-weight: bold;
+                                                    "th:with="noEnv=(@{|${envNo}|})"th:text="${noEnv}">122311</span></li>
+                                                    <li>Xem & ký văn bản:
+                                                        <a style="
+                                                                font-size: 14px;
+                                                                line-height: 24px;
+                                                                font-weight: bold;
+                                                                color: #2E6CF6; "
+                                                                               th:with="url=(@{|${baseUrl}/fi/${envId}/${rcpId}/act|})" th:href="${url}"
+                                                    >NHẤN VÀO ĐÂY ĐỂ MỞ HỢP ĐỒNG</a></li>
+                                                    <li>Mật khẩu: <span style="font-weight: 600;"
+                                                                        th:with="code=(@{|${password}|})" th:text="${code}"
+                                                    >password</span></li>
+                                                    <li>Thời hạn ký: trong vòng 24h kể từ thời điểm nhận được thông báo</li>
+                                                    <li>Hướng dẫn ký điện tử: <a href="https://s.kyta.fpt.com/s/XEseIbR">Tại đây</a></li>
+                                                </ul>
+                                                <div style="font-size: 14px; line-height: 16px">
+                                                    <p style="font-weight: bold; margin-bottom: 0">Nếu anh/chị có bất kỳ vướng mắc nào, vui lòng liên hệ với chuyên viên vận hành phụ trách.</p>
+                                                </div>
+                                                <br/>
+                                            </div>
+                                            <div th:if="${baseUrlInternal != 'null' && baseUrlInternal != null }">
+                                                <div style="font-size: 14px;
+                                                            line-height: 20px;
+                                                            color: #111111;
+                                                            font-weight: 500;
+                                                            text-align: left;
+                                                ">Anh/Chị có một hợp đồng mới <span style="font-weight: bold" th:with="noEnv=(@{|${envNo}|})"th:text="${noEnv}">CONTRACT-NO</span> cần xử lý,</div>
+                                                <ul style="text-align: left; line-height: 20px; font-size: 14px">
+                                                    <li>Số hợp đồng: <span style="font-weight: bold;
+                                                    "th:with="noEnv=(@{|${envNo}|})"th:text="${noEnv}">122311</span></li>
+                                                    <li>Click vào đây để xử lý hợp đồng:
+                                                        <a style="
+                                                                font-size: 14px;
+                                                                line-height: 24px;
+                                                                font-weight: bold;
+                                                                color: #2E6CF6; "
+                                                           th:with="urlInternal=(@{|${baseUrlInternal}|})" th:href="${urlInternal}">XEM TÀI LIỆU</a></li>
+                                                    <li>Tài khoản và mật khẩu: Sử dụng tài khoản AD VinGroup</li>
+                                                </ul>
+                                            </div>
+                                            <div style="font-size: 14px; line-height: 16px">
+                                                <p style="margin-top: 0">Trân trọng cảm ơn,</p>
+                                                Công ty Cổ phần Di chuyển Xanh và Thông minh GSM.
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- END MAIN CONTENT AREA -->
+                </table>
+
+                <!-- END CENTERED WHITE CONTAINER -->
+            </div>
+        </td>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+    </tr>
+</table>
+</body>
+
+</html>

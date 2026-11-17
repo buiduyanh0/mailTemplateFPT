@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FPT.eContract</title>
+</head>
+
+<body style="margin:0;padding:0;background:#FFFFFF;font-family:Arial,sans-serif;font-size:14px;line-height:1.5;">
+<table style="width:100%;background:#FFFFFF;">
+    <tr>
+        <td align="center">
+            <!-- CONTAINER -->
+            <table align="center" style="max-width:800px;width:100%;background:#ffffff;margin:0 auto;">
+
+                <!-- ================= HEADER ================= -->
+                <tr>
+                    <td><img src="https://raw.githubusercontent.com/phamuyen19091999-star/public-assets/main/Header.png"
+                             alt="La Vie Header" style="width:100%;display:block;border:0;"></td>
+                </tr>
+
+                <!-- ================= CONTENT ================= -->
+                <tr>
+                    <td style="padding:32px 40px; color:#000000;">
+
+                        <!-- GREETING -->
+                        <p style="margin:0 0 20px 0;">Xin chào <span th:text="${genderTitle}">anh/chị</span> <b th:text="${rcpName}">Nguyễn Văn A</b>,</p>
+
+                        <!-- DOCUMENT TITLE -->
+                        <p style="margin:0 0 8px 0;">Tài liệu</p>
+                        <p style="margin:0 0 20px 0;"><b th:text="${envName}">Tên hợp đồng</b> đã kết thúc quá trình ký.</p>
+
+                        <!-- RESULT -->
+                        <p style="margin:0 0 20px 0;"><b>KẾT QUẢ:</b>
+                            <span th:switch="${envStatus}">
+                                <span th:case="completed">Đã hoàn thành</span>
+                                <span th:case="rejected">Bị từ chối</span>
+                                <span th:case="voided">Bị hủy</span>
+                                <span th:case="overdue">Quá hạn</span>
+                            </span>
+                        </p>
+
+                        <!-- REJECT REASON -->
+                        <p th:if="${envStatus == 'rejected'}" style="margin:0 0 20px 0;">Lý do (nếu bị từ chối):
+                            <b style="font-weight: normal;" th:switch="${reason}">
+                                <span th:case="null"></span>
+                                <span th:case="'null'"></span>
+                                <span th:case="''"></span>
+                                <span th:case="*" th:text="${reason}"></span>
+                            </b>
+                        </p>
+
+                        <!-- VOID REASON -->
+                        <p th:if="${envStatus == 'voided'}" style="margin:0 0 20px 0;">Lý do (nếu bị hủy):
+                            <b style="font-weight: normal;" th:switch="${requesterReason}">
+                                <span th:case="null"></span>
+                                <span th:case="'null'"></span>
+                                <span th:case="''"></span>
+                                <span th:case="*" th:text="${requesterReason}"></span>
+                            </b>
+                        </p>
+
+                        <!-- ACCESS CODE + CTA (CENTER) - chỉ hiển thị khi hoàn thành -->
+                        <table th:if="${envStatus == 'completed'}" align="center" style="width:100%;">
+                            <tr>
+                                <td style="padding:16px 0 24px 0; text-align:center;">
+                                    <p style="margin:0 0 6px 0;">Mã truy cập</p>
+                                    <p style="margin:0 0 20px 0; font-size:20px; font-weight:bold; letter-spacing:2px;" th:text="${password}">fptsoft</p>
+                                    <a th:href="|${baseUrl}/fi/${envId}/${rcpId}/act|" style=" display:inline-block; padding:12px 28px; background:#00265a; color:#ffffff; text-decoration:none; font-weight:bold; font-size:14px;">TẢI TÀI LIỆU</a>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </td>
+                </tr>
+
+                <!-- ================= NOTICE ================= -->
+                <tr>
+                    <td style="padding:24px 40px;background:#FAFBFB;font-size:12px;color:#71787E;">
+                        <p style="margin:0 0 6px 0;font-weight:bold;color:#000;">KHÔNG CHIA SẺ</p>
+                        <p style="margin:0 0 12px 0;">Email này chứa mã bảo mật của LA VIE/FPT.eContract. Vui lòng không chia sẻ email hoặc mã bảo mật này cho bất kỳ ai.</p>
+                        <p style="margin:0 0 12px 0;">Đường link tải hợp đồng có hiệu lực 1 tháng kể từ khi bắt đầu ký.</p>
+                        <p style="margin:0 0 6px 0;font-weight:bold;color:#000;">CÂU HỎI VỀ TÀI LIỆU</p>
+                        <p style="margin:0;">Nếu bạn cần thêm thông tin về nội dung tài liệu hoặc gặp sự cố khi ký, vui lòng liên hệ với bộ phận nhân sự tại nơi bạn làm việc để được hỗ trợ.</p>
+                    </td>
+                </tr>
+
+                <!-- ================= FOOTER ================= -->
+                <tr>
+                    <td><img src="https://raw.githubusercontent.com/phamuyen19091999-star/public-assets/main/Footer.png"
+                             alt="La Vie Footer" style="width:100%;display:block;border:0;"></td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+
+</html>

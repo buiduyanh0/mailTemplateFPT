@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FptContact Email</title>
+</head>
+
+<body class=""
+      style="background-color: #E5E5E5; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 12px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+<table border="0" cellpadding="0" cellspacing="0" class="body"
+       style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; padding: 0; background-color: #ffffff;">
+    <tbody>
+    <tr>
+        <td
+                style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;
+        </td>
+        <td class="container"
+            style="font-family: sans-serif; font-size: 12px; vertical-align: top; display: block; margin: 0 auto; max-width: 800px; padding: 0; width: 800px;">
+            <div class="content"
+                 style="box-sizing: border-box; display: block; Margin: 0; max-width: 800px; padding: 0;">
+
+                <!-- START CENTERED WHITE CONTAINER -->
+                <div class="header"
+                     style="display: inline-block;clear: both;text-align: center;width: 100%;">
+                    <img src="https://i.imgur.com/HmfbDDJ.png" alt="FPT.eContract"
+                         style="float: left;max-width: 100%;height: auto;min-height: 32px;">
+                </div>
+                <table class="main"
+                       style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+
+                    <!-- START MAIN CONTENT AREA -->
+                    <tr>
+                        <td class="wrapper"
+                            style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding: 5%; padding-bottom: 0;">
+                            <table border="0" cellpadding="0" cellspacing="0"
+                                   style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                <tr>
+                                    <td
+                                            style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                                        <h1
+                                                style="
+                                                font-weight: bold;
+                                                font-size: 18px;
+                                                line-height: 24px;
+                                                color: #CE202F;
+                                                margin-bottom: 8px;
+                                                margin-top: 0;
+                                            "
+                                                th:with="rqtNameMail=(@{|Xin chào / Hi ${rcpName}|})" th:text="${rqtNameMail}">Xin chào / Hi
+                                            Nguyễn Văn A,</h1>
+                                        <div
+                                                style="background: #FCEEED; padding-bottom: 16px; text-align: center; padding-top: 24px;">
+
+                                            <p style="font-weight: 600; margin-top: 0; margin-bottom: 16px; font-size: 14px; line-height: 20px; color: #121E28;" >
+                                                Tài liệu được gửi từ / Documents sent from: <br>
+                                                <span
+                                                        style="color: #121E28; font-weight: bold;"
+                                                        th:with="nameDocSend=(@{| ${rqtMail} |})"
+                                                        th:text="${nameDocSend}"> uyenpht23@gmail.com </span>
+                                            </p>
+                                            <p style="font-weight: 600; margin-top: 0; margin-bottom: 16px; font-size: 14px; line-height: 20px; color: #121E28;"
+                                            > Tài liệu / Document:<br>
+
+                                                <span
+                                                        style="color: #121E28; font-weight: bold;"
+                                                        th:with="nameEnv=(@{|${envName}|})"
+                                                        th:text="${nameEnv}">Hợp đồng công nghệ
+																thông 2019 đã kết thúc</span>
+                                            </p>
+
+                                            <p
+                                                    style="font-weight: bold; font-size: 22px; line-height: 24px; color: #121E28; margin-top: 0; margin-bottom: 32px;">
+                                                <b th:switch="${envStatus}">
+                                                    <!--                          <span th:case="rejected"-->
+                                                    <!--                                                           th:with="finishstatus=(@{| BỊ TỪ CHỐI / WAS REJECTED|})"-->
+                                                    <!--                                                           th:text="${finishstatus}">Bị từ chối / Was rejected</span>-->
+                                                    <span
+                                                            th:case="completed"
+                                                            th:with="finishstatus=(@{| ĐÃ HOÀN THÀNH / COMPLETED|})"
+                                                            th:text="${finishstatus}">ĐÃ HOÀN THÀNH / COMPLETED</span>
+                                                    <!--                          <span-->
+                                                    <!--                                  th:case="voided" th:with="finishstatus=(@{| BỊ HỦY / WAS CANCELED|})"-->
+                                                    <!--                                  th:text="${finishstatus}">Bị hủy / Was canceled</span> <span-->
+                                                    <!--                                  th:case="overdue" th:with="finishstatus=(@{| ĐÃ QUÁ HẠN / OVERDUED|})"-->
+                                                    <!--                                  th:text="${finishstatus}">Quá hạn / Overdued </span>-->
+
+                                                </b>
+                                            </p>
+
+                                            <div th:if="${envStatus == 'completed'}">
+                                                <div th:if="${baseUrlInternal == 'null' || baseUrlInternal == null }">
+                                                    <p
+                                                            style="font-weight: 600; margin-top: 0; margin-bottom: 4px; font-size: 12px; line-height: 18px; color: #121E28;"
+                                                            th:with="codetitle=(@{|Mã truy cập / Access code|})"
+                                                            th:text="${codetitle}">Mã truy cập / Access code</p>
+
+                                                    <p
+                                                            style="font-weight: bold; font-size: 22px; line-height: 24px; color: #121E28; margin-top: 0; margin-bottom: 32px;">
+                                                        <b th:with="code=(@{|${password}|})" th:text="${code}">fptsoft</b>
+                                                    </p>
+                                                    <a
+                                                            style="
+                                                                font-size: 14px;
+                                                                line-height: 22px;
+                                                                padding: 9px 16px;
+                                                                font-weight: 500;
+                                                                border-radius: 8px;
+                                                                text-decoration: none;
+                                                                margin-bottom: 0;
+                                                                 display: inline-block;
+                                                                 cursor: pointer;
+                                                                 background: #EE3D72;
+                                                                 color: #FFFFFF;"
+                                                            th:with="url=(@{|${baseUrl}/fi/${envId}/${rcpId}/act|})"
+                                                            th:href="${url}">TẢI TÀI LIỆU / DOWNLOAD DOCUMENT</a>
+                                                </div>
+                                                <div th:if="${baseUrlInternal != 'null' && baseUrlInternal != null }">
+                                                    <a style="
+                                                                font-size: 14px;
+                                                                line-height: 22px;
+                                                                padding: 9px 16px;
+                                                                font-weight: 500;
+                                                                border-radius: 8px;
+                                                                text-decoration: none;
+                                                                margin-bottom: 0;
+                                                                 display: inline-block;
+                                                                 cursor: pointer;
+                                                                 background: #EE3D72;
+                                                                 color: #FFFFFF;"
+                                                       th:with="urlInternal=(@{|${baseUrlInternal}|})"
+                                                       th:href="${urlInternal}"
+                                                    >TẢI TÀI LIỆU / DOWNLOAD DOCUMENT </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td
+                                style="font-family: sans-serif; font-size: 12px; vertical-align: top; background: #FAFBFB; padding: 3% 5%;">
+                            <p
+                                    style="font-weight: 600; font-size: 13px; line-height: 18px; margin-top: 0; margin-bottom: 4px;">KHÔNG
+                                CHIA SẺ / DO NOT SHARE</p>
+                            <p
+                                    style="color: #71787E; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0; margin-bottom: 10px;">
+                                Email
+                                này chứa một mã bảo mật của FPT.eContract, vui lòng không chia
+                                sẻ email hoặc mã bảo mật này với người khác. /
+                                This email contains a security code of FPT.eContract, please do not share this email or security code
+                                with others.</p>
+                            <!--              <p-->
+                            <!--                style="font-weight: 600; font-size: 13px; line-height: 18px; margin-top: 0; margin-bottom: 4px;">LƯU-->
+                            <!--                Ý</p>-->
+                            <!--              <p-->
+                            <!--                style="color: #71787E; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0; margin-bottom: 10px;">Đường-->
+                            <!--                link download hợp đồng có hiệu lực 1 tháng kể từ khi bắt đầu-->
+                            <!--                ký</p>-->
+                            <p
+                                    style="font-weight: 600; font-size: 13px; line-height: 18px; margin-top: 0; margin-bottom: 4px;">GIỚI
+                                THIỆU VỀ FPT.eContract / ABOUT ECONTRACT</p>
+                            <p
+                                    style="color: #71787E; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0; margin-bottom: 10px;">
+                                FPT.eContract
+                                giúp bạn ký tài liệu điện tử trong vài phút. Sản phẩm an toàn,
+                                bảo mật, đảm bảo tính pháp lý. Cho dù bạn đang ở văn phòng, ở
+                                nhà, đang đi trên đường hay bất kỳ đất nước nào trên thế giới,
+                                FPT.eContract sẽ cung cấp giải pháp và dịch vụ đến với bạn. /
+                                FPT.eContract helps you sign e-documents in minutes. The product is safe, secure, and legally
+                                guaranteed. Whether you are in the office, at home, on the road or anywhere in the world, FPT.eContract
+                                will provide solutions and services to you.</p>
+                            <p
+                                    style="font-weight: 600; font-size: 13px; line-height: 18px; margin-top: 0; margin-bottom: 4px;">CÂU
+                                HỎI VỀ TÀI LIỆU / QUESTIONS ABOUT DOCUMENTS</p>
+                            <p
+                                    style="color: #71787E; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0; margin-bottom: 0;">
+                                Nếu
+                                bạn cần sửa đổi hoặc có câu hỏi về nội dung trong tài liệu,
+                                vui lòng liên hệ với người gửi bằng cách gửi email trực tiếp
+                                cho họ. Nếu bạn gặp sự cố khi ký tài liệu, vui lòng truy cập
+                                trang Trợ giúp. /
+                                If you need to make changes or have questions about the content in the document, please contact the
+                                sender by emailing them directly. If you are having trouble signing documents, please visit the Help
+                                page.</p>
+                        </td>
+                    </tr>
+
+                    <!-- END MAIN CONTENT AREA -->
+                </table>
+
+                <!-- END CENTERED WHITE CONTAINER -->
+            </div>
+        </td>
+        <td
+                style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;
+        </td>
+    </tr>
+</table>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FptContact Email</title>
+</head>
+
+<body style="background-color: #ffffff; color: #F5F5F5; font-family: Arial, sans-serif; -webkit-font-smoothing: antialiased; font-size: 12px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+<table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; padding: 0; background-color: #ffffff;">
+    <tbody>
+    <tr>
+        <td style="font-family: Arial, sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+        <td class="container" style="font-family: Arial, sans-serif; font-size: 12px; vertical-align: top; display: block; margin: 0 auto; max-width: 720px; padding: 20px; width: 100%; box-sizing: border-box;">
+            <div class="content" style="box-sizing: border-box; display: block; margin: 0; max-width: 720px; padding: 0; background-color: #151719;">
+
+                <!-- START CENTERED WHITE CONTAINER -->
+                <div class="header" style="display: block; clear: both; text-align: left; width: 100%; box-sizing: border-box; padding: 24px 30px; background-color: #ffffff;">
+                    <img src="https://raw.githubusercontent.com/buiduyanh0/image-econtract/main/goertek-seeklogo.png" alt="FPT.eContract" style="display: block; margin: 0; padding: 0; width: 190px; max-width: 38%; height: auto; min-height: 0;">
+                </div>
+
+                <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 0;">
+
+                    <!-- START MAIN CONTENT AREA -->
+                    <tr>
+                        <td class="wrapper" style="font-family: Arial, sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding: 34px 30px 18px;">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                <tr>
+                                    <td style="font-family: Arial, sans-serif; font-size: 12px; vertical-align: top;">
+                                        <h1 style="font-weight: bold; font-size: 22px; line-height: 30px; color: #000000; margin-bottom: 30px; margin-top: 6px; text-align: left;"
+                                            th:with="rqtNameMail=(@{|Xin chào ${rcpName}|})" th:text="${rqtNameMail}">Xin chào Nguyễn Văn A,</h1>
+
+                                        <div style="background: #ffffff; margin-bottom: 0; text-align: center; padding: 28px 24px 24px; box-sizing: border-box;">
+                                            <p style="font-weight: 500; margin-top: 0; margin-bottom: 22px; font-size: 18px; line-height: 28px; color: #000000;">
+                                                <span th:with="nameDocSend=(@{| Tài liệu được gửi từ  ${rqtMail} |})" th:text="${nameDocSend}">Tài liệu</span>
+                                                <br>
+                                                <span style="color: #000000;" th:with="nameEnv=(@{|${envName}|})" th:text="${nameEnv}"><b>GOERTEK VIỆT NAM</b></span>
+                                            </p>
+
+                                            <p style="font-weight: bold; font-size: 22px; line-height: 28px; color: #000000; margin-top: 0; margin-bottom: 24px;">
+                                                <b th:switch="${envStatus}">
+                                                    <span th:case="rejected" th:with="finishstatus=(@{| BỊ TỪ CHỐI|})" th:text="${finishstatus}">Bị từ chối</span>
+                                                    <span th:case="completed" th:with="finishstatus=(@{| ĐÃ HOÀN THÀNH|})" th:text="${finishstatus}">Hoàn thành</span>
+                                                    <span th:case="voided" th:with="finishstatus=(@{| BỊ HỦY |})" th:text="${finishstatus}">Không thành công</span>
+                                                    <span th:case="overdue" th:with="finishstatus=(@{| ĐÃ QUÁ HẠN |})" th:text="${finishstatus}">Quá hạn</span>
+                                                </b>
+                                            </p>
+
+                                            <!-- REJECTED -->
+                                            <div th:if="${envStatus == 'rejected'}">
+                                                <p style="font-weight: normal; margin-top: 5px; margin-bottom: 16px; font-size: 14px; line-height: 21px; color: #FF6B6B; text-align: center;">
+                                                    <b style="font-weight: normal;" th:switch="${reason}">
+                                                        <span th:case="null"></span>
+                                                        <span th:case="'null'"></span>
+                                                        <span th:case="''"></span>
+                                                        <span th:case="*" th:with="reasonTo=(@{|Lý do từ chối ${reason} |})" th:text="${reasonTo}">Lý do từ chối</span>
+                                                    </b>
+                                                </p>
+                                            </div>
+
+                                            <!-- VOIDED -->
+                                            <div th:if="${envStatus == 'voided'}">
+                                                <p style="font-weight: normal; margin-top: 5px; margin-bottom: 16px; font-size: 14px; line-height: 21px; color: #FF6B6B; text-align: center;">
+                                                    <b style="font-weight: normal;" th:switch="${requesterReason}">
+                                                        <span th:case="null"></span>
+                                                        <span th:case="'null'"></span>
+                                                        <span th:case="''"></span>
+                                                        <span th:case="*" th:with="reasonTo=(@{|Lý do hủy ${requesterReason}|})" th:text="${reasonTo}">Lý do hủy</span>
+                                                    </b>
+                                                </p>
+                                            </div>
+
+                                            <!-- COMPLETED -->
+                                            <div th:if="${envStatus == 'completed'}" style="border-top: 1px solid #494C4E; margin: 28px auto 0; padding-top: 28px; max-width: 440px;">
+                                                <p style="font-weight: 500; margin-top: 0; margin-bottom: 8px; font-size: 15px; line-height: 20px; color: #000000;"
+                                                   th:with="codetitle=(@{|Mã truy cập |})" th:text="${codetitle}">Mã truy cập</p>
+                                                <p style="font-weight: bold; font-size: 22px; line-height: 28px; color: #000000; margin-top: 0; margin-bottom: 20px;">
+                                                    <b th:with="code=(@{|${password}|})" th:text="${code}">fptsoft</b>
+                                                </p>
+                                                <a style="font-size: 16px; line-height: 24px; padding: 12px 44px; font-weight: bold; text-decoration: none; display: inline-block; background: #59BD4F; color: #111315; margin-bottom: 4px;"
+                                                   th:with="url=(@{|${baseUrl}/fi/${envId}/${rcpId}/act|})" th:href="${url}">TẢI TÀI LIỆU</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-family: Arial, sans-serif; font-size: 12px; vertical-align: top; background: #c2c1c1; padding: 14px 30px; border-top: 16px solid #ffffff;">
+                            <p style="color: #000000; font-weight: 600; font-size: 15px; line-height: 20px; margin-top: 0; margin-bottom: 6px;">KHÔNG CHIA SẺ</p>
+                            <p style="color: #000000; font-weight: normal; font-size: 14px; line-height: 21px; margin-top: 0; margin-bottom: 0;">Email này chứa một mã bảo mật của GOERTEK VIỆT NAM, vui lòng không chia sẻ email hoặc mã bảo mật này với người khác.</p>
+                            <p style="color: #000000; margin-top: 10px; margin-bottom: 10px;">Nếu bạn cần hỗ trợ, vui lòng liên hệ Bộ phận Nhân sự GOERTEK VIỆT NAM.</p>
+                            <p style="color: #000000; margin-top: 0; margin-bottom: 10px;">Trân trọng,</p>
+                            <p style="color: #000000; margin-top: 0; margin-bottom: 0;">GOERTEK VIỆT NAM</p>
+                        </td>
+                    </tr>
+                    <!-- END MAIN CONTENT AREA -->
+                </table>
+                <!-- END CENTERED WHITE CONTAINER -->
+
+            </div>
+        </td>
+        <td style="font-family: Arial, sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+
+</html>

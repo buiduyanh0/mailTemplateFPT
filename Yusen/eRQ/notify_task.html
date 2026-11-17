@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>KYTAGATE Email</title>
+  </head>
+  <body class="" style="background-color: #E5E5E5;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size:
+      12px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <table class="body" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width:
+        100%;padding: 0;background-color: #ffffff;">
+      <tbody>
+        <tr>
+          <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+          <td class="container" style="font-family: sans-serif;font-size: 12px;vertical-align: top;display:
+              block;margin: 0 auto;max-width: 800px;padding: 0;width: 800px;">
+            <div class="content" style="box-sizing: border-box;display: block;Margin: 0;max-width: 800px;padding: 0;">
+              <!-- START CENTERED WHITE CONTAINER -->
+              <div class="header" style="display: inline-block;clear: both;text-align: center;width: 100%;"><img
+                  src="https://i.imgur.com/4NFT8F6.png" alt="FPT.eContract" style="float: left;max-width: 99.5%;height:
+                  auto;min-height: 32px;"></div>
+              <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width:
+                  100%; background: #ffffff; border-radius: 3px;">
+                <!-- START MAIN CONTENT AREA -->
+                <tr>
+                  <td class="wrapper" style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing:
+                      border-box;padding-bottom: 0;">
+                    <table style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width:
+                        100%;">
+                      <tr>
+                        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                          <div style="gap: 8px; margin: 35px 35px 35px 36px;">
+                            <h1 style=" font-size: 21px; font-weight: 600; line-height: 24px; text-align: left; color:
+                                rgba(111, 44, 237, 1); margin-bottom: 8px; margin-top: 0;">Kính gửi <span
+                                th:text="${receiverName}">Nguyễn Văn A</span></h1>
+                            <div style=" font-size: 14px; font-weight: 400; line-height: 22px; text-align: left; color:
+                                rgba(0, 32, 77, 0.9); ">
+                              Chúng tôi liên lạc với quý khách để thông báo yêu cầu <span style="font-weight: 600;"
+                                  th:text="${transactionName}">{transactionName}</span> đã bị yêu cầu chỉnh sửa
+                            </div>
+                          </div>
+                          <div style="background: rgba(237, 242, 253, 1);margin-bottom: 16px;text-align: center;
+                              padding: 24px 32px; margin: 0 37px 35px 34px;">
+                            <p style=" font-size: 16px; font-weight: 600; line-height: 28px; text-align: left; color:
+                                rgba(111, 44, 237, 1); margin: 0 0 8px 0;">THÔNG TIN YÊU CẦU</p>
+                            <div style=" font-size: 15px; line-height: 22px; text-align: left; margin-bottom: 15px;">
+                              <span style=" color: rgba(66, 66, 66, 1); font-weight: 500;">Tên yêu cầu</span>
+                              <br>
+                              <span style="color: rgba(0, 0, 0, 1); font-weight: 600;" th:text="${ticketName}">Hợp đồng
+                                  vay tín chấp</span>
+                            </div>
+							<div style=" font-size: 15px; line-height: 22px; text-align: left; margin-bottom: 15px;">
+                              <span style=" color: rgba(66, 66, 66, 1); font-weight: 500;">Người đề nghị</span>
+                              <br>
+                              <span style="color: rgba(0, 0, 0, 1); font-weight: 600;" th:text="${userName}">Người đề nghị</span>
+                            </div>
+                            <div><a style=" font-size: 14px; line-height: 22px; padding: 9px 16px; font-weight: 500;
+                                text-decoration: none; margin-bottom: 0; display: inline-block; cursor: pointer;
+                                background: linear-gradient(92.13deg, rgba(0, 189, 142, 0.12) -10.74%, rgba(64, 188,
+                                254, 0.4) 47.33%, rgba(116, 85, 254, 0.2) 100.27%); color: #7F43EF;"
+                                th:with="url=(@{|http://10.14.121.10/erequest/ticket-detail/${ticketId}?path=%2Fmanage-ticket%2Ffollow-ticket-required&_recipientDetailsId=${recipientDetailsId}&_ticketId=${ticketId}&_userTaskId=${userTaskId}&_typeView=required&isNoti=true&from=email|})" th:href="${url}">Xem yêu cầu</a></div>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style=" vertical-align: top;background: #FFF; padding: 0 37px 113px 34px;">
+                    <p style=" font-weight: 600; font-size: 16px; line-height: 24px; margin-top: 0; margin-bottom: 4px;
+                        color: rgba(0, 32, 77, 1); ">KHÔNG CHIA SẺ</p>
+                    <p style=" color: rgba(0, 32, 77, 0.9); font-weight: normal; font-size: 14px; line-height: 22px;
+                        margin-top: 0; margin-bottom: 10px; ">Emai này chứa một mã bảo mật của Kyta Platform, vui lòng
+                        không chia sẻ email hoặc mã bảo mật này với người khác</p>
+                    <p style=" font-weight: 600; font-size: 16px; line-height: 24px; margin-top: 0; margin-bottom: 4px;
+                        color: rgba(0, 32, 77, 1); ">GIỚI THIỆU</p>
+                    <p style=" color: rgba(0, 32, 77, 0.9); font-weight: normal; font-size: 14px; line-height: 22px;
+                        margin-top: 0; margin-bottom: 10px; ">Kyta Platform là nền tảng định danh và ký kết điện tử.
+                        Cung cấp nhiều dịch vụ liên quan đến ký hết hợp đồng điện tử. Sản phầm an toàn, bảo mật, đảm bảo
+                        tính pháp lý</p>
+                  </td>
+                </tr>
+                <!-- END MAIN CONTENT AREA -->
+              </table>
+              <!-- END CENTERED WHITE CONTAINER -->
+            </div>
+          </td>
+          <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

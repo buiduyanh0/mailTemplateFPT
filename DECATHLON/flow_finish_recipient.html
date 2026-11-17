@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>DECATHLON Email</title>
+</head>
+
+<body class="" style="background-color: #E5E5E5;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size: 12px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;padding: 0;background-color: #ffffff;">
+    <tbody>
+    <tr>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+        <td class="container" style="font-family: sans-serif;font-size: 12px;vertical-align: top;display: block;margin: 0 auto;max-width: 800px;padding: 0;width: 800px;">
+            <div class="content" style="box-sizing: border-box;display: block;Margin: 0;max-width: 800px;padding: 0;">
+
+                <!-- START CENTERED WHITE CONTAINER -->
+
+                <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+
+                    <!-- START MAIN CONTENT AREA -->
+                    <tr>
+                        <td class="wrapper" style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding: 5%;padding-bottom: 0;">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                <tr>
+                                    <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                                        <h1 style="
+                                                font-size: 18px;
+                                                line-height: 24px;
+                                                margin-bottom: 5px;
+                                                margin-top: 0;
+                                                font-weight: 400" >Dear
+                                            <span th:with="rcpNameMail=(@{|${rcpName}|})"  th:text="${rcpNameMail}" style="font-weight: bold">Nguyễn Văn A,</span> </h1>
+                                        <h1 style="
+                                                font-size: 18px;
+                                                line-height: 24px;
+                                                margin-bottom: 24px;
+                                                margin-top: 0;
+                                                font-weight: 400">Xin chào
+                                            <span th:with="rcpNameMail=(@{|${rcpName}|})"  th:text="${rcpNameMail}" style="font-weight: bold">Nguyễn Văn A,</span></h1>
+                                        <div style="background: rgba(233, 234, 247, 0.5);margin-bottom: 16px;text-align: left;padding: 25px 20px">
+                                            <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                color: #121E28;
+                                                text-align: left">
+                                                Please notify your Labor Contract with the following information:
+                                                <br>
+                                                Xin thông báo Hợp đồng lao động của bạn với thông tin như sau:
+                                            </p>
+                                            <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                color: #121E28;
+                                                text-align: left">
+                                                - Name: <span th:with="rcpNameMail=(@{|${rcpName}|})"  th:text="${rcpNameMail}"></span> <br>
+                                                - Team:
+                                                <span th:each="f, i : ${header.fields}">
+                                                        <span th:if="${f.id == 'envF00'}" th:text="${f.value}" style="display: inline-block;"></span>
+                                                </span><br>
+                                                - Direct Leader:
+                                                <span th:each="f, i : ${header.fields}">
+                                                        <span th:if="${f.id == 'envF01'}" th:text="${f.value}" style="display: inline-block;"></span>
+                                                </span><br>
+                                                - Job Title / Role:
+                                                <span th:each="f, i : ${header.fields}">
+                                                        <span th:if="${f.id == 'envF02'}" th:text="${f.value}" style="display: inline-block;"></span>
+                                                </span><br>
+                                                - Contract type:
+                                                <span th:each="f, i : ${header.fields}">
+                                                        <span th:if="${f.id == 'envF03'}" th:text="${f.value}" style="display: inline-block;"></span>
+                                                </span><br>
+                                                - Contract start date:
+                                                <span th:each="f, i : ${header.fields}">
+                                                        <span th:if="${f.id == 'envF04'}" th:text="${f.value}" style="display: inline-block;"></span>
+                                                </span><br>
+                                                - Contract end date:
+                                                <span th:each="f, i : ${header.fields}">
+                                                        <span th:if="${f.id == 'envF05'}" th:text="${f.value}" style="display: inline-block;"></span>
+                                                </span><br>
+                                            </p>
+                                            <p
+                                                    style="font-weight: bold; font-size: 22px; line-height: 24px; color: #a50064; margin-top: 0; margin-bottom: 20px;text-align: center">
+                                                <b th:switch="${envStatus}">
+                                                    <span th:case="rejected"
+                                                          th:with="finishstatus=(@{| BỊ TỪ CHỐI / WAS REJECTED|})"
+                                                          th:text="${finishstatus}">Bị từ chối / Was rejected</span>
+                                                    <span
+                                                            th:case="completed"
+                                                            th:with="finishstatus=(@{| ĐÃ HOÀN THÀNH / COMPLETED|})"
+                                                            th:text="${finishstatus}">Hoàn thành / Completed</span> <span
+                                                        th:case="voided" th:with="finishstatus=(@{| BỊ HỦY / WAS CANCELED|})"
+                                                        th:text="${finishstatus}">Bị hủy / Was canceled</span> <span
+                                                        th:case="overdue" th:with="finishstatus=(@{| ĐÃ QUÁ HẠN / OVERDUED|})"
+                                                        th:text="${finishstatus}">Quá hạn / Overdued </span>
+
+                                                </b>
+                                            </p>
+
+
+                                            <div style="background: #f5f6f6" th:if="${reason != 'null' && reason != null }">
+                                                <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                font-size: 15px;
+                                                line-height: 18px;
+                                                color: #a50064;
+                                                font-style: italic;
+                                                margin-bottom: 10px;
+                                            "
+                                                   th:with="reasonTo=(@{|${reason} |})" th:text="${reasonTo}"
+                                                > Lý do từ chối</p>
+
+                                            </div>
+
+                                            <div style="background: #f5f6f6; text-align: center" th:if="${envStatus == 'completed'}">
+                                                <a style="
+                                                    font-size: 14px;
+                                                    line-height: 24px;
+                                                    padding: 8px 20px;
+                                                    font-weight: bold;
+                                                    text-decoration: none;
+                                                    display: inline-block;
+                                                    background: #5b9bd5;
+                                                    color: #fff;
+                                                    margin-bottom: 17px;"
+                                                   th:with="url=(@{|${baseUrl}/fi/${envId}/${rcpId}/act|})" th:href="${url}"
+                                                >Review your contract <br>Xem tài liệu</a>
+                                                <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 4px;
+                                                font-size: 12px;
+                                                line-height: 18px;
+                                                color: #71787E;"
+                                                   th:with="codetitle=(@{|Access code/ Mã truy cập: |})" th:text="${codetitle}"
+                                                >Access code/ Mã truy cập:</p>
+                                                <p style="
+                                                font-weight: bold;
+                                                font-size: 22px;
+                                                line-height: 24px;
+                                                color: #121E28;
+                                                margin-top: 0;
+                                            "><b th:with="code=(@{|${password}|})" th:text="${code}" >fises6</b></p>
+                                            </div>
+                                            <div style="text-align: left">
+                                                Should you need further assistance on this topic, please contact C&B Leader (loi.nguyenvan@decathlon.com).<br>
+                                                Nếu bạn cần hỗ trợ, vui lòng liên hệ C&B Leader (loi.nguyenvan@decathlon.com).
+                                            </div>
+                                            <br>
+                                            <div>
+                                                Best regards,<br><br>
+                                                PEOPLE Team <br>
+                                                <img style="width: 120px" src="https://i.imgur.com/RmiUmkk.png" alt="">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- END MAIN CONTENT AREA -->
+                </table>
+
+                <!-- END CENTERED WHITE CONTAINER -->
+            </div>
+        </td>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+    </tr>
+</table>
+</body>
+
+</html>

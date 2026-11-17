@@ -1,0 +1,59 @@
+              <!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FptContact Email</title>
+</head>
+
+<body class="" style="background-color: #E5E5E5;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size: 12px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;padding: 0;background-color: #ffffff;">
+    <tbody>
+    <tr>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+        <td class="container" style="font-family: sans-serif;font-size: 12px;vertical-align: top;display: block;margin: 0 auto;max-width: 800px;padding: 0;width: 800px;">
+            <div class="content" style="box-sizing: border-box;display: block;Margin: 0;max-width: 800px;padding: 0;">
+
+                <!-- START CENTERED WHITE CONTAINER -->
+                <div class="header" style="display: inline-block;clear: both;text-align: center;width: 100%;background: url(https://i.imgur.com/aisEGz2.png) no-repeat center;     background-size: cover;">
+                    <img src="https://i.imgur.com/WCHvfh1.png" alt="FPT.eContract" style="float: left;padding: 5% 0 4% 5%;max-width: 38%;height: auto;min-height: 32px;">
+                </div>
+                <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+
+                    <!-- START MAIN CONTENT AREA -->
+                    <tr> 
+                        <td style="padding:30px;"> <!-- ===== VIETNAMESE ===== --> 
+                            <h3 style="color:#0B5ED7;margin-top:0;"> THÔNG BÁO KÝ KẾT HỢP ĐỒNG LAO ĐỘNG NGƯỜI NƯỚC NGOÀI ĐIỆN TỬ </h3> 
+                            <p> LITEON Việt Nam thông báo hợp đồng <b th:text="${envF05}">[LOẠI HỢP ĐỒNG]</b> 
+                                của bạn <b th:text="${rcpName}">&lt;HỌ TÊN&gt;</b>
+                                , mã nhân viên <b th:text="${envF01}">&lt;MÃ NHÂN VIÊN&gt;</b>
+                                , có hiệu lực từ ngày <b th:text="${envF00}">[START DATE]</b> đã được phát hành. </p> 
+                                <p> Vui lòng truy cập vào liên kết dưới đây để hoàn thành việc ký kết hợp đồng: </p> 
+                                <p style="text-align:center;margin:30px 0;"> <a th:with="url=(@{|${baseUrl}/fi/${envId}/${rcpId}/act|})" th:href="${url}" style="background:#0B5ED7;color:#ffffff; padding:10px 24px; text-decoration:none; font-weight:bold; display:inline-block;"> TRUY CẬP KÝ HỢP ĐỒNG </a> </p> 
+                                <p> Đề nghị kiểm tra và hoàn thành việc ký kết trước ngày <b th:text="${#temporals.format(#temporals.create(envF00, 'dd/MM/yyyy').plusDays(3), 'dd/MM/yyyy')}">[START DATE + 4]</b>. </p> 
+                                <p> <b>Lưu ý:</b> Hợp đồng điện tử này có giá trị pháp lý tương đương hợp đồng giấy có đóng dấu Công ty. Trong trường hợp cần hỗ trợ, vui lòng liên hệ trợ lý bộ phận hoặc <b>VN HR PIC</b>. </p> 
+                                <hr style="margin:40px 0;border:none;border-top:1px solid #ddd;"> <!-- ===== CHINESE ===== --> 
+                                <h3 style="color:#0B5ED7;"> 外籍人員電子合約簽署通知 </h3> 
+                                <p> 越南光寶通知，您的【 
+                                    <b th:text="${envF05}">合約類型</b> 】合約， 姓名 <b th:text="${rcpName}">&lt;姓名&gt;</b>， 工號 
+                                    <b th:text="${envF01}">&lt;工號&gt;</b>， 自 <b th:text="${envF00}">生效日期</b> 起生效，現已發佈。 </p> 
+                                    <p>請點擊以下鏈接完成合約簽署：</p> 
+                                    <p style="text-align:center;margin:30px 0;"> <a th:with="url=(@{|${baseUrl}/fi/${envId}/${rcpId}/act|})" th:href="${url}" style="background:#0B5ED7;color:#ffffff; padding:10px 24px; text-decoration:none; font-weight:bold; display:inline-block;"> 點擊此處簽署合約 </a> </p> 
+                                    <p> 請務必於 <b th:text="${#temporals.format(#temporals.create(envF00, 'dd/MM/yyyy').plusDays(3), 'dd/MM/yyyy')}">截止日期</b> 前完成簽署。 </p> 
+                                    <p> <b>說明：</b> 本電子合約與公司蓋章紙本合約具有同等法律效力。 若有疑問，請隨時與 <b>VN HR PIC</b> 聯繫。 </p> 
+                                </td> 
+                            </tr>
+
+                    <!-- END MAIN CONTENT AREA -->
+                </table>
+
+                <!-- END CENTERED WHITE CONTAINER -->
+            </div>
+        </td>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+    </tr>
+</table>
+</body>
+
+</html>

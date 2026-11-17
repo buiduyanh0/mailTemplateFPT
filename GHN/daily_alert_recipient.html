@@ -1,0 +1,76 @@
+              <!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FptContact Email</title>
+</head>
+<body style="background-color: #E5E5E5; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size:12px; line-height:1.4; margin:0; padding:0; -ms-text-size-adjust:100%; -webkit-text-size-adjust:100%;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#E5E5E5" style="font-family: sans-serif; font-size: 12px; background-color: #ffffff; margin:0; padding:0;">
+    <tr>
+        <td align="center" style="margin:0 auto; max-width:800px; width:800px; padding:0;">
+            <table width="800" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="max-width:800px; width:800px; background-color:#ffffff; margin:0 auto;">
+                <tr>
+                    <td align="center" style="background:#fff; text-align:center; width:100%;">
+                        <img src="https://raw.githubusercontent.com/buiduyanh0/image-econtract/main/Group_1_GHN_replaced.png" alt="Group-1" border="0" style="width:89%;">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0 5%;">
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+                            <tr>
+                                <td>
+                                    <h1 style="font-weight: bold; font-size: 18px; line-height: 24px; margin-bottom: 10px; margin-top: 0;" th:with="rcpNameMail=(@{|Chào Anh/Chị ${rcpName}|})" th:text="${rcpNameMail}">Chào Anh/Chị Nguyễn Văn A,</h1>
+                                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:rgba(233,234,247,0.5); margin-bottom:16px; text-align:justify;">
+                                        <tr>
+                                            <td style="padding:20px;">
+                                                <p style="font-weight:500; margin-top:0; margin-bottom:8px; font-size:14px; line-height:20px; color:#121E28;">
+                                                    <b>Anh/Chị có thông báo thực hiện ký Hợp Đồng/ Phụ Lục Hợp Đồng với thông tin cụ thể như sau:</b>
+                                                </p>
+                                                <table width="100%" cellpadding="0" cellspacing="0" border="0" th:if="${baseUrlInternal == 'null' || baseUrlInternal == null }">
+                                                    <tr>
+                                                        <td>
+                                                            <p style="font-weight: 500; margin-top: 0; margin-bottom: 4px; font-size: 14px; line-height: 18px;">
+                                                                1. Mã hợp đồng: <span th:text="${envNo}">${envNo}</span> được gửi từ: <span th:text="${orgName}">Tên công ty</span>
+                                                            </p>
+                                                            <p style="font-weight: 500; margin-top: 0; margin-bottom: 4px; font-size: 14px; line-height: 18px;">
+                                                                2. Mã truy cập: <b th:text="${password}">sdsads</b>
+                                                            </p>
+                                                            <br>
+                                                            <div style="font-weight: 500; margin-top: 0; margin-bottom: 10px; font-size: 14px; line-height: 18px;">
+                                                                Anh/Chị vui lòng chọn vào nút <b>"Tải tài liệu"</b> bên dưới và sử dụng email của Anh/Chị cùng mật khẩu được cung cấp trong email này  để thực hiện đăng nhập.
+                                                            </div>
+                                                            <div style="text-align: center">
+                                                                <a style="font-size:14px; line-height:24px; padding:4px 15px; font-weight:bold; border-radius:4px; text-decoration:none; margin-bottom:10px; display:inline-block; background:#ff8600; color:#fff;" th:with="url=(@{|${baseUrl}/fi/${envId}/${rcpId}/act|})" th:href="${url}">TẢI TÀI LIỆU</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <table width="100%" cellpadding="0" cellspacing="0" border="0" th:if="${baseUrlInternal != 'null' && baseUrlInternal != null }">
+                                                    <tr>
+                                                        <td>
+                                                            <div style="font-weight: 500; margin-top: 0; margin-bottom: 10px; font-size: 14px; line-height: 18px;">
+                                                                Anh/Chị vui lòng chọn vào nút <b>"Tải tài liệu"</b>  bên dưới và sử dụng email của Anh/Chị cùng mật khẩu được cung cấp trong email này  để thực hiện đăng nhập.
+                                                            </div>
+                                                            <div style="text-align: center">
+                                                                <a style="font-size:14px; line-height:24px; padding:4px 15px; font-weight:bold; border-radius:4px; text-decoration:none; margin-bottom:10px; display:inline-block; background:#ff8600; color:#fff;" th:with="urlInternal=(@{|${baseUrlInternal}|})" th:href="${urlInternal}">TẢI TÀI LIỆU</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <p style="font-weight: 500; margin-top: 0; margin-bottom: 10px; font-size: 14px; line-height: 18px;">Trân trọng cảm ơn Anh/Chị</p>
+                                                <span style="font-weight: 500; margin-top: 0; margin-bottom: 4px; font-size: 14px; line-height: 18px;" th:text="${orgName}">Tên công ty</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

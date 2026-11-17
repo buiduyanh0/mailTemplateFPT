@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>TFM Group Email</title>
+</head>
+
+<body class="" style="background-color: #E5E5E5;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size: 12px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;padding: 0;background-color: #ffffff;">
+    <tbody>
+    <tr>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+        <td class="container" style="font-family: sans-serif;font-size: 12px;vertical-align: top;display: block;margin: 0 auto;max-width: 800px;padding: 0;width: 800px;">
+            <div class="content" style=" box-sizing: border-box;display: block;Margin: 0;max-width: 800px;padding: 0;">
+                <div class="header" style=" display: inline-block;clear: both;text-align: center;width: 100%; background-size: cover;">
+                    <img src="https://i.imgur.com/5sAeB4I.jpg" alt="TMF GROUP" style="float: right;max-width: 54%;height: auto;min-height: 32px;">
+                </div>
+                <table class="main" style=" border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+                    <tr>
+                        <td class="wrapper" style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding: 5%;padding-bottom: 0;padding-top: 20px;">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                <tr>
+                                    <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                                        <h1 style="
+                                                font-weight: bold;
+                                                font-size: 18px;
+                                                line-height: 24px;
+                                                color: black;
+                                                margin-bottom: 24px;
+                                                margin-top: 0;"
+                                            th:with="rcpNameMail=(@{|Dear ${rcpName}|})" th:text="${rcpNameMail}">
+                                            Dear Tên người được chia sẻ,</h1>
+                                        <div style="background: rgba(233, 234, 247, 0.5);text-align: center;padding-top: 20px;padding-bottom: 20px">
+                                            <p style="
+                                                font-weight: 500;
+                                                font-size: 15px;
+                                                line-height: 18px;
+                                                margin-top: 0;
+                                                margin-bottom: 20px;">
+                                                You have been shared
+                                                <span style="color: #2E6CF6; font-weight: 700" th:with="nameEnv=(@{|${envName}|})" th:text="${nameEnv}">Tên tài liệu</span>
+                                                from <span style="color: #2E6CF6; "><b th:with="create=(@{|${rqtMail}|})" th:text="${create}">Tên và email người chia sẻ</b></span></p>
+                                            <a style=" font-size: 14px;
+                                                    line-height: 24px;
+                                                    padding: 8px 20px;
+                                                    font-weight: bold;
+                                                    text-decoration: none;
+                                                    margin-bottom: 0;
+                                                    display: inline-block;
+                                                    background: #2E6CF6;
+                                                    color: #fff;
+                                                    margin-bottom: 17px; "
+                                               th:with="url=(@{|${baseUrl}/fp/${envId}/${rcpName}/view|})" th:href="${url}">
+                                                Download here</a>
+                                            <p style="
+                                                font-weight: 500;
+                                                margin-top: 15px;
+                                                margin-bottom: 15px;
+                                                font-size: 15px;
+                                                line-height: 18px;"
+                                               th:with="codetitle=(@{|Accesscode|})" th:text="${codetitle}"
+                                            >Access code </p>
+                                            <p style="
+                                                font-weight: 600;
+                                                font-size: 15px;
+                                                line-height: 24px;
+                                                color: #2E6CF6;
+                                                margin-top: 15px;
+                                                margin-bottom: 15px;
+                                                "><b th:with="code=(@{|${password}|})" th:text="${code}">code</b><br>
+                                            <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 15px;
+                                                font-size: 15px;
+                                                line-height: 18px;">
+                                                Should you have any queries, please feel free to reply to this email or contact TMF’s person in-charge. </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                </table>
+            </div>
+            <div style="margin-top: 40px; border-top: 1px solid black;"></div>
+            <div style="margin-top: 2px; border-top: 1px solid black;"></div>
+        </td>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;"></td>
+    </tr>
+    <tbody>
+    <tr>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+        <td class="container" style="font-family: sans-serif;font-size: 12px;vertical-align: top;display: block;margin: 0 auto;max-width: 800px;padding: 0;width: 800px;">
+            <div class="content" style=" box-sizing: border-box;display: block;Margin: 0;max-width: 800px;padding: 0;">
+                <table class="main" style=" border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+                    <tr>
+                        <td class="wrapper" style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding: 5%;padding-bottom: 0;padding-top: 20px;">
+                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                <tr>
+                                    <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                                        <h1 style="
+                                                font-weight: bold;
+                                                font-size: 18px;
+                                                line-height: 24px;
+                                                color: black;
+                                                margin-bottom: 24px;
+                                                margin-top: 0;"
+                                            th:with="rcpNameMail=(@{|Dear ${rcpName}|})" th:text="${rcpNameMail}">
+                                            Dear Tên người được chia sẻ,</h1>
+                                        <div style="background: rgba(233, 234, 247, 0.5);text-align: center;padding-top: 20px;padding-bottom: 20px">
+                                            <p style=" font-weight: 700;
+                                                       font-size: 15px;
+                                                       line-height: 18px;
+                                                       color: #2E6CF6;
+                                                       margin-top: 0;
+                                                       margin-bottom: 15px;"
+                                               th:with="nameEnv=(@{|${envName}|})" th:text="${nameEnv}">
+                                                Tên tài liệu</p>
+                                            <p style="
+                                                font-weight: 500;
+                                                font-size: 15px;
+                                                line-height: 18px;
+                                                margin-top: 0;
+                                                margin-bottom: 20px;">
+                                                Bạn được chia sẻ một hợp đồng ký
+                                                <span style="color: #2E6CF6; font-weight: 700" th:with="nameEnv=(@{|${envName}|})" th:text="${nameEnv}">Hợp đồng công nghệ</span>
+                                                từ <span style="color: #2E6CF6; "><b th:with="create=(@{|${rqtMail}|})" th:text="${create}">Tên và email người chia sẻ</b></span></p>
+                                            <a style="       font-size: 14px;
+                                                    line-height: 24px;
+                                                    padding: 8px 20px;
+                                                    font-weight: bold;
+                                                    text-decoration: none;
+                                                    margin-bottom: 0;
+                                                    display: inline-block;
+                                                    background: #2E6CF6;
+                                                    color: #fff;
+                                                    margin-bottom: 17px;"
+                                               th:with="url=(@{|${baseUrl}/fp/${envId}/${rcpName}/view|})" th:href="${url}">
+                                                Tải về</a>
+                                            <p style="
+                                                font-weight: 500;
+                                                margin-top: 15px;
+                                                margin-bottom: 15px;
+                                                font-size: 15px;
+                                                line-height: 18px;"
+                                               th:with="codetitle=(@{|Mã truy cập |})" th:text="${codetitle}"
+                                            >Mã truy cập </p>
+                                            <p style="
+                                                font-weight: 600;
+                                                font-size: 15px;
+                                                line-height: 24px;
+                                                color: #2E6CF6;
+                                                margin-top: 0;
+                                                margin-bottom: 0px;">
+                                                <b th:with="code=(@{|${password}|})" th:text="${code}">code</b></p><br>
+                                            <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 15px;
+                                                font-size: 15px;
+                                                line-height: 18px;">
+                                                Nếu có bất kỳ thắc mắc nào, vui lòng trả lời email này hoặc liên hệ người phụ trách bên TMF.</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+					<tr>
+						<td style="font-family: sans-serif; font-size: 12px; vertical-align: top;background: #FAFBFB;padding:
+						3% 5%;">
+							<p style="font-weight: 600; font-size: 16px; line-height: 24px; margin-top: 0; margin-bottom: 4px;">
+								LƯU Ý / NOTE </p>
+							<p style="color: #71787E; font-weight: normal; font-size: 14px; line-height: 22px; margin-top: 0; margin-bottom: 10px;">
+								Vì lý do bảo mật, đường link download hợp đồng có hiệu lực <b>36 tháng</b> kể từ khi bắt đầu ký. Vui lòng tải hợp đồng về trước thời gian trên.
+							<br>
+								For security reasons, the contract download link is valid for <b>36 months</b> from the signing start date. Please download the contract before it expires.</p>
+						</td>
+					</tr>
+                    <tr>
+                </table>
+            </div>
+        </td>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;"></td>
+    </tr>
+</table>
+
+
+</body>
+
+</html>

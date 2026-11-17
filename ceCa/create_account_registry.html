@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>FptCeCa Email</title>
+  </head>
+
+  <body
+    class=""
+    style="
+      background-color: #e5e5e5;
+      font-family: sans-serif;
+      -webkit-font-smoothing: antialiased;
+      font-size: 12px;
+      line-height: 1.4;
+      margin: 0;
+      padding: 0;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    "
+  >
+    <table
+      border="0"
+      cellpadding="0"
+      cellspacing="0"
+      class="body"
+      style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; padding: 0; background-color: #ffffff"
+    >
+      <tbody>
+        <tr>
+          <td style="font-family: sans-serif; font-size: 12px; vertical-align: top">&nbsp;</td>
+          <td
+            class="container"
+            style="
+              font-family: sans-serif;
+              font-size: 12px;
+              vertical-align: top;
+              display: block;
+              margin: 0 auto;
+              max-width: 800px;
+              padding: 0;
+              width: 800px;
+            "
+          >
+            <div class="content" style="box-sizing: border-box; display: block; margin: 0; max-width: 800px; padding: 0">
+              <!-- START CENTERED WHITE CONTAINER -->
+              <div class="header" style="display: inline-block; clear: both; text-align: center; width: 100%; background-size: cover">
+                <img
+                  src="https://i.imgur.com/MKFtaaZ.png"
+                  alt="FPT.eContract"
+                  style="float: left; width: 100%; height: auto; min-height: 32px"
+                />
+              </div>
+              <table
+                class="main"
+                style="
+                  border-collapse: separate;
+                  mso-table-lspace: 0pt;
+                  mso-table-rspace: 0pt;
+                  width: 100%;
+                  background: #ffffff;
+                  border-radius: 3px;
+                "
+              >
+                <!-- START MAIN CONTENT AREA -->
+                <tr>
+                  <td
+                    class="wrapper"
+                    style="
+                      font-family: sans-serif;
+                      font-size: 12px;
+                      vertical-align: top;
+                      box-sizing: border-box;
+                      padding: 5% 9%;
+                      padding-bottom: 0;
+                    "
+                  >
+                    <table
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%"
+                    >
+                      <tr>
+                        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top; padding-bottom: 15px">
+                          <div style="background-color: #e9eaf7; font-size: 14px; padding: 5%">
+                            <p
+                              style="
+                                font-family: 'SF Pro Text';
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 16px;
+                                margin-top: 0;
+                                margin-bottom: 25px;
+                              "
+                            >
+                              Cảm ơn quý khách đã tin tưởng và sử dụng dịch vụ của FPT.CeCa!
+                            </p>
+                            <p style="color: #2838c1; font-weight: 600; font-size: 14px; line-height: 20px">
+                              Tài khoản đăng nhập của quý khách là:
+                            </p>
+                            <p>
+                              <span
+                                style="font-family: 'SF Pro Text'; font-style: normal; line-height: 16px"
+                                th:with="theAccount=(@{|Tên tài khoản: |})"
+                                th:text="${theAccount}"
+                                >Tên tài khoản:</span
+                              >
+                              <b th:text="${account}">nenpt@fpt.com.vn</b>
+                            </p>
+                            <p>
+                              <span
+                                style="font-family: 'SF Pro Text'; font-style: normal"
+                                th:with="thePassWord=(@{|Mật khẩu đăng nhập là: |})"
+                                th:text="${thePassWord}"
+                                >Mật khẩu đăng nhập là: </span
+                              ><b th:text="${password}">123456a@</b>
+                            </p>
+                            <a
+                              th:with="url=(@{|${baseUrl}|})"
+                              th:href="${url}"
+                              style="
+                                font-size: 14px;
+                                line-height: 24px;
+                                padding: 8px 20px;
+                                font-weight: bold;
+                                text-decoration: none;
+                                display: inline-block;
+                                background: #2e6cf6;
+                                color: #fff;
+                                margin-bottom: 17px;
+                              "
+                              >Đăng nhập</a
+                            >
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style="
+                      font-family: sans-serif;
+                      font-size: 12px;
+                      vertical-align: top;
+                      padding: 3% 5%;
+                      background: #fafbfb;
+                      border-top: 1px solid #ecedee;
+                    "
+                  >
+                    <p style="font-weight: 600; font-size: 13px; line-height: 18px; margin-top: 0; margin-bottom: 4px">KHÔNG CHIA SẺ</p>
+                    <p style="color: #71787e; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0; margin-bottom: 10px">
+                      Email này chứa một mã bảo mật của FPT.CeCa, vui lòng không chia sẻ email hoặc mã bảo mật này với người khác.
+                    </p>
+                    <!--              <p-->
+                    <!--                style="font-weight: 600; font-size: 13px; line-height: 18px; margin-top: 0; margin-bottom: 4px;">LƯU-->
+                    <!--                Ý</p>-->
+                    <!--              <p-->
+                    <!--                style="color: #71787E; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0; margin-bottom: 10px;">Đường-->
+                    <!--                link download hợp đồng có hiệu lực 1 tháng kể từ khi bắt đầu-->
+                    <!--                ký</p>-->
+                    <p style="font-weight: 600; font-size: 13px; line-height: 18px; margin-top: 0; margin-bottom: 4px">
+                      GIỚI THIỆU VỀ FPT.CeCa
+                    </p>
+                    <p style="color: #71787e; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0; margin-bottom: 10px">
+                      FPT.CeCa cung cấp giải pháp và dịch vụ hỗ trợ người sử dụng có thể ký số và chứng thực hợp đồng điện tử nhanh chóng,
+                      tiện lợi. Sản phẩm an toàn, bảo mật đảm bảo tính pháp lý.
+                    </p>
+                    <p style="font-weight: 600; font-size: 13px; line-height: 18px; margin-top: 0; margin-bottom: 4px">
+                      CÂU HỎI VỀ TÀI LIỆU
+                    </p>
+                    <p style="color: #71787e; font-weight: normal; font-size: 12px; line-height: 18px; margin-top: 0; margin-bottom: 0">
+                      Nếu bạn cần sửa đổi hoặc có câu hỏi về nội dung trong tài liệu, vui lòng liên hệ với người gửi bằng cách gửi email
+                      trực tiếp cho họ. Nếu bạn gặp sự cố khi ký tài liệu, vui lòng truy cập trang Trợ giúp.
+                    </p>
+                  </td>
+                </tr>
+
+                <!-- END MAIN CONTENT AREA -->
+              </table>
+
+              <!-- END CENTERED WHITE CONTAINER -->
+            </div>
+          </td>
+          <td style="font-family: sans-serif; font-size: 12px; vertical-align: top">&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calendar - Nhắc lịch cuộc họp</title>
+    <style>
+      @media only screen and (max-width: 620px) {
+        .email-container { width: 100% !important; }
+        .mobile-padding { padding-left: 20px !important; padding-right: 20px !important; }
+        .info-column { display: block !important; width: 100% !important; box-sizing: border-box !important; }
+        .header-image { width: 100% !important; height: auto !important; }
+      }
+    </style>
+  </head>
+  <body style="margin: 0; padding: 0; background-color: #e5e5e5; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 1.5; color: #00204d; -webkit-font-smoothing: antialiased;">
+    
+    <!-- Preheader -->
+    <div style="display: none; max-height: 0; overflow: hidden; opacity: 0; color: transparent; line-height: 1px; font-size: 1px;">
+      Hệ thống Calendar xin nhắc Anh/Chị về sự kiện "<span th:text="${event_title}">Tên cuộc họp</span>" <span th:text="${reminder_text}">sẽ bắt đầu sau 1 giờ</span>.
+    </div>
+
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#e5e5e5" style="width: 100%; margin: 0; padding: 0; border-collapse: collapse; background-color: #e5e5e5;">
+      <tr>
+        <td align="center" style="padding: 0; vertical-align: top;">
+          <table class="email-container" role="presentation" width="800" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" style="width: 100%; max-width: 800px; margin: 0 auto; border-collapse: collapse; background-color: #ffffff;">
+            
+            <!-- HEADER -->
+            <tr>
+              <td style="padding: 0; line-height: 0;">
+                <img class="header-image" src="https://i.imgur.com/4NFT8F6.png" width="800" alt="KYTA Platform" style="display: block; width: 100%; max-width: 800px; height: auto; border: 0;">
+              </td>
+            </tr>
+
+            <!-- GREETING & INTRO -->
+            <tr>
+              <td class="mobile-padding" style="padding: 35px 36px 28px 36px;">
+                <h1 style="margin: 0 0 12px 0; font-size: 21px; font-weight: 600; line-height: 28px; color: #6f2ced;">
+                  Kính gửi Anh/Chị,
+                </h1>
+                <p style="margin: 0; font-size: 14px; font-weight: 400; line-height: 22px; color: #193958;">
+                  Hệ thống Calendar xin nhắc Anh/Chị về sự kiện "<strong style="font-weight: 600;" th:text="${event_title}">Họp giao ban Văn phòng Bộ</strong>" <span th:text="${reminder_text}">sẽ bắt đầu sau 1 giờ</span>.
+                </p>
+              </td>
+            </tr>
+
+            <!-- CARD THÔNG TIN CUỘC HỌP -->
+            <tr>
+              <td class="mobile-padding" style="padding: 0 34px 28px 34px;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#edf2fd" style="width: 100%; border-collapse: collapse; background-color: #edf2fd; border-radius: 8px;">
+                  <tr>
+                    <td style="padding: 24px 28px 8px 28px;">
+                      <p style="margin: 0; font-size: 16px; font-weight: 600; line-height: 28px; color: #6f2ced;">
+                        THÔNG TIN LỊCH
+                      </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style="padding: 0 20px 8px 20px;">
+                      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="width: 100%; border-collapse: collapse;">
+                        <tr>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;">
+                            <p style="margin: 0 0 3px 0; font-size: 13px; line-height: 20px; color: #5f6670;">Loại lịch</p>
+                            <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 22px; color: #000000;" th:text="${calendar_type_name}">
+                              Cuộc họp
+                            </p>
+                          </td>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;">
+                            <p style="margin: 0 0 3px 0; font-size: 13px; line-height: 20px; color: #5f6670;">Tên sự kiện</p>
+                            <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 22px; color: #000000; word-break: break-word;" th:text="${event_title}">
+                              Họp giao ban Văn phòng Bộ
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;">
+                            <p style="margin: 0 0 3px 0; font-size: 13px; line-height: 20px; color: #5f6670;">Thời gian</p>
+                            <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 22px; color: #000000;">
+                              <span th:text="${event_date}">05/09/2026</span>, <span th:text="${start_time}">14:00</span> – <span th:text="${end_time}">16:00</span>
+                            </p>
+                          </td>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;" th:if="${booking_title != null}">
+                            <p style="margin: 0 0 3px 0; font-size: 13px; line-height: 20px; color: #5f6670;">Booking</p>
+                            <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 22px; color: #000000; word-break: break-word;" th:text="${booking_title}">
+                              BK-2026-005 - Họp giao ban Văn phòng Bộ
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;">
+                            <p style="margin: 0 0 3px 0; font-size: 13px; line-height: 20px; color: #5f6670;">Người chủ trì</p>
+                            <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 22px; color: #000000;" th:text="${host_name}">
+                              Trần Minh Hùng
+                            </p>
+                          </td>
+                          <td class="info-column" width="50%" valign="top" style="width: 50%; padding: 8px;" th:if="${participant_list != null}">
+                            <p style="margin: 0 0 3px 0; font-size: 13px; line-height: 20px; color: #5f6670;">Người tham gia</p>
+                            <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 22px; color: #000000; word-break: break-word;">
+                              <span th:text="${participant_count}">04</span> người - <span th:text="${participant_list}">Nguyễn Văn A, Lê Thu Trang, Phạm Minh Đức, Ban Thư ký</span>
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+
+                  <!-- THÔNG TIN BỔ SUNG -->
+                  <tr th:if="${(location != null and !location.isEmpty()) or (meeting_url != null and !meeting_url.isEmpty()) or (description != null and !description.isEmpty())}">
+                    <td style="padding: 8px 28px 8px 28px;">
+                      <div style="height: 1px; background-color: #d5deee; line-height: 1px;">&nbsp;</div>
+                    </td>
+                  </tr>
+                  <tr th:if="${(location != null and !location.isEmpty()) or (meeting_url != null and !meeting_url.isEmpty()) or (description != null and !description.isEmpty())}">
+                    <td style="padding: 8px 28px 6px 28px;">
+                      <p style="margin: 0; font-size: 16px; font-weight: 600; line-height: 28px; color: #6f2ced;">
+                        THÔNG TIN BỔ SUNG
+                      </p>
+                    </td>
+                  </tr>
+                  <tr th:if="${(location != null and !location.isEmpty()) or (meeting_url != null and !meeting_url.isEmpty()) or (description != null and !description.isEmpty())}">
+                    <td style="padding: 0 28px 24px 28px;">
+                      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="width: 100%; border-collapse: collapse;">
+                        <tr th:if="${location != null and !location.isEmpty()}">
+                          <td style="padding: 4px 0; font-size: 14px; line-height: 22px;">
+                            <strong style="color: #424242;">Địa điểm:</strong> <span th:text="${location}">Phòng họp số 1 - Tầng 3</span>
+                          </td>
+                        </tr>
+                        <tr th:if="${meeting_url != null and !meeting_url.isEmpty()}">
+                          <td style="padding: 4px 0; font-size: 14px; line-height: 22px;">
+                            <strong style="color: #424242;">Link cuộc họp:</strong> <a th:href="${meeting_url}" th:text="${meeting_url}" style="color: #6f2ced; word-break: break-all;">https://meeting.example.vn/abc</a>
+                          </td>
+                        </tr>
+                        <tr th:if="${description != null and !description.isEmpty()}">
+                          <td style="padding: 4px 0; font-size: 14px; line-height: 22px;">
+                            <strong style="color: #424242;">Mô tả:</strong> <span th:text="${description}">Họp giao ban định kỳ, rà soát tiến độ công việc trong tuần.</span>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- CALL TO ACTION & REMINDER NOTE -->
+            <tr>
+              <td class="mobile-padding" align="center" style="padding: 0 34px 34px 34px;">
+                <p style="margin: 0 0 16px 0; font-size: 14px; line-height: 22px; text-align: left; color: #193958;">
+                  Vui lòng chủ động sắp xếp thời gian và tham gia đúng giờ.
+                </p>
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+                  <tr>
+                    <td align="center" bgcolor="#eee8fe" style="border: 1px solid #d7c7fa; border-radius: 4px; background-color: #eee8fe;">
+                      <a th:href="${calendar_detail_url}" style="display: inline-block; padding: 10px 22px; font-size: 14px; line-height: 22px; font-weight: 600; text-decoration: none; color: #6f2ced;">
+                        Xem chi tiết lịch
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- SIGNATURE -->
+            <tr>
+              <td class="mobile-padding" style="padding: 0 36px 36px 36px;">
+                <p style="margin: 0; font-size: 14px; line-height: 22px; color: #193958;">
+                  Trân trọng,<br>
+                  <strong style="font-weight: 600; color: #00204d;">Hệ thống Calendar</strong>
+                </p>
+              </td>
+            </tr>
+
+            <!-- COPYRIGHT FOOTER -->
+            <tr>
+              <td class="mobile-padding" style="padding: 18px 36px; border-top: 1px solid #e2e7ef; background-color: #f7f9fc;">
+                <p style="margin: 0; font-size: 12px; line-height: 18px; text-align: center; color: #6b7685;">
+                  Đây là email được gửi tự động từ hệ thống Calendar. Vui lòng không trả lời email này.
+                </p>
+              </td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

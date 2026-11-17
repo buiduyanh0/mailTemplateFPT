@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FptContact Email</title>
+</head>
+
+<body class=""
+    style="background-color: #E5E5E5;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size: 12px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <table border="0" cellpadding="0" cellspacing="0" class="body"
+        style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;padding: 0;background-color: #ffffff;">
+        <tbody>
+            <tr>
+                <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+                <td class="container"
+                    style="font-family: sans-serif;font-size: 12px;vertical-align: top;display: block;margin: 0 auto;max-width: 800px;padding: 0;width: 800px;">
+                    <div class="content"
+                        style="box-sizing: border-box;display: block;Margin: 0;max-width: 800px;padding: 0;">
+
+                        <!-- START CENTERED WHITE CONTAINER -->
+                        <div class="header">
+                            <img src="https://i.imgur.com/qkyWXVk.png" alt="Vinamilk"
+                                 style="float: left;width: 60%;padding: 5% 0 0% 5%;height: auto !important;background-color: #fff;">
+                        </div>
+                        <table class="main"
+                               style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+
+                            <!-- START MAIN CONTENT AREA -->
+                            <tr>
+                                <td class="wrapper"
+                                    style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding: 2% 3%; padding-bottom: 0;">
+                                    <table border="0" cellpadding="0" cellspacing="0"
+                                           style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                        <tr>
+                                            <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                                                <h1 style="
+                                                font-weight:normal;
+                                                font-size: 12px;
+                                                line-height: 24px;
+                                                color: #000;
+                                                margin-bottom: 24px;
+                                                margin-top: 0;
+                                                " th:with="rcpNameMail=(@{|Kính gửi Anh/ Chị ${rcpName}|})"
+                                                    th:text="${rcpNameMail}">[Họ tên]</h1>
+
+                                                <!-- Trân trọng -->
+                                                <div
+                                                    style="background: #fff;margin-bottom:5px;text-align: center;padding-top: 5px;">
+                                                    <p style="
+                                                    font-weight: normal;
+                                                    margin-top: 0;
+                                                    margin-bottom: 16px;
+                                                    font-size: 12px;
+                                                    line-height: 20px;
+                                                    color: #000;
+                                                    text-align: left;
+                                                    ">
+                                                        Bạn được chia sẻ một tài liệu từ
+                                                        <b style="font-weight:normal;"
+                                                            th:with="create=(@{|${rqtMail}|})" th:text="${create}">
+                                                            Nguyễn Minh Tâm - nguyenminhtam@gmail.com</b>
+                                                        <span style="color: #000;" th:with="nameEnv=(@{| ${envName}|})"
+                                                            th:text="${nameEnv}"><b>Hợp đồng công nghệ thông
+                                                                2019</b></span>
+                                                    </p>
+
+                                                    <p style="text-align:left;">Anh/ Chị vui lòng bấm vào đường link
+                                                        truy cập bên dưới, sau đó nhập địa chỉ email và mã truy cập để
+                                                        xem nội dung văn bản.</p>
+                                                    <a style="
+                                                    font-size: 14px;
+                                                    line-height: 24px;
+                                                    padding: 3px 10px;
+                                                    font-weight: bold;
+                                                    text-decoration: underline;
+                                                    margin-bottom: 0;
+                                                    display: inline-block;
+                                                    color: #000;
+                                                    margin-bottom: 5px;
+                                                    "th:with="url=(@{|${baseUrl}/fp/${envId}/${rcpName}/view|})" th:href="${url}" 
+                                                        >NHẤN VÀO ĐÂY ĐỂ XEM TÀI LIỆU
+                                                    </a>
+
+                                                    <p style="
+                                                    font-weight: 500;
+                                                    margin-top: 0;
+                                                    margin-bottom: 2px;
+                                                    font-size: 12px;
+                                                    font-style: italic;
+                                                    line-height: 18px;
+                                                    color: #000;
+                                                    " th:with="codetitle=(@{|Mã truy cập |})" th:text="${codetitle}">Mã
+                                                    </p>
+                                                    <p style="
+                                                    font-weight: bold;
+                                                    font-size: 14px;
+                                                    line-height: 24px;
+                                                    font-style: italic;
+                                                    color: black;
+                                                    margin-top: 0;
+                                                    margin-bottom: 5px;
+                                                    "><b th:with="code=(@{|${password}|})" th:text="${code}">2TK8gK</b>
+                                                    </p>
+                                                    <br />
+                                                </div>
+                                                <!-- Hết phần trân trọng -->
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td
+                                    style="font-family: sans-serif; font-size: 12px; vertical-align: top;background: #fff;padding:1% 3%;">
+                                    <p style="
+                                                color: #000;
+                                                font-weight: normal;
+                                                font-size: 12px;
+                                                text-align: left;
+                                                line-height: 18px;
+                                                margin-top: 0;
+                                                margin-bottom: 0;
+                                            ">Để xem chi tiết luồng ký, Anh/ Chị vui lòng đăng nhập, sau đó chọn vào “Lịch sử điều phối” phía trên bên phải màn hình để tham khảo quy trình ký trực quan.
+                                    </p>
+                                </td>
+                            </tr>
+
+
+                            <tr style="width: 100%;font-family: sans-serif;font-size: 12px;">
+                                <td style="background: #fff;padding:1% 3%;">
+                                    <br><b style="font-weight: normal;font-family: sans-serif;font-size: 12px;"
+                                        th:with="create=(@{|Người khởi tạo: ${rqtMail}|})" th:text="${create}"> Nguyễn
+                                        Minh Tâm - nguyenminhtam@gmail.com</b><br>
+                                </td>
+                            </tr>
+
+                            <!-- END MAIN CONTENT AREA -->
+                        </table>
+
+                        <!-- END CENTERED WHITE CONTAINER -->
+                    </div>
+                </td>
+                <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+            </tr>
+            <!--IMG Footer-->
+            <tr>
+                <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+                <td class="container-img"
+                    style="font-family: sans-serif;font-size: 12px;vertical-align: top;display: block;margin: 0 auto;max-width: 800px;padding: 0;width: 800px;">
+                    <div class="content-img"
+                        style="box-sizing: border-box;display: block;Margin: 0;max-width: 800px;padding: 0;">
+                    </div>
+                </td>
+                <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+            </tr>
+    </table>
+
+</body>
+
+</html>

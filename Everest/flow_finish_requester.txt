@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Everest Email</title>
+</head>
+
+<body class=""
+      style="background-color: #E5E5E5; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 12px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+<table border="0" cellpadding="0" cellspacing="0" class="body"
+       style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; padding: 0; background-color: #ffffff;">
+  <tbody>
+  <tr>
+    <td
+            style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+    <td class="container"
+        style="font-family: sans-serif; font-size: 12px; vertical-align: top; display: block; margin: 0 auto; max-width: 800px; padding: 0; width: 800px;">
+      <div class="content"
+           style="box-sizing: border-box; display: block; Margin: 0; max-width: 800px; padding: 0;">
+
+        <!-- START CENTERED WHITE CONTAINER -->
+        <!--                <div class="header"-->
+        <!--                     style="display: inline-block; clear: both; text-align: center; width: 100%; background: url(https://i.imgur.com/aisEGz2.png) no-repeat center; background-size: cover;">-->
+        <!--                    <img src="https://i.imgur.com/WCHvfh1.png" alt="FPT.eContract"-->
+        <!--                         style="float: left; padding: 5% 0 4% 5%; max-width: 38%; height: auto; min-height: 32px;">-->
+        <!--                </div>-->
+        <table class="main"
+               style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+
+          <!-- START MAIN CONTENT AREA -->
+          <tr>
+            <td class="wrapper"
+                style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding: 5%; padding-bottom: 0;">
+              <table border="0" cellpadding="0" cellspacing="0"
+                     style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                <tr>
+                  <td
+                          style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                    <h1 style="
+                                                font-size: 18px;
+                                                line-height: 24px;
+                                                margin-bottom: 24px;
+                                                margin-top: 0;
+font-weight: 500">
+                      Kính gửi Quý khách hàng <span style="font-style: italic" th:with="rqtNameMail=(@{|${rqtName}|})"
+                                               th:text="${rqtNameMail}">Nguyễn Văn A</span>,</h1>
+                    <div style="   padding-top: 24px; text-align: left">
+
+                      <p style="font-weight: 500; margin-top: 0; margin-bottom: 16px; font-size: 14px; line-height: 20px; color: #121E28;"
+                         th:with="nameDocSend=(@{| Tài liệu được gửi từ  ${rqtMail} |})"
+                         th:text="${nameDocSend}">Tài liệu
+                        <span style="color: #121E28;"
+                              th:with="nameEnv=(@{| ${envName}|})"
+                              th:text="${nameEnv}"><b>Hợp đồng công nghệ thông 2019 đã kết thúc</b></span>
+                      </p>
+
+                      <p
+                              style="font-weight: bold; font-size: 22px; line-height: 24px; color: #121E28; margin-top: 0; margin-bottom: 20px;">
+                        <b th:switch="${envStatus}"> <span th:case="rejected"
+                                                           th:with="finishstatus=(@{| BỊ TỪ CHỐI|})"
+                                                           th:text="${finishstatus}">Bị từ chối</span> <span
+                                th:case="completed"
+                                th:with="finishstatus=(@{| ĐÃ HOÀN THÀNH|})"
+                                th:text="${finishstatus}">Hoàn thành</span> <span
+                                th:case="voided" th:with="finishstatus=(@{| BỊ HỦY |})"
+                                th:text="${finishstatus}">Bị hủy </span> <span
+                                th:case="overdue" th:with="finishstatus=(@{| ĐÃ QUÁ HẠN |})"
+                                th:text="${finishstatus}">Quá hạn </span>
+
+                        </b>
+                      </p>
+
+                      <div th:if="${envStatus == 'rejected'}">
+                        <div th:if="${reason != 'null' }">
+                          <p style="
+                                                font-weight: bold;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 12px;
+                                                line-height: 18px;
+                                                color: #121E28;">
+                            Lý do từ chối: <span th:with="reasonTo=(@{|${reason} |})" th:text="${reasonTo}">xxxxx</span> </p>
+                        </div>
+                      </div>
+                      <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                text-align: left;
+                                                color: #121E28;">
+                        Đây là Email được gửi tự động từ hệ thống, vui lòng không trả lời Email này. Mọi thắc mắc vui lòng liên hệ với chúng tôi để được hỗ trợ nhanh nhất.</p>
+                      <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                text-align: left;
+                                                color: #121E28;">
+                        Email: phongdvkh@eves.com.vn</p>
+                      <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                text-align: left;
+                                                color: #121E28;">
+                        Hotline: 0243 772 6699 máy lẻ: 328</p>
+                      <p style="
+                                                font-weight: 500;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                text-align: left;
+                                                color: #121E28;">
+                        Kính chúc Quý khách hàng sức khỏe và đầu tư thành công tại EVS.</p>
+                      <p style="
+                                                font-weight: bold;
+                                                margin-top: 0;
+                                                margin-bottom: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                text-align: left;
+                                                color: #121E28;">
+                        Trân trọng.</p>
+                      <img style="width: 100%" src="https://i.imgur.com/L8zTW7d.png" alt="">
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- END MAIN CONTENT AREA -->
+        </table>
+
+        <!-- END CENTERED WHITE CONTAINER -->
+      </div>
+    </td>
+    <td
+            style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+  </tr>
+</table>
+</body>
+
+</html>

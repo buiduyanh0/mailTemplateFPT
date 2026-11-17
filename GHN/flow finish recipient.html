@@ -1,0 +1,112 @@
+              <!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FptContact Email</title>
+</head>
+<body style="background-color: #E5E5E5; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 12px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#E5E5E5" style="width:100%;background-color:#ffffff;">
+    <tr>
+        <td>&nbsp;</td>
+        <td align="center" style="margin:0 auto;max-width:800px;width:800px;padding:0;">
+            <table width="800" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="max-width:800px;width:800px;background-color:#ffffff;margin:0 auto;">
+                <tr>
+                    <td align="center" style="background:#fff;text-align:center;width:100%;padding-top:16px;">
+                        <img src="https://raw.githubusercontent.com/buiduyanh0/image-econtract/main/Group_1_GHN_replaced.png" alt="Group-1" border="0" style="width:89%;">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0 5%;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="width:100%;">
+                            <tr>
+                                <td>
+                                    <h1
+                                            style="font-weight:bold;font-size:18px;line-height:24px;margin-bottom:10px;margin-top:0;"
+                                            th:with="rqtNameMail=(@{|Chào Anh/Chị ${rcpName}|})"
+                                            th:text="${rqtNameMail}">Chào Anh/Chị Nguyễn Văn A,</h1>
+                                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:rgba(233,234,247,0.5);margin-bottom:16px;text-align:justify;">
+                                        <tr>
+                                            <td style="padding:20px;">
+                                                <p style="font-weight:500;margin-top:0;margin-bottom:10px;font-size:14px;line-height:20px;color:#121E28;">
+                                                    Hợp Đồng/ Phụ Lục Hợp Đồng <b>ĐÃ</b>
+                                                    <b th:switch="${envStatus}">
+                                                        <span th:case="rejected"
+                                                              th:with="finishstatus=(@{| BỊ TỪ CHỐI|})"
+                                                              th:text="${finishstatus}">Bị từ chối</span>
+                                                        <span th:case="completed"
+                                                              th:with="finishstatus=(@{| HOÀN THÀNH|})"
+                                                              th:text="${finishstatus}">Hoàn thành</span>
+                                                        <span th:case="voided"
+                                                              th:with="finishstatus=(@{| BỊ HỦY |})"
+                                                              th:text="${finishstatus}">Bị hủy </span>
+                                                        <span th:case="overdue"
+                                                              th:with="finishstatus=(@{| QUÁ HẠN |})"
+                                                              th:text="${finishstatus}">Quá hạn </span>
+                                                    </b>
+                                                    <span th:if="${envStatus == 'completed'}">
+                                                        với mã truy cập tài liệu là <b th:text="${password}">sadsadsa</b>
+                                                    </span>
+                                                    <span th:if="${envStatus == 'rejected'}" style="font-weight:normal;margin-top:5px;margin-bottom:16px;font-size:13px;line-height:18px;">
+                                                        bởi
+                                                        <b style="font-weight:normal;" th:switch="${reason}">
+                                                            <span th:case="null"></span>
+                                                            <span th:case="'null'"></span>
+                                                            <span th:case="''"></span>
+                                                            <span th:case="*"
+                                                                  th:with="reasonTo=(@{|${reason} |})"
+                                                                  th:text="${reasonTo}">
+                                                                11111111
+                                                            </span>
+                                                        </b><br>
+                                                        Khối Nhân Lực <b>sẽ liên hệ để hỗ trợ</b> Anh/Chị theo đúng quy định.
+                                                    </span>
+                                                    <span th:if="${envStatus == 'voided'}" style="font-weight:normal;margin-top:5px;margin-bottom:16px;font-size:13px;line-height:18px;">
+                                                        <b style="font-weight:normal;" th:switch="${requesterReason}">
+                                                            <span th:case="null"></span>
+                                                            <span th:case="'null'"></span>
+                                                            <span th:case="''"></span>
+                                                            <span th:case="*"
+                                                                  th:with="reasonTo=(@{|với lý do ${requesterReason}|})"
+                                                                  th:text="${reasonTo}">
+                                                                với lý do
+                                                            </span>
+                                                        </b>
+                                                        <br>
+                                                        Khối Nhân Lực <b>sẽ liên hệ để hỗ trợ</b> Anh/Chị theo đúng quy định.
+                                                    </span>
+                                                </p>
+                                                <table width="100%" cellpadding="0" cellspacing="0" border="0" th:if="${envStatus == 'completed'}">
+                                                    <tr>
+                                                        <td>
+                                                            <div style="font-weight:500;margin-top:0;margin-bottom:10px;font-size:13px;line-height:20px;color:#121E28;text-align:center;">
+                                                                <div style="text-align:left">
+                                                                    Anh/Chị vui lòng chọn vào nút
+                                                                    <b>"Tải Tài Liệu"</b> bên dưới
+                                                                    để có thể xem lại hoặc tải tài liệu lưu trữ
+                                                                </div>
+                                                                <br>
+                                                                <a style="font-size:14px;line-height:24px;padding:4px 15px;font-weight:bold;border-radius:4px;text-decoration:none;margin-bottom:10px;display:inline-block;background:#ff8600;color:#fff;"
+                                                                   th:with="url=(@{|${baseUrl}/fi/${envId}/${rcpId}/act|})"
+                                                                   th:href="${url}">TẢI TÀI LIỆU</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <p style="font-weight:500;margin-top:0;margin-bottom:10px;font-size:14px;line-height:18px;">Trân trọng cảm ơn Anh/Chị</p>
+                                                <span style="font-weight:500;margin-top:0;margin-bottom:4px;font-size:14px;line-height:18px;" th:text="${orgName}">Tên công ty</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</body>
+</html>

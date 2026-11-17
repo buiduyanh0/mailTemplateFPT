@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FptContact Email</title>
+</head>
+
+<body class=""
+    style="background-color: #E5E5E5;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size: 12px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <table border="0" cellpadding="0" cellspacing="0" class="body"
+        style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;padding: 0;background-color: #ffffff;">
+        <tbody>
+            <tr>
+                <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+                <td class="container"
+                    style="font-family: sans-serif;font-size: 12px;vertical-align: top;display: block;margin: 0 auto;max-width: 800px;padding: 0;width: 800px;">
+                    <div class="content"
+                        style="box-sizing: border-box;display: block;Margin: 0;max-width: 800px;padding: 0;">
+
+                        <!-- START CENTERED WHITE CONTAINER -->
+                        <div class="header">
+                            <img src="https://i.imgur.com/qkyWXVk.png" alt="Vinamilk"
+                                 style="float: left;width: 60%;padding: 5% 0 0% 5%;height: auto !important;background-color: #fff;">
+                        </div>
+                        <table class="main"
+                               style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+
+                            <!-- START MAIN CONTENT AREA -->
+                            <tr>
+                                <td class="wrapper"
+                                    style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding: 2% 3%; padding-bottom: 0;">
+                                    <table border="0" cellpadding="0" cellspacing="0"
+                                           style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                        <tr>
+                                            <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                                                <h1 style="
+                                                font-weight:normal;
+                                                font-size: 12px;
+                                                line-height: 24px;
+                                                color: #000;
+                                                margin-bottom: 24px;
+                                                margin-top: 0;
+                                                " th:with="rcpNameMail=(@{|Kính gửi Anh/ Chị ${rcpName}|})"
+                                                    th:text="${rcpNameMail}">[Họ tên]</h1>
+
+                                                <!-- Trân trọng -->
+                                                <div
+                                                    style="background: #fff;margin-bottom:5px;text-align: center;padding-top: 5px;">
+
+                                                    <p style="
+                                                    font-weight:normal;
+                                                    margin-top: 0;
+                                                    margin-bottom: 16px;
+                                                    font-size: 12px;
+                                                    line-height: 20px;
+                                                    text-align: left;
+                                                    color: #000;
+                                                    font-family: sans-serif;
+                                                    ">
+                                                        <b style="font-weight: normal;font-family: sans-serif;"
+                                                            th:switch="${role}">
+                                                            <span th:text="${orgName}">Tên công ty</span> <span> </span>
+                                                            <span th:case="signer"
+                                                                th:with="roleRecipient=(@{| trân trọng trình Anh/ Chị ký văn bản |})"
+                                                                th:text="${roleRecipient}">Bạn có một yêu cầu ký tài
+                                                                liệu từ</span>
+                                                            <span th:case="reviewer"
+                                                                th:with="roleRecipient=(@{| trân trọng trình Anh/ Chị xem xét văn bản |})"
+                                                                th:text="${roleRecipient}">Bạn có một yêu cầu xem xét
+                                                                tài liệu từ</span>
+                                                            <span th:case="stamper"
+                                                                th:with="roleRecipient=(@{| trân trọng trình Anh/ Chị ký số của đơn vị cho văn bản |})"
+                                                                th:text="${roleRecipient}">Bạn có một yêu cầu xem xét
+                                                                tài liệu từ</span>
+                                                            <span th:case="coordinator"
+                                                                th:with="roleRecipient=(@{| trân trọng trình Anh/ Chị xác nhận/thiết lập luồng ký văn bản |})"
+                                                                th:text="${roleRecipient}">Bạn có một yêu cầu xem xét
+                                                                tài liệu từ</span>
+
+                                                        </b>
+                                                        <b style="font-weight: normal;"
+                                                            th:with="nameEnv=(@{| ${envName}|})" th:text="${nameEnv}">
+                                                            Tên hợp đồng
+                                                        </b>
+                                                    </p>
+                                                    <!-- <p style="text-align:left;">Anh/ Chị vui lòng bấm vào đường link
+                                                truy cập bên dưới, sau đó nhập địa chỉ email và mã truy cập để xem nội dung văn bản và thực hiện xem xét.</p> -->
+                                                    <p style="
+                                                        font-weight:normal;
+                                                        margin-top: 0;
+                                                        margin-bottom: 16px;
+                                                        font-size: 12px;
+                                                        line-height: 20px;
+                                                        text-align: left;
+                                                        color: #000;
+                                                        font-family: sans-serif;
+                                                        ">
+                                                        <b style="font-weight: normal;font-family: sans-serif;"
+                                                            th:switch="${role}">
+                                                            <span th:case="signer"
+                                                                th:with="roleRecipient=(@{| Anh/ Chị vui lòng bấm vào đường link
+                                                                        truy cập bên dưới, sau đó nhập địa chỉ email và mã truy cập để xem nội dung văn bản và thực hiện ký. |})"
+                                                                th:text="${roleRecipient}">Bạn có một yêu cầu ký tài
+                                                                liệu từ</span>
+                                                            <span th:case="reviewer"
+                                                                th:with="roleRecipient=(@{| Anh/ Chị vui lòng bấm vào đường link
+                                                                        truy cập bên dưới, sau đó nhập địa chỉ email và mã truy cập để xem nội dung văn bản và thực hiện xem xét. |})"
+                                                                th:text="${roleRecipient}">Bạn có một yêu cầu xem xét
+                                                                tài liệu từ</span>
+                                                            <span th:case="stamper"
+                                                                th:with="roleRecipient=(@{| Anh/ Chị vui lòng bấm vào đường link
+                                                                        truy cập bên dưới, sau đó nhập địa chỉ email và mã truy cập để xem nội dung văn bản và thực hiện ký. |})"
+                                                                th:text="${roleRecipient}">Bạn có một yêu cầu xem xét
+                                                                tài liệu từ</span>
+                                                            <span th:case="coordinator"
+                                                                th:with="roleRecipient=(@{| Anh/ Chị vui lòng bấm vào đường link
+                                                                        truy cập bên dưới, sau đó nhập địa chỉ email và mã truy cập để
+                                                                        xem nội dung văn bản và thực hiện xác nhận/thiết lập luồng ký. |})"
+                                                                th:text="${roleRecipient}">Bạn có một yêu cầu xem xét
+                                                                tài liệu từ</span>
+                                                        </b>
+                                                    </p>
+                                                   						<div th:if="${baseUrlInternal == 'null' || baseUrlInternal == null }">
+                                                    <a style="
+                                                    font-size:14px;
+                                                    line-height: 24px;
+                                                    padding: 3px 10px;
+                                                    font-weight: bold;
+                                                    text-decoration: underline;
+                                                    margin-bottom: 0;
+                                                    display: inline-block;
+                                                    color: #000;
+                                                    margin-bottom: 5px;
+                                                    " th:with="url=(@{|${baseUrl}/fi/${envId}/${rcpId}/act|})"
+                                                        th:href="${url}">NHẤN VÀO ĐÂY ĐỂ XEM TÀI LIỆU
+                                                    </a>
+
+                                                    <p style="
+                                                    font-weight: 500;
+                                                    margin-top: 0;
+                                                    margin-bottom: 2px;
+                                                    font-size: 12px;
+                                                    font-style: italic;
+                                                    line-height: 18px;
+                                                    color: #000;
+                                                    " th:with="codetitle=(@{|Mã truy cập |})" th:text="${codetitle}">Mã
+                                                    </p>
+						
+                                                    <p style="
+                                                    font-weight: bold;
+                                                    font-size: 14px;
+                                                    line-height: 24px;
+                                                    font-style: italic;
+                                                    color: black;
+                                                    margin-top: 0;
+                                                    margin-bottom: 5px;
+                                                    "><b th:with="code=(@{|${password}|})" th:text="${code}">2TK8gK</b>
+                                                    </p>
+						</div>
+
+						<div th:if="${baseUrlInternal != 'null' && baseUrlInternal != null }"> 
+												   <a style="
+                                                    font-size: 14px;
+                                                    line-height: 24px;
+                                                    padding: 8px 20px;
+                                                    font-weight: bold;
+                                                    text-decoration: none;
+                                                    margin-bottom: 0;
+                                                    display: inline-block;
+                                                    background: #2E6CF6;
+                                                    color: #fff;
+                                                    margin-bottom: 17px;
+                                                "
+												th:with="urlInternal=(@{|${baseUrlInternal}|})" th:href="${urlInternal}" 
+												>XEM TÀI LIỆU</a>
+							</div>
+
+                                              
+                                                <!-- Hết phần trân trọng -->
+
+                                                <p style="
+                                                    font-weight:normal;
+                                                    margin-top: 5px;
+                                                    margin-bottom: 16px;
+                                                    font-size: 12px;
+                                                    line-height: 20px;
+                                                    color: red;
+                                                    text-align: left;
+                                                    ">
+                                                        <b style="font-weight: normal;" th:switch="${message}">
+                                                            <span th:case="null">
+                                                          
+                                                            </span>
+                                                            <span th:case="'null'">
+
+                                                            </span>
+                                                            <span th:case="''">
+
+                                                            </span>
+                                                            <span th:case="*"
+                                                            th:with="messageTo=(@{|${message} |})" 
+                                                            th:text="${messageTo}"
+                                                            >
+                                                            Bạn có một
+                                                            lời nhắn từ admin của FPT.eContract Hôm nay là 1 ngày đẹp
+                                                            trời tại sao chúng ta lại không đi chơi, đi chơi xong nhớ ký
+                                                            tài liệu tại FPT.eContract
+                                                            </span>
+                                                        </b>  
+                                                </p>
+												
+												
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td
+                                    style="font-family: sans-serif; font-size: 12px; vertical-align: top;background: #fff;padding:1% 3%;">
+                                    <p style="
+                                                color: #000;
+                                                font-weight: normal;
+                                                font-size: 12px;
+                                                text-align: left;
+                                                line-height: 18px;
+                                                margin-top: 0;
+                                                margin-bottom: 0;
+                                            ">Để xem chi tiết luồng ký, Anh/ Chị vui lòng đăng nhập, sau đó chọn vào biểu tượng đồng hồ phía trên bên phải màn hình hoặc tham khảo quy trình ký trực quan sau đây:</p><br>
+                                </td>
+                            </tr>
+
+                            <tr style="width: 100%;font-family: sans-serif;font-size: 12px;" >
+                                <td style="padding-left: 3%;">
+                                    <div th:each="party : ${parties}" style="width: 100%">
+                                        <div style="margin: 18px 0 18px 0; width: 100%">
+                                            <span th:if="${party.type} == 'my-organization'"
+                                                style="font-size: 12px;font-weight: 600;">Thông tin luồng ký: </span> <!--&nbsp;-->
+                                            <span th:if="${party.type} != 'my-organization'"
+                                                style="font-size: 12px;font-weight: 600;">Thông tin luồng ký: </span> &nbsp;
+                                            <span style="font-size: 12px;font-weight: 600;"
+                                                th:text="${party.name}"></span>
+                                        </div>
+                                        <table style="width: 100%;font-size: 12px;font-family: sans-serif;">
+                                            <tr style="width: 100%">
+                                                <td
+                                                    style="width: 30%;border: 1px solid black;text-align: center;font-size: 12px;font-weight: 600;line-height: 26px; padding: 12px">
+                                                    <p>Vai trò</p>
+                                                </td>
+                                                <td
+                                                    style="width: 70%;border: 1px solid black;text-align: center;font-size: 12px;font-weight: 600;line-height: 26px; padding: 12px">
+                                                    <p>Người thực hiện</p>
+                                                </td>
+                                            </tr>
+                                            <div th:each="recipient : ${party.recipients}">
+                                                <tr style="width: 100%">
+                                                    <td style="width: 30%;border: 1px black solid;">
+                                                        <p th:if="${recipient.role} == 'signer'"
+                                                            style="font-size: 12px;font-weight: 500;line-height: 10px;margin-top: 10px;margin-bottom: 10px;margin-left: 20px;">
+                                                            Người ký</p>
+                                                        <p th:if="${recipient.role} == 'reviewer'"
+                                                            style="font-size: 12px;font-weight: 500;line-height: 10px;margin-top: 10px;margin-bottom: 10px;margin-left: 20px;">
+                                                            Người xem xét</p>
+                                                        <p th:if="${recipient.role} == 'stamper'"
+                                                            style="font-size: 12px;font-weight: 500;line-height: 10px;margin-top: 10px;margin-bottom: 10px;margin-left: 20px;">
+                                                            Văn thư</p>
+                                                            <p th:if="${recipient.role} == 'coordinator'"
+                                                            style="font-size: 12px;font-weight: 500;line-height: 10px;margin-top: 10px;margin-bottom: 10px;margin-left: 20px;">
+                                                            Người điều phối</p>
+                                                    </td>
+                                                    <td style="width: 70%;border: 1px black solid">
+                                                        <div
+                                                            style="margin-top: 10px;margin-bottom: 10px;margin-left: 20px;">
+                                                            <span
+                                                                style="font-size: 12px;font-weight: 500;line-height: 10px;">Thông
+                                                                tin: </span>
+                                                            &nbsp;
+                                                            <span th:if="${recipient.contact.name != null }"
+                                                                th:text="${recipient.contact.name}"
+                                                                style="font-size: 12px;font-weight: 500;line-height: 10px;">Họ
+                                                                tên</span>
+                                                            &nbsp; (<span th:if="${recipient.contact.name != null }"
+                                                                th:text="${recipient.contact.email}"
+                                                                style="font-size: 12px;font-weight: 500;line-height: 10px;"></span>)
+                                                        </div>
+                                                        <!--                                                <p th:if="${recipient.contact.title != null }" th:text="${recipient.contact.title}">Chức danh</p>-->
+                                                        <div
+                                                            style="margin-top: 10px;margin-bottom: 10px;margin-left: 20px;">
+                                                            <span
+                                                                style="font-size: 12px;font-weight: 500;line-height: 10px;">Trạng
+                                                                thái: </span>
+                                                            &nbsp;
+                                                            <span th:if="${recipient.status == null }"
+                                                                style="font-size: 12px;font-weight: 500;line-height: 10px;">Chưa
+                                                                xử lý</span>
+                                                            <span th:if="${recipient.status == 'processing' }"
+                                                                style="font-size: 12px;font-weight: 500;line-height: 10px;">Đang
+                                                                xử lý</span>
+                                                            <span th:if="${recipient.status == 'accepted' }"
+                                                                style="font-size: 12px;font-weight: 500;line-height: 10px;">Hoàn
+                                                                tất</span>
+                                                            <span th:if="${recipient.status == 'rejected' }"
+                                                                style="font-size: 12px;font-weight: 500;line-height: 10px">Từ
+                                                                chối</span>
+                                                        </div>
+
+                                                        <div style="margin-top: 10px;margin-bottom: 10px;margin-left: 20px;"
+                                                            th:if="${recipient.signDate != null }">
+                                                            <span th:if="${recipient.signDate != null }"
+                                                                style="font-size: 12px;font-weight: 500;line-height: 10px;">Ngày
+                                                                hoàn tất: </span>
+                                                            &nbsp;
+                                                            <span th:if="${recipient.signDate != null }"
+                                                                th:text="${recipient.signDateStr}"
+                                                                style="font-size: 12px;font-weight: 500;line-height: 10px;">Ngày
+                                                                thực hiện</span>
+                                                        </div>
+
+                                                    </td>
+                                                </tr>
+                                            </div>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr style="width: 100%;font-family: sans-serif;font-size: 12px;">
+                                <td style="background: #fff;padding:1% 3%;font-size: 12px;font-family: sans-serif;">
+                                    <br><b style="font-weight: normal;" th:with="create=(@{|Người khởi tạo: ${rqtMail}|})"
+                                        th:text="${create}"> Nguyễn Minh Tâm - nguyenminhtam@gmail.com</b><br>
+                                </td>
+                            </tr>
+
+                            <!-- END MAIN CONTENT AREA -->
+                        </table>
+                    </div>
+
+                    <!-- END CENTERED WHITE CONTAINER -->
+                </td>
+                <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+            </tr>
+            <!--IMG Footer-->
+            <tr>
+                <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+                <td class="container-img"
+                    style="font-family: sans-serif;font-size: 12px;vertical-align: top;display: block;margin: 0 auto;max-width: 800px;padding: 0;width: 800px;">
+                    <div class="content-img"
+                        style="box-sizing: border-box;display: block;Margin: 0;max-width: 800px;padding: 0;">
+                    </div>
+                </td>
+                <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

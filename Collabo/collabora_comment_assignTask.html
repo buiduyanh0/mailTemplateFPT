@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FptContact Email</title>
+    <style>
+        @media (max-width: 480px) {
+            .container {
+                max-width: 440px;
+            }
+
+            h1 {
+                margin: 0 !important;
+            }
+
+            .content-head {
+                max-width: 440px;
+            }
+
+            .check-file {
+                max-width: 440px;
+            }
+
+            p {
+                max-width: 440px;
+            }
+        }
+
+        @media (max-width: 280px) {
+            .container {
+                width: 250px;
+            }
+        }
+
+        .tooltip-container {
+            display: inline-block;
+            max-width: 180px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-family: Inter;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 16px;
+            color: var(--Typography-Light-theme-Label, rgba(0, 32, 77, 0.95));
+        }
+    </style>
+</head>
+
+<body class=""
+      style="background-color: #E5E5E5;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size: 12px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<table border="0" cellpadding="0" cellspacing="0" class="body"
+       style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;padding: 0;background-color: #ffffff;">
+    <tbody>
+    <tr>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+        <td class="container"
+            style="font-family: sans-serif;font-size: 12px;vertical-align: top;display: block;margin: 0 auto;max-width: 800px;padding: 0;width: 800px;">
+            <div class="content"
+                 style="box-sizing: border-box;display: block;Margin: 0;max-width: 800px;padding: 0;">
+
+                <!-- START CENTERED WHITE CONTAINER -->
+                <div class="header"
+                     style="display: inline-block;clear: both;text-align: center;width: 100%;background: url() no-repeat center;     background-size: cover;">
+                    <img src="https://i.imgur.com/4NFT8F6.png" alt="FPT.eContract"
+                         style="float: left;padding: 5% 0 0 0;max-width: 99.5%;height: auto;min-height: 32px;">
+                </div>
+                <table class="main"
+                       style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+
+                    <!-- START MAIN CONTENT AREA -->
+                    <tr>
+                        <td class="wrapper"
+                            style="font-family: sans-serif; font-size: 12px; vertical-align: top; box-sizing: border-box; padding: 5% 5% 0 5%;;">
+                            <table border="0" cellpadding="0" cellspacing="0"
+                                   style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                <tr>
+                                    <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">
+                                        <h1 style="
+                                                font-family: Inter;
+                                                font-size: 21px;
+                                                font-weight: 600;
+                                                line-height: 24px;
+                                                color: rgba(111, 44, 237, 1);
+                                                margin-bottom: 8px;
+                                                margin-top: 0;">Kính gửi
+                                            <span th:text="${action == 1 ? ownerName  : userName}"></span>
+                                            <div class="content-head" style="
+                                                        font-family: Inter;
+                                                        font-size: 14px;
+                                                        font-weight: 400;
+                                                        line-height: 22px;
+                                                        color: rgba(0, 32, 77, 0.9);
+                                                      " th:if="${action} == 0 ">
+                                                Cảm ơn quý khách đã sử dụng dịch vụ của
+                                                <span style="font-weight: 600">KYTA.CLM</span><br />
+                                                Chúng tôi liên lạc với quý khách để thông báo quý
+                                                khách đã được người dùng
+                                                <span style="font-weight: 600"
+                                                      th:text="${ownerName}">{UserName}</span> đã đề cập đến bạn trong
+                                                tài liệu tài
+                                                liệu "<span style="font-weight: 600"
+                                                            th:text="${fileName}">abc.excel</span>" với nội dung <span
+                                                    style="font-weight: 600" th:text="${message}">{Massage}</span>
+                                                vào lúc
+                                                <span th:text="${createDate}">23/01/2024</span>
+                                            </div>
+                                            <div class="content-head" style="
+                                                        font-family: Inter;
+                                                        font-size: 14px;
+                                                        font-weight: 400;
+                                                        line-height: 22px;
+                                                        color: rgba(0, 32, 77, 0.9);
+                                                      " th:if="${action} == 1 ">
+                                                Cảm ơn quý khách đã sử dụng dịch vụ của
+                                                <span style="font-weight: 600">KYTA.CLM</span><br />
+                                                Chúng tôi liên lạc với quý khách để thông báo quý
+                                                khách đã được người dùng
+                                                <span style="font-weight: 600"
+                                                      th:text="${userName}">{UserName}</span>
+                                                đã phản hồi bình luận của bạn trong tài
+                                                liệu "<span style="font-weight: 600"
+                                                            th:text="${fileName}">abc.excel</span>"
+                                                vào lúc
+                                                <span th:text="${createDate}">23/01/2024</span>
+                                            </div>
+                                            <div class="content-head" style="
+                                                        font-family: Inter;
+                                                        font-size: 14px;
+                                                        font-weight: 400;
+                                                        line-height: 22px;
+                                                        color: rgba(0, 32, 77, 0.9);
+                                                      " th:if="${action} == 2 ">
+                                                Cảm ơn quý khách đã sử dụng dịch vụ của
+                                                <span style="font-weight: 600">KYTA.CLM</span><br />
+                                                Chúng tôi liên lạc với quý khách để thông báo quý
+                                                khách đã được người dùng
+                                                <span style="font-weight: 600"
+                                                      th:text="${ownerName}">{UserName}</span>
+                                                giao việc cho bạn trong "<span style="font-weight: 600"
+                                                                               th:text="${fileName}">abc.excel</span>"
+                                                vào lúc
+                                                <span th:text="${createDate}">23/01/2024</span>
+                                            </div>
+                                            <div class="check-file" style=" background: rgba(237, 242, 253, 1);
+                                                             margin-bottom: 16px;
+                                                             text-align: center;
+                                                             padding: 21px;
+                                                             margin: 35px 0;">
+                                                <div th:if="${fileType} == 'word'" style="
+                                                   border: 2px solid rgba(227, 228, 228, 0.9);
+                                                   background-color: #fcf8f8;
+                                                   border-radius: 16px;
+                                                   width: 254px;
+                                                   padding: 10px 0px;
+                                                   display: inline-block;
+                                                 " class="word">
+                                                    <div style="display: flex; padding-left: 10px;">
+                                                        <img src="https://i.imgur.com/wPgNPpB.png"
+                                                             alt="Icon Excel" style="
+                                                       border-radius: 4px;
+                                                       margin-right: 10px;
+                                                     " />
+                                                        <span style="
+                                                       font-family: Inter;
+                                                       font-size: 12px;
+                                                       font-style: normal;
+                                                       font-weight: 400;
+                                                       line-height: 16px;
+                                                       color: var(--Typography-Light-theme-Label, rgba(0, 32, 77, 0.95));
+                                                     " th:text="${fileName}" class="tooltip-container">abc.doc</span>
+                                                    </div>
+                                                    <img src="https://i.imgur.com/o7uPdHg.png" alt="Excel Image"
+                                                         style="
+                                                     padding: 10px;
+                                                     border-radius: 16px;
+                                                   " />
+                                                    <div style="padding: 0 11px; font-family: Inter;
+                                                       font-size: 9px;
+                                                       font-weight: 400;
+                                                       line-height: 14px;
+                                                       text-align: left;
+                                                       color: rgba(0, 32, 77, 0.8);">
+                                                                <span style="margin-right: 114px;"
+                                                                      th:text="${createDateFile}">22/08/2023 - 16:30</span>
+                                                        <span th:text="${fileSize}">123.32KB</span>
+                                                    </div>
+                                                </div>
+                                                <div th:if="${fileType} == 'excel'" style="
+                                border: 2px solid rgba(227, 228, 228, 0.9);
+                                background-color: #fcf8f8;
+                                border-radius: 16px;
+                                width: 254px;
+                                padding: 10px 0px;
+                                display: inline-block;
+
+                              " class="word">
+                                                    <div style="display: flex; padding-left: 10px;">
+                                                        <img src="https://i.imgur.com/kYCMEtB.png"
+                                                             alt="Icon Excel" style="
+                                    border-radius: 4px;
+                                    margin-right: 10px;
+                                  " />
+                                                        <span style="
+                                    font-family: Inter;
+                                    font-size: 12px;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: 16px;
+                                    color: var(--Typography-Light-theme-Label, rgba(0, 32, 77, 0.95));
+                                  " th:text="${fileName}" class="tooltip-container">abc.excel</span>
+                                                    </div>
+                                                    <img src="https://i.imgur.com/gR0RC5g.png" alt="Excel Image"
+                                                         style="
+                                  padding: 10px 10px;
+                                  border-radius: 16px;
+                                " />
+                                                    <div style="padding: 0 11px; font-family: Inter;
+                                    font-size: 9px;
+                                    font-weight: 400;
+                                    line-height: 14px;
+                                    text-align: left;
+                                    color: rgba(0, 32, 77, 0.8);">
+                                                                <span style="margin-right: 114px;"
+                                                                      th:text="${createDateFile}">22/08/2023 -
+                                                                    16:30</span>
+                                                        <span th:text="${fileSize}">123.32KB</span>
+                                                    </div>
+                                                </div>
+                                                <div style="text-align: center; margin-top: 12px;"
+                                                     class="button">
+                                                    <a style="
+                                                              font-family: Inter;
+                                                              font-size: 16px;
+                                                              font-weight: 600;
+                                                              line-height: 28px;
+                                                              border-radius: 8px;
+                                                              background-color: #5d5fef;
+                                                              color: #ffffff;
+                                                              margin-top: 12px;
+                                                              width: 125px;
+                                                              padding: 5px 8px;
+                                                              text-align: center;
+                                                              text-decoration: none;
+                                                            " th:with="url=(@{|${baseUrl}|})" th:href="${url}">
+                                                        Truy cập tài liệu
+                                                    </a>
+                                                </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="
+                      vertical-align: top;
+                      background: #fff;
+                      padding: 0 37px 0 34px;
+                      font-family: Inter;
+                      text-align: left;
+                      max-width: 727px;
+                    ">
+                            <p style="
+                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 24px;
+                        margin-top: 0;
+                        margin-bottom: 4px;
+                        color: rgba(0, 32, 77, 1);
+                      ">
+                                KHÔNG CHIA SẺ
+                            </p>
+                            <p style="
+                        color: rgba(0, 32, 77, 0.9);
+                        font-weight: normal;
+                        font-size: 14px;
+                        line-height: 22px;
+                        margin-top: 0;
+                        margin-bottom: 10px;
+                      ">
+                                Emai này chứa một mã bảo mật của Kyta Platform, vui lòng không
+                                chia sẻ email hoặc mã bảo mật này với người khác.
+                            </p>
+                            <p style="
+                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 24px;
+                        margin-top: 0;
+                        margin-bottom: 4px;
+                        color: rgba(0, 32, 77, 1);
+                      ">
+                                GIỚI THIỆU
+                            </p>
+                            <p style="
+                        color: rgba(0, 32, 77, 0.9);
+                        font-weight: normal;
+                        font-size: 14px;
+                        line-height: 22px;
+                        margin-top: 0;
+                        margin-bottom: 10px;
+                      ">
+                                Kyta Platform là nền tảng định danh và ký kết điện tử. Cung
+                                cấp nhiều dịch vụ liên quan đến ký hết hợp đồng điện tử.
+                                Sản phầm an toàn, bảo mật, đảm bảo tính pháp lý.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- END MAIN CONTENT AREA -->
+                </table>
+
+                <!-- END CENTERED WHITE CONTAINER -->
+            </div>
+        </td>
+        <td style="font-family: sans-serif; font-size: 12px; vertical-align: top;">&nbsp;</td>
+    </tr>
+</table>
+</body>
+
+</html>
