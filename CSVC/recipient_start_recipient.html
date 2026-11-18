@@ -22,7 +22,7 @@
                     <!-- HEADER LOGO - Thu hẹp padding xung quanh logo -->
                     <tr>
                         <td align="center" style="padding: 10px 15px 0 15px;">
-                            <img src="CSVC_Logo.png" alt="CSVC Logo" style="max-width: 220px; height: auto; display: block; margin: 0 auto;">
+                            <img src="https://raw.githubusercontent.com/buiduyanh0/image-econtract/main/CSVC_Logo.png" alt="CSVC Logo" style="max-width: 220px; height: auto; display: block; margin: 0 auto;">
                         </td>
                     </tr>
 
@@ -63,12 +63,6 @@
                                                         <b th:with="create=(@{|${rqtMail}|})" th:text="${create}">Nguyễn Minh Tâm - nguyenminhtam@gmail.com</b><br>
                                                         <span style="color: #2E6CF6;" th:with="nameEnv=(@{| ${envName}|})" th:text="${nameEnv}"><b>Hợp đồng công nghệ thông 2019</b></span>
                                                     </p>
-
-                                                    <!-- Link hướng dẫn -->
-                                                    <a style="color: #2E6CF6; font-weight: bold; font-size: 14px; line-height: 20px; display: inline-block; margin-bottom: 15px;" 
-                                                       href="https://drive.google.com/file/d/1_lZ7I6xgLSk5rNtKKDiTAHK4XB5teJHE/view?usp=sharing">
-                                                        Link hướng dẫn / Instruction link
-                                                    </a>
 
                                                     <!-- Điều kiện baseUrlInternal == null -->
                                                     <div th:if="${baseUrlInternal == 'null' || baseUrlInternal == null }">
